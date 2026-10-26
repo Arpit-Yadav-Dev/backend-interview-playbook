@@ -35,7 +35,7 @@
           "file": "content/p01-internet/ip-ports-localhost.md",
           "level": "beginner",
           "priority": "must-know",
-          "minutes": 10,
+          "minutes": 11,
           "tags": [
             "ip",
             "ports",
@@ -131,7 +131,7 @@
           "file": "content/p01-internet/http-versions.md",
           "level": "intermediate",
           "priority": "good-to-know",
-          "minutes": 10,
+          "minutes": 11,
           "tags": [
             "http",
             "performance",
@@ -178,7 +178,8 @@
           "related": [
             "http-basics",
             "cookies-sessions-storage",
-            "owasp-essentials"
+            "owasp-essentials",
+            "sessions-vs-jwt"
           ]
         }
       ]
@@ -195,7 +196,7 @@
           "file": "content/p02-linux-servers/what-is-a-server.md",
           "level": "beginner",
           "priority": "must-know",
-          "minutes": 8,
+          "minutes": 9,
           "tags": [
             "servers",
             "vps",
@@ -205,6 +206,25 @@
             "linux-essentials",
             "ssh",
             "cloud-basics"
+          ]
+        },
+        {
+          "id": "ssh",
+          "title": "SSH: how it works",
+          "summary": "How you log in to a remote server securely, and why keys are safer than passwords.",
+          "file": "content/p02-linux-servers/ssh.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "ssh",
+            "security",
+            "keys"
+          ],
+          "related": [
+            "ssh-tunnels",
+            "firewalls",
+            "deploy-docker-ssh"
           ]
         },
         {
@@ -265,32 +285,13 @@
           ]
         },
         {
-          "id": "ssh",
-          "title": "SSH: how it works",
-          "summary": "How you log in to a remote server securely, and why keys are safer than passwords.",
-          "file": "content/p02-linux-servers/ssh.md",
-          "level": "beginner",
-          "priority": "must-know",
-          "minutes": 14,
-          "tags": [
-            "ssh",
-            "security",
-            "keys"
-          ],
-          "related": [
-            "ssh-tunnels",
-            "firewalls",
-            "deploy-docker-ssh"
-          ]
-        },
-        {
           "id": "ssh-tunnels",
           "title": "SSH tunnels, scp, and rsync",
           "summary": "Reaching private services through SSH, and copying files to and from servers.",
           "file": "content/p02-linux-servers/ssh-tunnels.md",
           "level": "intermediate",
           "priority": "good-to-know",
-          "minutes": 10,
+          "minutes": 11,
           "tags": [
             "ssh",
             "networking",
@@ -309,7 +310,7 @@
           "file": "content/p02-linux-servers/firewalls.md",
           "level": "beginner",
           "priority": "must-know",
-          "minutes": 10,
+          "minutes": 11,
           "tags": [
             "security",
             "networking",
@@ -366,7 +367,7 @@
           "file": "content/p02-linux-servers/env-secrets.md",
           "level": "beginner",
           "priority": "must-know",
-          "minutes": 10,
+          "minutes": 11,
           "tags": [
             "security",
             "config",
@@ -385,7 +386,7 @@
           "file": "content/p02-linux-servers/process-managers.md",
           "level": "intermediate",
           "priority": "good-to-know",
-          "minutes": 9,
+          "minutes": 10,
           "tags": [
             "pm2",
             "systemd",
