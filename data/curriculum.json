@@ -1,0 +1,2333 @@
+{
+  "version": 1,
+  "phases": [
+    {
+      "id": "p01-internet",
+      "title": "How the internet works",
+      "summary": "What actually happens between typing a URL and seeing a page.",
+      "topics": [
+        {
+          "id": "url-to-page",
+          "title": "What happens when you type a URL",
+          "summary": "The full journey from pressing Enter to seeing a page, as a map of everything that follows.",
+          "file": "content/p01-internet/url-to-page.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "dns",
+            "tcp",
+            "http",
+            "tls"
+          ],
+          "related": [
+            "ip-ports-localhost",
+            "dns",
+            "tcp-udp",
+            "http-basics",
+            "tls-https"
+          ]
+        },
+        {
+          "id": "ip-ports-localhost",
+          "title": "IP addresses, ports, and localhost",
+          "summary": "How computers find each other on a network, and how one computer runs many services at once.",
+          "file": "content/p01-internet/ip-ports-localhost.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "ip",
+            "ports",
+            "networking"
+          ],
+          "related": [
+            "url-to-page",
+            "dns",
+            "processes-ports-services"
+          ]
+        },
+        {
+          "id": "dns",
+          "title": "DNS: from domain names to IPs",
+          "summary": "How a name like example.com becomes the address of a real server, and why changes take time to spread.",
+          "file": "content/p01-internet/dns.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "dns",
+            "records",
+            "ttl"
+          ],
+          "related": [
+            "url-to-page",
+            "domains-ssl",
+            "cdn"
+          ]
+        },
+        {
+          "id": "tcp-udp",
+          "title": "TCP vs UDP",
+          "summary": "Two ways to send data across a network: reliable and ordered, or fast with no guarantees.",
+          "file": "content/p01-internet/tcp-udp.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "tcp",
+            "udp",
+            "networking"
+          ],
+          "related": [
+            "url-to-page",
+            "http-versions",
+            "realtime"
+          ]
+        },
+        {
+          "id": "http-basics",
+          "title": "HTTP basics: methods, status codes, headers",
+          "summary": "The request-and-response language that browsers and servers use to talk to each other.",
+          "file": "content/p01-internet/http-basics.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "http",
+            "rest",
+            "headers"
+          ],
+          "related": [
+            "rest-api-design",
+            "cookies-sessions-storage",
+            "cors"
+          ]
+        },
+        {
+          "id": "tls-https",
+          "title": "HTTPS and TLS",
+          "summary": "What the padlock actually promises: encryption, and proof that you are talking to the real server.",
+          "file": "content/p01-internet/tls-https.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "tls",
+            "https",
+            "certificates",
+            "security"
+          ],
+          "related": [
+            "domains-ssl",
+            "security-headers",
+            "url-to-page"
+          ]
+        },
+        {
+          "id": "http-versions",
+          "title": "HTTP/1.1 vs HTTP/2 vs HTTP/3",
+          "summary": "How each version of HTTP made pages load faster, and what problem each one fixed.",
+          "file": "content/p01-internet/http-versions.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 10,
+          "tags": [
+            "http",
+            "performance",
+            "quic"
+          ],
+          "related": [
+            "tcp-udp",
+            "http-basics",
+            "cdn"
+          ]
+        },
+        {
+          "id": "cookies-sessions-storage",
+          "title": "Cookies, sessions, and local storage",
+          "summary": "Where a website remembers things about you, and which place is safe for what.",
+          "file": "content/p01-internet/cookies-sessions-storage.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "cookies",
+            "sessions",
+            "browser"
+          ],
+          "related": [
+            "sessions-vs-jwt",
+            "security-headers",
+            "cors"
+          ]
+        },
+        {
+          "id": "cors",
+          "title": "CORS: why the browser blocks requests",
+          "summary": "Why your frontend's request to your own API fails in the browser, and how to allow it correctly.",
+          "file": "content/p01-internet/cors.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "cors",
+            "browser",
+            "security"
+          ],
+          "related": [
+            "http-basics",
+            "cookies-sessions-storage",
+            "owasp-essentials"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p02-linux-servers",
+      "title": "Linux and servers",
+      "summary": "The computer your code actually runs on, and how to look after it.",
+      "topics": [
+        {
+          "id": "what-is-a-server",
+          "title": "What a server actually is",
+          "summary": "A server is just a computer that runs your code and answers requests, usually rented from someone else.",
+          "file": "content/p02-linux-servers/what-is-a-server.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 8,
+          "tags": [
+            "servers",
+            "vps",
+            "hosting"
+          ],
+          "related": [
+            "linux-essentials",
+            "ssh",
+            "cloud-basics"
+          ]
+        },
+        {
+          "id": "linux-essentials",
+          "title": "Linux essentials",
+          "summary": "Finding your way around a Linux server with the handful of commands you will use every day.",
+          "file": "content/p02-linux-servers/linux-essentials.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "linux",
+            "shell",
+            "commands"
+          ],
+          "related": [
+            "file-permissions",
+            "processes-ports-services",
+            "ssh"
+          ]
+        },
+        {
+          "id": "file-permissions",
+          "title": "Users, groups, and permissions",
+          "summary": "Who is allowed to read, change, or run each file, and what numbers like 755 and 644 mean.",
+          "file": "content/p02-linux-servers/file-permissions.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "linux",
+            "permissions",
+            "sudo"
+          ],
+          "related": [
+            "linux-essentials",
+            "ssh",
+            "dockerfile-node"
+          ]
+        },
+        {
+          "id": "processes-ports-services",
+          "title": "Processes, ports, and services",
+          "summary": "Seeing what is running on a server, what it is listening on, and keeping it running after a reboot.",
+          "file": "content/p02-linux-servers/processes-ports-services.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "linux",
+            "processes",
+            "systemd"
+          ],
+          "related": [
+            "ip-ports-localhost",
+            "process-managers",
+            "logs-debugging"
+          ]
+        },
+        {
+          "id": "ssh",
+          "title": "SSH: how it works",
+          "summary": "How you log in to a remote server securely, and why keys are safer than passwords.",
+          "file": "content/p02-linux-servers/ssh.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "ssh",
+            "security",
+            "keys"
+          ],
+          "related": [
+            "ssh-tunnels",
+            "firewalls",
+            "deploy-docker-ssh"
+          ]
+        },
+        {
+          "id": "ssh-tunnels",
+          "title": "SSH tunnels, scp, and rsync",
+          "summary": "Reaching private services through SSH, and copying files to and from servers.",
+          "file": "content/p02-linux-servers/ssh-tunnels.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 10,
+          "tags": [
+            "ssh",
+            "networking",
+            "files"
+          ],
+          "related": [
+            "ssh",
+            "firewalls",
+            "backups"
+          ]
+        },
+        {
+          "id": "firewalls",
+          "title": "Firewalls and open ports",
+          "summary": "Deciding which doors into your server stay open, and closing everything else.",
+          "file": "content/p02-linux-servers/firewalls.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "security",
+            "networking",
+            "ufw"
+          ],
+          "related": [
+            "ip-ports-localhost",
+            "ssh",
+            "nginx-reverse-proxy"
+          ]
+        },
+        {
+          "id": "nginx-reverse-proxy",
+          "title": "Nginx as a reverse proxy",
+          "summary": "Why a Node app usually sits behind Nginx, and what Nginx does for it.",
+          "file": "content/p02-linux-servers/nginx-reverse-proxy.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "nginx",
+            "proxy",
+            "deployment"
+          ],
+          "related": [
+            "domains-ssl",
+            "load-balancers",
+            "docker-compose"
+          ]
+        },
+        {
+          "id": "domains-ssl",
+          "title": "Domains and SSL on a server",
+          "summary": "Pointing a domain at your server and getting a free HTTPS certificate that renews itself.",
+          "file": "content/p02-linux-servers/domains-ssl.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "dns",
+            "tls",
+            "certbot"
+          ],
+          "related": [
+            "dns",
+            "tls-https",
+            "nginx-reverse-proxy"
+          ]
+        },
+        {
+          "id": "env-secrets",
+          "title": "Environment variables and secrets",
+          "summary": "Keeping passwords and API keys out of your code, and out of Git.",
+          "file": "content/p02-linux-servers/env-secrets.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "security",
+            "config",
+            "secrets"
+          ],
+          "related": [
+            "dockerfile-node",
+            "ci-cd",
+            "logging"
+          ]
+        },
+        {
+          "id": "process-managers",
+          "title": "PM2 vs systemd vs Docker",
+          "summary": "Three ways to keep a Node app running and restart it when it crashes.",
+          "file": "content/p02-linux-servers/process-managers.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 9,
+          "tags": [
+            "pm2",
+            "systemd",
+            "docker"
+          ],
+          "related": [
+            "processes-ports-services",
+            "containers-vs-vms",
+            "deploy-docker-ssh"
+          ]
+        },
+        {
+          "id": "logs-debugging",
+          "title": "Reading logs and debugging a server",
+          "summary": "Finding out why a server misbehaves: logs, full disks, and running out of memory.",
+          "file": "content/p02-linux-servers/logs-debugging.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "logs",
+            "debugging",
+            "linux"
+          ],
+          "related": [
+            "logging",
+            "scenario-server-down",
+            "processes-ports-services"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p03-node",
+      "title": "Node.js and backend fundamentals",
+      "summary": "How a Node server handles requests, and how to design APIs people can rely on.",
+      "topics": [
+        {
+          "id": "event-loop",
+          "title": "The Node.js event loop",
+          "summary": "How one thread can serve thousands of requests, and the one mistake that freezes all of them.",
+          "file": "content/p03-node/event-loop.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "node",
+            "event-loop",
+            "async"
+          ],
+          "related": [
+            "async-await",
+            "browser-event-loop",
+            "streams-buffers"
+          ]
+        },
+        {
+          "id": "async-await",
+          "title": "Callbacks, promises, and async/await",
+          "summary": "Three ways to wait for slow work in JavaScript, and how to handle errors in each.",
+          "file": "content/p03-node/async-await.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "javascript",
+            "async",
+            "errors"
+          ],
+          "related": [
+            "event-loop",
+            "validation-errors",
+            "browser-event-loop"
+          ]
+        },
+        {
+          "id": "streams-buffers",
+          "title": "Streams and buffers",
+          "summary": "Processing big files piece by piece, so a 2 GB upload does not need 2 GB of memory.",
+          "file": "content/p03-node/streams-buffers.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 12,
+          "tags": [
+            "node",
+            "streams",
+            "files"
+          ],
+          "related": [
+            "event-loop",
+            "file-uploads",
+            "design-video-platform"
+          ]
+        },
+        {
+          "id": "express-middleware",
+          "title": "Express: routing and middleware",
+          "summary": "How a request travels through an Express app, one function at a time.",
+          "file": "content/p03-node/express-middleware.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "express",
+            "middleware",
+            "node"
+          ],
+          "related": [
+            "rest-api-design",
+            "validation-errors",
+            "authn-vs-authz"
+          ]
+        },
+        {
+          "id": "rest-api-design",
+          "title": "REST API design",
+          "summary": "Designing URLs, methods, and responses that other developers can guess without reading docs.",
+          "file": "content/p03-node/rest-api-design.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "rest",
+            "api",
+            "http"
+          ],
+          "related": [
+            "http-basics",
+            "idempotency",
+            "graphql-vs-rest"
+          ]
+        },
+        {
+          "id": "validation-errors",
+          "title": "Input validation and error handling",
+          "summary": "Rejecting bad input early, and turning every error into a clear, safe response.",
+          "file": "content/p03-node/validation-errors.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "validation",
+            "errors",
+            "express"
+          ],
+          "related": [
+            "express-middleware",
+            "owasp-essentials",
+            "logging"
+          ]
+        },
+        {
+          "id": "idempotency",
+          "title": "Idempotency",
+          "summary": "Making sure that retrying a request, like a payment, never does the work twice.",
+          "file": "content/p03-node/idempotency.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 11,
+          "tags": [
+            "api",
+            "payments",
+            "retries"
+          ],
+          "related": [
+            "retries-backoff-dlq",
+            "rest-api-design",
+            "transactions-acid"
+          ]
+        },
+        {
+          "id": "file-uploads",
+          "title": "File uploads and presigned URLs",
+          "summary": "Getting large files from users into storage without pushing every byte through your server.",
+          "file": "content/p03-node/file-uploads.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "uploads",
+            "s3",
+            "cdn"
+          ],
+          "related": [
+            "streams-buffers",
+            "cloud-basics",
+            "design-video-platform"
+          ]
+        },
+        {
+          "id": "graphql-vs-rest",
+          "title": "GraphQL vs REST",
+          "summary": "Two styles of API, and the honest reasons to pick one over the other.",
+          "file": "content/p03-node/graphql-vs-rest.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 11,
+          "tags": [
+            "graphql",
+            "rest",
+            "api"
+          ],
+          "related": [
+            "rest-api-design",
+            "n-plus-one",
+            "api-gateway"
+          ]
+        },
+        {
+          "id": "realtime",
+          "title": "WebSockets vs SSE vs polling",
+          "summary": "Three ways for a server to push live updates to a browser, from simplest to most capable.",
+          "file": "content/p03-node/realtime.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "websockets",
+            "sse",
+            "realtime"
+          ],
+          "related": [
+            "tcp-udp",
+            "design-chat",
+            "llm-apis"
+          ]
+        },
+        {
+          "id": "grpc",
+          "title": "gRPC for internal services",
+          "summary": "A fast, typed way for backend services to call each other.",
+          "file": "content/p03-node/grpc.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 10,
+          "tags": [
+            "grpc",
+            "microservices",
+            "api"
+          ],
+          "related": [
+            "rest-api-design",
+            "monolith-microservices",
+            "http-versions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p04-auth-security",
+      "title": "Authentication and security",
+      "summary": "Proving who users are, deciding what they can do, and keeping attackers out.",
+      "topics": [
+        {
+          "id": "authn-vs-authz",
+          "title": "Authentication vs authorization",
+          "summary": "Authentication asks who you are; authorization asks what you are allowed to do.",
+          "file": "content/p04-auth-security/authn-vs-authz.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 8,
+          "tags": [
+            "auth",
+            "security"
+          ],
+          "related": [
+            "sessions-vs-jwt",
+            "rbac",
+            "oauth-oidc"
+          ]
+        },
+        {
+          "id": "sessions-vs-jwt",
+          "title": "Sessions vs JWT",
+          "summary": "Two ways to remember a logged-in user, and the honest tradeoffs between them.",
+          "file": "content/p04-auth-security/sessions-vs-jwt.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "auth",
+            "jwt",
+            "sessions"
+          ],
+          "related": [
+            "cookies-sessions-storage",
+            "authn-vs-authz",
+            "redis-beyond-caching"
+          ]
+        },
+        {
+          "id": "password-hashing",
+          "title": "Password hashing",
+          "summary": "Storing passwords so that even a stolen database does not reveal them.",
+          "file": "content/p04-auth-security/password-hashing.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 11,
+          "tags": [
+            "security",
+            "passwords",
+            "bcrypt"
+          ],
+          "related": [
+            "authn-vs-authz",
+            "rate-limiting",
+            "owasp-essentials"
+          ]
+        },
+        {
+          "id": "oauth-oidc",
+          "title": "OAuth 2.0 and \"Login with Google\"",
+          "summary": "Letting users log in with another account without ever giving you their password.",
+          "file": "content/p04-auth-security/oauth-oidc.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "oauth",
+            "oidc",
+            "auth"
+          ],
+          "related": [
+            "authn-vs-authz",
+            "sessions-vs-jwt",
+            "tls-https"
+          ]
+        },
+        {
+          "id": "rbac",
+          "title": "Role-based access control",
+          "summary": "Giving permissions to roles like admin or seller, then giving roles to users.",
+          "file": "content/p04-auth-security/rbac.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "authorization",
+            "roles",
+            "security"
+          ],
+          "related": [
+            "authn-vs-authz",
+            "owasp-essentials",
+            "express-middleware"
+          ]
+        },
+        {
+          "id": "owasp-essentials",
+          "title": "OWASP: injection, XSS, CSRF",
+          "summary": "The attacks that break real web apps most often, and the standard defense for each.",
+          "file": "content/p04-auth-security/owasp-essentials.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 18,
+          "tags": [
+            "security",
+            "sql-injection",
+            "xss",
+            "csrf"
+          ],
+          "related": [
+            "validation-errors",
+            "security-headers",
+            "rbac"
+          ]
+        },
+        {
+          "id": "rate-limiting",
+          "title": "Rate limiting and brute-force protection",
+          "summary": "Capping how often someone can call your API, so one client cannot overwhelm it or guess passwords.",
+          "file": "content/p04-auth-security/rate-limiting.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 11,
+          "tags": [
+            "security",
+            "rate-limiting",
+            "redis"
+          ],
+          "related": [
+            "design-rate-limiter",
+            "password-hashing",
+            "redis-beyond-caching"
+          ]
+        },
+        {
+          "id": "security-headers",
+          "title": "Security headers and cookie flags",
+          "summary": "A few response headers and cookie settings that switch on the browser's built-in protections.",
+          "file": "content/p04-auth-security/security-headers.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 11,
+          "tags": [
+            "security",
+            "headers",
+            "cookies"
+          ],
+          "related": [
+            "owasp-essentials",
+            "cookies-sessions-storage",
+            "tls-https"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p05-databases",
+      "title": "Databases",
+      "summary": "Storing data so it stays correct, fast to read, and safe to change.",
+      "topics": [
+        {
+          "id": "sql-vs-nosql",
+          "title": "SQL vs NoSQL: how to choose",
+          "summary": "Choosing a database by the shape of your data and the questions you will ask it.",
+          "file": "content/p05-databases/sql-vs-nosql.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "sql",
+            "nosql",
+            "databases"
+          ],
+          "related": [
+            "relational-modeling",
+            "mongodb-basics",
+            "cap-theorem"
+          ]
+        },
+        {
+          "id": "relational-modeling",
+          "title": "Relational modeling and keys",
+          "summary": "Turning users, products, and orders into tables that link to each other correctly.",
+          "file": "content/p05-databases/relational-modeling.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "sql",
+            "modeling",
+            "keys"
+          ],
+          "related": [
+            "normalization",
+            "indexes",
+            "sql-vs-nosql"
+          ]
+        },
+        {
+          "id": "normalization",
+          "title": "Normalization and denormalization",
+          "summary": "Storing each fact once to avoid contradictions, and knowing when copying data is worth it.",
+          "file": "content/p05-databases/normalization.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 11,
+          "tags": [
+            "sql",
+            "modeling"
+          ],
+          "related": [
+            "relational-modeling",
+            "n-plus-one",
+            "caching-layers"
+          ]
+        },
+        {
+          "id": "indexes",
+          "title": "Indexes: how they work",
+          "summary": "How a database finds one row among millions without reading them all, and what that costs.",
+          "file": "content/p05-databases/indexes.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "sql",
+            "indexes",
+            "performance"
+          ],
+          "related": [
+            "explain-analyze",
+            "n-plus-one",
+            "relational-modeling"
+          ]
+        },
+        {
+          "id": "explain-analyze",
+          "title": "Reading a slow query with EXPLAIN",
+          "summary": "Asking the database how it runs your query, and spotting why it is slow.",
+          "file": "content/p05-databases/explain-analyze.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "sql",
+            "performance",
+            "postgres"
+          ],
+          "related": [
+            "indexes",
+            "performance-bottlenecks",
+            "n-plus-one"
+          ]
+        },
+        {
+          "id": "transactions-acid",
+          "title": "Transactions and ACID",
+          "summary": "Grouping changes so they all happen or none do, even if the server crashes halfway.",
+          "file": "content/p05-databases/transactions-acid.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "sql",
+            "transactions",
+            "acid"
+          ],
+          "related": [
+            "isolation-levels",
+            "idempotency",
+            "sql-vs-nosql"
+          ]
+        },
+        {
+          "id": "isolation-levels",
+          "title": "Isolation levels and race conditions",
+          "summary": "What goes wrong when two requests change the same row at once, and how databases prevent it.",
+          "file": "content/p05-databases/isolation-levels.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 15,
+          "tags": [
+            "sql",
+            "concurrency",
+            "locks"
+          ],
+          "related": [
+            "transactions-acid",
+            "idempotency",
+            "cap-theorem"
+          ]
+        },
+        {
+          "id": "n-plus-one",
+          "title": "The N+1 query problem",
+          "summary": "Why a page that shows 50 orders can quietly run 51 database queries.",
+          "file": "content/p05-databases/n-plus-one.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "sql",
+            "orm",
+            "performance"
+          ],
+          "related": [
+            "orms",
+            "indexes",
+            "graphql-vs-rest"
+          ]
+        },
+        {
+          "id": "orms",
+          "title": "ORMs and query builders",
+          "summary": "Writing database code in JavaScript instead of SQL: what you gain and what you hide.",
+          "file": "content/p05-databases/orms.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 10,
+          "tags": [
+            "orm",
+            "sql",
+            "node"
+          ],
+          "related": [
+            "n-plus-one",
+            "migrations",
+            "owasp-essentials"
+          ]
+        },
+        {
+          "id": "mongodb-basics",
+          "title": "MongoDB basics",
+          "summary": "Storing data as JSON-like documents, and deciding when to nest data versus link it.",
+          "file": "content/p05-databases/mongodb-basics.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "mongodb",
+            "nosql",
+            "documents"
+          ],
+          "related": [
+            "sql-vs-nosql",
+            "relational-modeling",
+            "indexes"
+          ]
+        },
+        {
+          "id": "connection-pooling",
+          "title": "Connection pooling",
+          "summary": "Reusing a few open database connections instead of opening a new one for every request.",
+          "file": "content/p05-databases/connection-pooling.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "databases",
+            "performance",
+            "postgres"
+          ],
+          "related": [
+            "performance-bottlenecks",
+            "event-loop",
+            "vertical-horizontal-scaling"
+          ]
+        },
+        {
+          "id": "replication-sharding",
+          "title": "Replication and sharding",
+          "summary": "Copying data to more machines to read faster, and splitting it to store more.",
+          "file": "content/p05-databases/replication-sharding.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 14,
+          "tags": [
+            "databases",
+            "scaling",
+            "replicas"
+          ],
+          "related": [
+            "vertical-horizontal-scaling",
+            "cap-theorem",
+            "backups"
+          ]
+        },
+        {
+          "id": "migrations",
+          "title": "Migrations and zero-downtime changes",
+          "summary": "Changing a live database's structure without breaking the app that is using it.",
+          "file": "content/p05-databases/migrations.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 13,
+          "tags": [
+            "databases",
+            "migrations",
+            "deployment"
+          ],
+          "related": [
+            "orms",
+            "deployment-strategies",
+            "backups"
+          ]
+        },
+        {
+          "id": "backups",
+          "title": "Backups and restore",
+          "summary": "Making copies you can actually restore from, and proving it before you need them.",
+          "file": "content/p05-databases/backups.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 10,
+          "tags": [
+            "databases",
+            "backups",
+            "operations"
+          ],
+          "related": [
+            "replication-sharding",
+            "migrations",
+            "scenario-server-down"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p06-caching",
+      "title": "Caching and performance",
+      "summary": "Answering requests faster by not doing the same work twice.",
+      "topics": [
+        {
+          "id": "caching-layers",
+          "title": "Caching layers",
+          "summary": "The places a response can be saved on its way to the user: browser, CDN, app, and database.",
+          "file": "content/p06-caching/caching-layers.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "caching",
+            "performance",
+            "cdn"
+          ],
+          "related": [
+            "redis-caching",
+            "cdn",
+            "cache-invalidation"
+          ]
+        },
+        {
+          "id": "redis-caching",
+          "title": "Redis caching",
+          "summary": "Keeping a copy of popular data in fast memory, so most requests never touch the database.",
+          "file": "content/p06-caching/redis-caching.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "redis",
+            "caching",
+            "performance"
+          ],
+          "related": [
+            "cache-invalidation",
+            "cache-stampede",
+            "caching-layers"
+          ]
+        },
+        {
+          "id": "cache-invalidation",
+          "title": "Cache invalidation strategies",
+          "summary": "Deciding when a cached copy is too old to trust, and why that is famously hard.",
+          "file": "content/p06-caching/cache-invalidation.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "caching",
+            "redis",
+            "consistency"
+          ],
+          "related": [
+            "redis-caching",
+            "cdn",
+            "cache-stampede"
+          ]
+        },
+        {
+          "id": "redis-beyond-caching",
+          "title": "Redis beyond caching",
+          "summary": "Using Redis for sessions, rate limits, leaderboards, pub/sub, and simple queues.",
+          "file": "content/p06-caching/redis-beyond-caching.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 12,
+          "tags": [
+            "redis",
+            "pub-sub",
+            "queues"
+          ],
+          "related": [
+            "redis-caching",
+            "rate-limiting",
+            "message-queues"
+          ]
+        },
+        {
+          "id": "cache-stampede",
+          "title": "Cache stampede",
+          "summary": "When a popular cache entry expires and thousands of requests hit the database at once.",
+          "file": "content/p06-caching/cache-stampede.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 10,
+          "tags": [
+            "caching",
+            "redis",
+            "performance"
+          ],
+          "related": [
+            "redis-caching",
+            "cache-invalidation",
+            "designing-for-failure"
+          ]
+        },
+        {
+          "id": "cdn",
+          "title": "CDNs and cache headers",
+          "summary": "Serving files from a server near each user, and telling it how long to keep them.",
+          "file": "content/p06-caching/cdn.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "cdn",
+            "caching",
+            "http"
+          ],
+          "related": [
+            "caching-layers",
+            "design-video-platform",
+            "dns"
+          ]
+        },
+        {
+          "id": "performance-bottlenecks",
+          "title": "Finding performance bottlenecks",
+          "summary": "Measuring before fixing: where the time actually goes, and latency versus throughput.",
+          "file": "content/p06-caching/performance-bottlenecks.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "performance",
+            "latency",
+            "throughput"
+          ],
+          "related": [
+            "explain-analyze",
+            "scenario-slow-site",
+            "metrics-alerts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p07-async-messaging",
+      "title": "Async work and messaging",
+      "summary": "Moving slow work out of the request, so users never wait for it.",
+      "topics": [
+        {
+          "id": "background-jobs",
+          "title": "Why background jobs exist",
+          "summary": "Sending emails or processing videos after replying to the user, not before.",
+          "file": "content/p07-async-messaging/background-jobs.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "jobs",
+            "queues",
+            "async"
+          ],
+          "related": [
+            "message-queues",
+            "retries-backoff-dlq",
+            "cron-jobs"
+          ]
+        },
+        {
+          "id": "message-queues",
+          "title": "Message queues",
+          "summary": "A to-do list between services: producers add work, consumers take it, and nothing is lost.",
+          "file": "content/p07-async-messaging/message-queues.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "queues",
+            "messaging"
+          ],
+          "related": [
+            "background-jobs",
+            "bullmq-rabbitmq-kafka",
+            "retries-backoff-dlq"
+          ]
+        },
+        {
+          "id": "bullmq-rabbitmq-kafka",
+          "title": "BullMQ vs RabbitMQ vs Kafka",
+          "summary": "Three popular queue tools, and the kind of problem each one is built for.",
+          "file": "content/p07-async-messaging/bullmq-rabbitmq-kafka.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 14,
+          "tags": [
+            "queues",
+            "kafka",
+            "rabbitmq",
+            "bullmq"
+          ],
+          "related": [
+            "message-queues",
+            "event-driven",
+            "redis-beyond-caching"
+          ]
+        },
+        {
+          "id": "retries-backoff-dlq",
+          "title": "Retries, backoff, and dead-letter queues",
+          "summary": "Retrying failed work without making things worse, and parking jobs that keep failing.",
+          "file": "content/p07-async-messaging/retries-backoff-dlq.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "queues",
+            "retries",
+            "reliability"
+          ],
+          "related": [
+            "idempotency",
+            "message-queues",
+            "designing-for-failure"
+          ]
+        },
+        {
+          "id": "cron-jobs",
+          "title": "Scheduled jobs (cron)",
+          "summary": "Running a task on a timetable, like a nightly report, and the traps when you run many servers.",
+          "file": "content/p07-async-messaging/cron-jobs.md",
+          "level": "beginner",
+          "priority": "good-to-know",
+          "minutes": 8,
+          "tags": [
+            "cron",
+            "jobs",
+            "linux"
+          ],
+          "related": [
+            "background-jobs",
+            "backups",
+            "processes-ports-services"
+          ]
+        },
+        {
+          "id": "event-driven",
+          "title": "Event-driven architecture",
+          "summary": "Services announcing what happened instead of calling each other, and living with delay.",
+          "file": "content/p07-async-messaging/event-driven.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 13,
+          "tags": [
+            "events",
+            "messaging",
+            "consistency"
+          ],
+          "related": [
+            "message-queues",
+            "monolith-microservices",
+            "cap-theorem"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p08-docker-deploy",
+      "title": "Docker and deployment",
+      "summary": "Packaging your app so it runs the same everywhere, and shipping it safely.",
+      "topics": [
+        {
+          "id": "containers-vs-vms",
+          "title": "Containers vs virtual machines",
+          "summary": "Two ways to isolate software on one machine, and why containers start in seconds.",
+          "file": "content/p08-docker-deploy/containers-vs-vms.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "docker",
+            "containers",
+            "vms"
+          ],
+          "related": [
+            "images-containers-layers",
+            "what-is-a-server",
+            "kubernetes-concepts"
+          ]
+        },
+        {
+          "id": "images-containers-layers",
+          "title": "Images, containers, and layers",
+          "summary": "The recipe, the running copy, and the stacked layers that make Docker fast.",
+          "file": "content/p08-docker-deploy/images-containers-layers.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "docker",
+            "images",
+            "layers"
+          ],
+          "related": [
+            "dockerfile-node",
+            "containers-vs-vms",
+            "docker-volumes"
+          ]
+        },
+        {
+          "id": "dockerfile-node",
+          "title": "A good Dockerfile for Node",
+          "summary": "Writing a Dockerfile that builds fast, stays small, and does not run as root.",
+          "file": "content/p08-docker-deploy/dockerfile-node.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "docker",
+            "node",
+            "dockerfile"
+          ],
+          "related": [
+            "images-containers-layers",
+            "multi-stage-builds",
+            "env-secrets"
+          ]
+        },
+        {
+          "id": "multi-stage-builds",
+          "title": "Multi-stage builds",
+          "summary": "Building in one image and shipping only the result in a smaller one.",
+          "file": "content/p08-docker-deploy/multi-stage-builds.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 10,
+          "tags": [
+            "docker",
+            "images"
+          ],
+          "related": [
+            "dockerfile-node",
+            "ci-cd",
+            "images-containers-layers"
+          ]
+        },
+        {
+          "id": "docker-volumes",
+          "title": "Volumes and persistent data",
+          "summary": "Where to keep data so it survives when a container is deleted.",
+          "file": "content/p08-docker-deploy/docker-volumes.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "docker",
+            "volumes",
+            "storage"
+          ],
+          "related": [
+            "docker-compose",
+            "backups",
+            "images-containers-layers"
+          ]
+        },
+        {
+          "id": "docker-networking",
+          "title": "Docker networking",
+          "summary": "How containers find and talk to each other, and why localhost means something different inside one.",
+          "file": "content/p08-docker-deploy/docker-networking.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "docker",
+            "networking"
+          ],
+          "related": [
+            "docker-compose",
+            "ip-ports-localhost",
+            "nginx-reverse-proxy"
+          ]
+        },
+        {
+          "id": "docker-compose",
+          "title": "Docker Compose for a full app",
+          "summary": "Running your app, Postgres, Redis, and Nginx together with one file and one command.",
+          "file": "content/p08-docker-deploy/docker-compose.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "docker",
+            "compose"
+          ],
+          "related": [
+            "docker-networking",
+            "docker-volumes",
+            "deploy-docker-ssh"
+          ]
+        },
+        {
+          "id": "deploy-docker-ssh",
+          "title": "Deploying Docker over SSH",
+          "summary": "Getting your app from your laptop onto a real server, step by step.",
+          "file": "content/p08-docker-deploy/deploy-docker-ssh.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 16,
+          "tags": [
+            "docker",
+            "deployment",
+            "ssh"
+          ],
+          "related": [
+            "ssh",
+            "docker-compose",
+            "ci-cd"
+          ]
+        },
+        {
+          "id": "ci-cd",
+          "title": "CI/CD with GitHub Actions",
+          "summary": "Testing, building, and deploying automatically every time you push.",
+          "file": "content/p08-docker-deploy/ci-cd.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "ci-cd",
+            "github-actions",
+            "deployment"
+          ],
+          "related": [
+            "deploy-docker-ssh",
+            "test-levels",
+            "deployment-strategies"
+          ]
+        },
+        {
+          "id": "deployment-strategies",
+          "title": "Rolling, blue-green, and canary",
+          "summary": "Releasing a new version without downtime, and rolling back fast when it goes wrong.",
+          "file": "content/p08-docker-deploy/deployment-strategies.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 12,
+          "tags": [
+            "deployment",
+            "reliability"
+          ],
+          "related": [
+            "ci-cd",
+            "load-balancers",
+            "migrations"
+          ]
+        },
+        {
+          "id": "kubernetes-concepts",
+          "title": "Kubernetes concepts",
+          "summary": "Pods, deployments, and services, plus what to say if you have never used it.",
+          "file": "content/p08-docker-deploy/kubernetes-concepts.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 13,
+          "tags": [
+            "kubernetes",
+            "containers"
+          ],
+          "related": [
+            "containers-vs-vms",
+            "load-balancers",
+            "deployment-strategies"
+          ]
+        },
+        {
+          "id": "cloud-basics",
+          "title": "Cloud basics: EC2, S3, RDS, Lambda",
+          "summary": "The four kinds of cloud service you will hear about most, and what each one replaces.",
+          "file": "content/p08-docker-deploy/cloud-basics.md",
+          "level": "beginner",
+          "priority": "good-to-know",
+          "minutes": 13,
+          "tags": [
+            "cloud",
+            "aws"
+          ],
+          "related": [
+            "what-is-a-server",
+            "file-uploads",
+            "cdn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p09-system-design",
+      "title": "System design",
+      "summary": "Turning a vague product idea into an architecture you can defend.",
+      "topics": [
+        {
+          "id": "system-design-approach",
+          "title": "How to approach system design",
+          "summary": "A step-by-step framework for the open-ended design interview, so you never freeze.",
+          "file": "content/p09-system-design/system-design-approach.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "system-design",
+            "interview"
+          ],
+          "related": [
+            "vertical-horizontal-scaling",
+            "design-url-shortener",
+            "cap-theorem"
+          ]
+        },
+        {
+          "id": "vertical-horizontal-scaling",
+          "title": "Vertical vs horizontal scaling",
+          "summary": "Handling more traffic with a bigger machine, or with more machines.",
+          "file": "content/p09-system-design/vertical-horizontal-scaling.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "scaling",
+            "system-design"
+          ],
+          "related": [
+            "load-balancers",
+            "replication-sharding",
+            "what-is-a-server"
+          ]
+        },
+        {
+          "id": "load-balancers",
+          "title": "Load balancers and stateless servers",
+          "summary": "Spreading requests across servers, and why that only works if servers remember nothing.",
+          "file": "content/p09-system-design/load-balancers.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "load-balancing",
+            "scaling"
+          ],
+          "related": [
+            "vertical-horizontal-scaling",
+            "nginx-reverse-proxy",
+            "sessions-vs-jwt"
+          ]
+        },
+        {
+          "id": "cap-theorem",
+          "title": "CAP theorem, plainly",
+          "summary": "When a network splits, a distributed database must choose between correct answers and any answer.",
+          "file": "content/p09-system-design/cap-theorem.md",
+          "level": "advanced",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "cap",
+            "consistency",
+            "distributed-systems"
+          ],
+          "related": [
+            "replication-sharding",
+            "event-driven",
+            "sql-vs-nosql"
+          ]
+        },
+        {
+          "id": "monolith-microservices",
+          "title": "Monolith vs microservices",
+          "summary": "One deployable app versus many small ones, and why most teams should start with one.",
+          "file": "content/p09-system-design/monolith-microservices.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "architecture",
+            "microservices"
+          ],
+          "related": [
+            "api-gateway",
+            "event-driven",
+            "grpc"
+          ]
+        },
+        {
+          "id": "api-gateway",
+          "title": "API gateways and service calls",
+          "summary": "A single front door for many services, and how services talk behind it.",
+          "file": "content/p09-system-design/api-gateway.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 11,
+          "tags": [
+            "architecture",
+            "gateway",
+            "microservices"
+          ],
+          "related": [
+            "monolith-microservices",
+            "rate-limiting",
+            "load-balancers"
+          ]
+        },
+        {
+          "id": "design-url-shortener",
+          "title": "Design: URL shortener",
+          "summary": "Designing a service like bit.ly: short codes, fast redirects, and huge read traffic.",
+          "file": "content/p09-system-design/design-url-shortener.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 18,
+          "tags": [
+            "system-design",
+            "case-study"
+          ],
+          "related": [
+            "system-design-approach",
+            "redis-caching",
+            "indexes"
+          ]
+        },
+        {
+          "id": "design-rate-limiter",
+          "title": "Design: rate limiter",
+          "summary": "Designing a limiter that works across many servers, and choosing the right algorithm.",
+          "file": "content/p09-system-design/design-rate-limiter.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 16,
+          "tags": [
+            "system-design",
+            "case-study",
+            "redis"
+          ],
+          "related": [
+            "rate-limiting",
+            "redis-beyond-caching",
+            "api-gateway"
+          ]
+        },
+        {
+          "id": "design-chat",
+          "title": "Design: chat application",
+          "summary": "Designing one-to-one and group chat with delivery, ordering, and online status.",
+          "file": "content/p09-system-design/design-chat.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 18,
+          "tags": [
+            "system-design",
+            "case-study",
+            "websockets"
+          ],
+          "related": [
+            "realtime",
+            "message-queues",
+            "load-balancers"
+          ]
+        },
+        {
+          "id": "design-notifications",
+          "title": "Design: notification system",
+          "summary": "Sending email, push, and SMS reliably to millions of users without spamming them.",
+          "file": "content/p09-system-design/design-notifications.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 16,
+          "tags": [
+            "system-design",
+            "case-study",
+            "queues"
+          ],
+          "related": [
+            "message-queues",
+            "retries-backoff-dlq",
+            "background-jobs"
+          ]
+        },
+        {
+          "id": "design-video-platform",
+          "title": "Design: video streaming platform",
+          "summary": "Upload, transcode, store, and stream video, plus the basics of live streaming.",
+          "file": "content/p09-system-design/design-video-platform.md",
+          "level": "advanced",
+          "priority": "must-know",
+          "minutes": 22,
+          "tags": [
+            "system-design",
+            "case-study",
+            "video"
+          ],
+          "related": [
+            "file-uploads",
+            "cdn",
+            "background-jobs"
+          ]
+        },
+        {
+          "id": "designing-for-failure",
+          "title": "Designing for failure",
+          "summary": "Timeouts, retries, circuit breakers, and graceful degradation: staying up when parts break.",
+          "file": "content/p09-system-design/designing-for-failure.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 14,
+          "tags": [
+            "reliability",
+            "resilience"
+          ],
+          "related": [
+            "retries-backoff-dlq",
+            "health-checks",
+            "cache-stampede"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p10-observability",
+      "title": "Observability and production",
+      "summary": "Knowing what your system is doing, and fixing it when it breaks.",
+      "topics": [
+        {
+          "id": "logging",
+          "title": "Logging well",
+          "summary": "Writing logs you can search at 2 AM, and keeping secrets out of them.",
+          "file": "content/p10-observability/logging.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 11,
+          "tags": [
+            "logging",
+            "observability"
+          ],
+          "related": [
+            "logs-debugging",
+            "metrics-alerts",
+            "env-secrets"
+          ]
+        },
+        {
+          "id": "metrics-alerts",
+          "title": "Metrics, monitoring, and alerts",
+          "summary": "Tracking numbers over time and getting woken up only when it matters.",
+          "file": "content/p10-observability/metrics-alerts.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 12,
+          "tags": [
+            "metrics",
+            "monitoring",
+            "alerts"
+          ],
+          "related": [
+            "logging",
+            "health-checks",
+            "performance-bottlenecks"
+          ]
+        },
+        {
+          "id": "distributed-tracing",
+          "title": "Distributed tracing",
+          "summary": "Following one request across many services to see where the time went.",
+          "file": "content/p10-observability/distributed-tracing.md",
+          "level": "advanced",
+          "priority": "good-to-know",
+          "minutes": 10,
+          "tags": [
+            "tracing",
+            "observability",
+            "microservices"
+          ],
+          "related": [
+            "logging",
+            "monolith-microservices",
+            "performance-bottlenecks"
+          ]
+        },
+        {
+          "id": "health-checks",
+          "title": "Health checks and uptime monitoring",
+          "summary": "Letting load balancers and monitors ask your app, \"Are you OK?\"",
+          "file": "content/p10-observability/health-checks.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 9,
+          "tags": [
+            "monitoring",
+            "reliability"
+          ],
+          "related": [
+            "load-balancers",
+            "metrics-alerts",
+            "designing-for-failure"
+          ]
+        },
+        {
+          "id": "scenario-slow-site",
+          "title": "Scenario: the site is slow",
+          "summary": "A step-by-step story for the classic question: production is slow, what do you do?",
+          "file": "content/p10-observability/scenario-slow-site.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "debugging",
+            "performance",
+            "scenario"
+          ],
+          "related": [
+            "performance-bottlenecks",
+            "explain-analyze",
+            "metrics-alerts"
+          ]
+        },
+        {
+          "id": "scenario-server-down",
+          "title": "Scenario: server down at 2 AM",
+          "summary": "Walking through an outage calmly, from the first alert to the write-up afterwards.",
+          "file": "content/p10-observability/scenario-server-down.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "incident",
+            "debugging",
+            "scenario"
+          ],
+          "related": [
+            "logs-debugging",
+            "health-checks",
+            "backups"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p11-frontend",
+      "title": "Frontend essentials",
+      "summary": "The browser and React questions that backend-leaning candidates still get.",
+      "topics": [
+        {
+          "id": "js-fundamentals",
+          "title": "Closures, this, hoisting, and scope",
+          "summary": "The JavaScript basics interviewers still ask, explained with code you can run.",
+          "file": "content/p11-frontend/js-fundamentals.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "javascript",
+            "fundamentals"
+          ],
+          "related": [
+            "async-await",
+            "browser-event-loop",
+            "react-hooks"
+          ]
+        },
+        {
+          "id": "browser-event-loop",
+          "title": "Browser event loop: microtasks vs macrotasks",
+          "summary": "Why a promise callback runs before a setTimeout, and how that affects rendering.",
+          "file": "content/p11-frontend/browser-event-loop.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "javascript",
+            "event-loop",
+            "browser"
+          ],
+          "related": [
+            "event-loop",
+            "async-await",
+            "critical-rendering-path"
+          ]
+        },
+        {
+          "id": "critical-rendering-path",
+          "title": "How the browser renders a page",
+          "summary": "From HTML bytes to pixels: parsing, styling, layout, and paint.",
+          "file": "content/p11-frontend/critical-rendering-path.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 13,
+          "tags": [
+            "browser",
+            "rendering",
+            "performance"
+          ],
+          "related": [
+            "web-performance",
+            "url-to-page",
+            "rendering-strategies"
+          ]
+        },
+        {
+          "id": "react-rendering",
+          "title": "React rendering and reconciliation",
+          "summary": "When a React component re-renders, what React compares, and why keys matter.",
+          "file": "content/p11-frontend/react-rendering.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "react",
+            "rendering"
+          ],
+          "related": [
+            "react-hooks",
+            "state-management",
+            "rendering-strategies"
+          ]
+        },
+        {
+          "id": "react-hooks",
+          "title": "React hooks and common mistakes",
+          "summary": "useState, useEffect, useMemo, and useCallback, and the bugs each one invites.",
+          "file": "content/p11-frontend/react-hooks.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "react",
+            "hooks"
+          ],
+          "related": [
+            "react-rendering",
+            "js-fundamentals",
+            "state-management"
+          ]
+        },
+        {
+          "id": "state-management",
+          "title": "State management",
+          "summary": "Choosing between local state, context, and an external store.",
+          "file": "content/p11-frontend/state-management.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 11,
+          "tags": [
+            "react",
+            "state"
+          ],
+          "related": [
+            "react-hooks",
+            "react-rendering",
+            "rendering-strategies"
+          ]
+        },
+        {
+          "id": "rendering-strategies",
+          "title": "SSR, SSG, CSR, and Server Components",
+          "summary": "Where and when HTML gets built, and what each choice does to speed and cost.",
+          "file": "content/p11-frontend/rendering-strategies.md",
+          "level": "advanced",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "react",
+            "nextjs",
+            "ssr"
+          ],
+          "related": [
+            "critical-rendering-path",
+            "cdn",
+            "web-performance"
+          ]
+        },
+        {
+          "id": "web-performance",
+          "title": "Core Web Vitals and web performance",
+          "summary": "How Google measures page experience, and the fixes that move the numbers.",
+          "file": "content/p11-frontend/web-performance.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 12,
+          "tags": [
+            "performance",
+            "web-vitals"
+          ],
+          "related": [
+            "critical-rendering-path",
+            "cdn",
+            "rendering-strategies"
+          ]
+        },
+        {
+          "id": "accessibility-basics",
+          "title": "Accessibility basics",
+          "summary": "Building pages everyone can use, including with a keyboard or a screen reader.",
+          "file": "content/p11-frontend/accessibility-basics.md",
+          "level": "beginner",
+          "priority": "good-to-know",
+          "minutes": 10,
+          "tags": [
+            "accessibility",
+            "html"
+          ],
+          "related": [
+            "critical-rendering-path",
+            "react-rendering"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p12-ai-era",
+      "title": "Engineering in the AI era",
+      "summary": "Building with AI tools and AI APIs, responsibly.",
+      "topics": [
+        {
+          "id": "ai-coding-tools",
+          "title": "Using AI coding tools well",
+          "summary": "Reviewing and testing AI-written code, and talking about it honestly in interviews.",
+          "file": "content/p12-ai-era/ai-coding-tools.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 11,
+          "tags": [
+            "ai",
+            "workflow"
+          ],
+          "related": [
+            "code-review",
+            "test-levels",
+            "explain-your-project"
+          ]
+        },
+        {
+          "id": "llm-apis",
+          "title": "Calling LLM APIs from a backend",
+          "summary": "Streaming responses, handling timeouts, and keeping token costs and rate limits under control.",
+          "file": "content/p12-ai-era/llm-apis.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "ai",
+            "llm",
+            "api"
+          ],
+          "related": [
+            "realtime",
+            "rate-limiting",
+            "retries-backoff-dlq"
+          ]
+        },
+        {
+          "id": "rag",
+          "title": "RAG, embeddings, and vector databases",
+          "summary": "Giving a language model the right documents to answer from, explained simply.",
+          "file": "content/p12-ai-era/rag.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 14,
+          "tags": [
+            "ai",
+            "rag",
+            "embeddings"
+          ],
+          "related": [
+            "llm-apis",
+            "indexes",
+            "prompt-injection"
+          ]
+        },
+        {
+          "id": "prompt-injection",
+          "title": "Prompt injection and AI security",
+          "summary": "How text inside data can hijack an AI feature, and how to limit the damage.",
+          "file": "content/p12-ai-era/prompt-injection.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 11,
+          "tags": [
+            "ai",
+            "security"
+          ],
+          "related": [
+            "owasp-essentials",
+            "llm-apis",
+            "rag"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p13-testing-git",
+      "title": "Testing, Git, and teamwork",
+      "summary": "Shipping changes with confidence, together.",
+      "topics": [
+        {
+          "id": "test-levels",
+          "title": "Unit vs integration vs end-to-end",
+          "summary": "What to test at each level, and why you need a mix of all three.",
+          "file": "content/p13-testing-git/test-levels.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "testing"
+          ],
+          "related": [
+            "mocking-api-tests",
+            "ci-cd",
+            "code-review"
+          ]
+        },
+        {
+          "id": "mocking-api-tests",
+          "title": "Mocking and testing APIs",
+          "summary": "Testing an Express API for real, and faking only what you must.",
+          "file": "content/p13-testing-git/mocking-api-tests.md",
+          "level": "intermediate",
+          "priority": "good-to-know",
+          "minutes": 12,
+          "tags": [
+            "testing",
+            "api",
+            "mocking"
+          ],
+          "related": [
+            "test-levels",
+            "express-middleware",
+            "ci-cd"
+          ]
+        },
+        {
+          "id": "git-essentials",
+          "title": "Git: branches, rebase, and undo",
+          "summary": "Branching, merging versus rebasing, fixing conflicts, and undoing mistakes safely.",
+          "file": "content/p13-testing-git/git-essentials.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "git",
+            "workflow"
+          ],
+          "related": [
+            "code-review",
+            "ci-cd",
+            "test-levels"
+          ]
+        },
+        {
+          "id": "code-review",
+          "title": "What good code reviewers look for",
+          "summary": "Reviewing for correctness, clarity, and risk, not just style.",
+          "file": "content/p13-testing-git/code-review.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 9,
+          "tags": [
+            "teamwork",
+            "code-review"
+          ],
+          "related": [
+            "git-essentials",
+            "ai-coding-tools",
+            "test-levels"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p14-interview",
+      "title": "The interview itself",
+      "summary": "Telling your story clearly when it counts.",
+      "topics": [
+        {
+          "id": "explain-your-project",
+          "title": "Explaining your own project",
+          "summary": "Walking an interviewer through your architecture, your role, and what you would change.",
+          "file": "content/p14-interview/explain-your-project.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "interview",
+            "communication"
+          ],
+          "related": [
+            "system-design-approach",
+            "star-method",
+            "ai-coding-tools"
+          ]
+        },
+        {
+          "id": "star-method",
+          "title": "Behavioral answers with STAR",
+          "summary": "Answering \"Tell me about a time...\" with a story that has a clear shape.",
+          "file": "content/p14-interview/star-method.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 10,
+          "tags": [
+            "interview",
+            "behavioral"
+          ],
+          "related": [
+            "production-bug-story",
+            "explain-your-project",
+            "when-you-dont-know"
+          ]
+        },
+        {
+          "id": "production-bug-story",
+          "title": "\"Tell me about a production bug\"",
+          "summary": "Turning a real bug you fixed into a calm, convincing story.",
+          "file": "content/p14-interview/production-bug-story.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 9,
+          "tags": [
+            "interview",
+            "behavioral",
+            "debugging"
+          ],
+          "related": [
+            "star-method",
+            "scenario-server-down",
+            "logs-debugging"
+          ]
+        },
+        {
+          "id": "when-you-dont-know",
+          "title": "When you don't know the answer",
+          "summary": "Saying \"I don't know\" in a way that still shows how you think.",
+          "file": "content/p14-interview/when-you-dont-know.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 7,
+          "tags": [
+            "interview",
+            "communication"
+          ],
+          "related": [
+            "star-method",
+            "system-design-approach"
+          ]
+        },
+        {
+          "id": "questions-to-ask",
+          "title": "Questions to ask the interviewer",
+          "summary": "Good questions that help you judge the job and leave a strong last impression.",
+          "file": "content/p14-interview/questions-to-ask.md",
+          "level": "beginner",
+          "priority": "good-to-know",
+          "minutes": 6,
+          "tags": [
+            "interview"
+          ],
+          "related": [
+            "explain-your-project",
+            "when-you-dont-know"
+          ]
+        }
+      ]
+    }
+  ]
+}
