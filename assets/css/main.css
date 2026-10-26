@@ -615,17 +615,25 @@ textarea { width: 100%; padding: 10px 12px; line-height: 1.5; resize: vertical; 
 .topic-head { margin-bottom: 24px; }
 .topic-head h1 { margin-bottom: 10px; }
 .topic-meta { display: flex; flex-wrap: wrap; gap: 4px 18px; color: var(--muted); font-size: 0.9375rem; margin: 0; }
+.view-toggle { margin-top: 16px; }
+.quick-note { display: none; margin: 10px 0 0; color: var(--muted); font-size: 0.9375rem; }
+
+/* Quick review: only the core sections (and their TOC entries) */
+.topic-page.is-quick .quick-note { display: block; }
+.topic-page.is-quick .topic-section:not(.is-core),
+.topic-page.is-quick .toc-list li:not(.is-core) { display: none; }
 
 /* Prose ------------------------------------------------------------------- */
 
 /* Text keeps a readable line length; diagrams, code, and tables may use the full column. */
-.prose > :not(.diagram):not(.code-block):not(.table-scroll) { max-width: var(--measure); }
+.prose > :not(.diagram):not(.code-block):not(.table-scroll):not(.topic-section),
+.topic-section > :not(.diagram):not(.code-block):not(.table-scroll) { max-width: var(--measure); }
 .prose > * + * { margin-top: 0; }
 .prose h2 {
   font-size: 1.5rem; margin: 2.4em 0 0.6em; scroll-margin-top: calc(var(--bar-h) + 20px);
   display: flex; align-items: center; gap: 8px;
 }
-.prose h2:first-child { margin-top: 0.4em; }
+.prose > :first-child h2:first-child, .prose > h2:first-child { margin-top: 0.4em; }
 .prose h3 { font-size: 1.1875rem; margin: 1.8em 0 0.5em; scroll-margin-top: calc(var(--bar-h) + 20px); }
 .prose ul, .prose ol { padding-left: 1.4em; margin: 0 0 1em; }
 .prose li { margin-bottom: 0.4em; }
@@ -881,9 +889,11 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
     --hl-title: #1F5FD6;   --hl-builtin: #0A6A73; --hl-attr: #6A3AB8;   --hl-meta: #7A5018;
     color-scheme: light;
   }
+  .topic-page.is-quick .topic-section { display: block !important; }
   .diagram-light { display: block !important; }
   .diagram-dark { display: none !important; }
   body { font-size: 11pt; padding: 0; background: #fff; }
+  .view-toggle, .quick-note,
   .site-header, .site-nav, .skip-link, .topic-bar, .toc-panel, .toc-mobile,
   .topic-end, .heading-link, .code-copy, .toast, .term-pop, .path-tools, .intro, #dismiss-intro { display: none !important; }
   .page, .topic-layout { max-width: none; padding: 0; margin: 0; }

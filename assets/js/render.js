@@ -45,9 +45,33 @@ export function renderMarkdown(md, { topicId } = {}) {
   transformCallouts(root);
   transformCode(root);
   const headings = transformHeadings(root, topicId);
+  wrapSections(root, headings);
   transformLinks(root, topicId);
   wrapTables(root);
   return { fragment: root, headings };
+}
+
+// Sections shown in "Quick review" mode: the one-liner, the mechanism, the
+// interview answers, and the self-check.
+const CORE_SECTION = /^(in one line|how it works|how to say it|check yourself)/i;
+
+/** Wrap each `##` heading and its content in a <section>, flagging the core ones. */
+function wrapSections(root, headings) {
+  let current = null;
+  [...root.childNodes].forEach((node) => {
+    if (node.nodeType === 1 && node.tagName === 'H2') {
+      current = document.createElement('section');
+      current.className = 'topic-section';
+      const slug = node.dataset.slug;
+      const heading = headings.find((h) => h.slug === slug);
+      if (heading) heading.core = CORE_SECTION.test(heading.text);
+      if (heading && heading.core) current.classList.add('is-core');
+      node.replaceWith(current);
+      current.appendChild(node);
+    } else if (current) {
+      current.appendChild(node);
+    }
+  });
 }
 
 function transformCallouts(root) {

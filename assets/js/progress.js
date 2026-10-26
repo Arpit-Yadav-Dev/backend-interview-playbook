@@ -21,6 +21,7 @@
     mustKnowOnly: false,
     introDismissed: false,
     pathView: 'map',      // 'map' | 'list'
+    quickReview: false,   // topic pages show only the core sections
   });
 
   const emptyState = () => ({

@@ -34,7 +34,7 @@ export function renderTopic(main, { id, section }) {
   const related = (t.related || []).map(getTopic).filter(Boolean);
 
   main.innerHTML = `
-  <div class="topic-page" style="--line:${lineVar(phase)}">
+  <div class="topic-page${settings.quickReview ? ' is-quick' : ''}" style="--line:${lineVar(phase)}">
     <div class="topic-bar" id="topic-bar">
       <div class="topic-bar-inner">
         <a class="phase-chip" href="#/path?phase=${phase.id}"><span class="phase-chip-dot" aria-hidden="true"></span>${phase.code} · ${esc(phase.title)}</a>
@@ -62,6 +62,11 @@ export function renderTopic(main, { id, section }) {
             <span>${esc(t.level[0].toUpperCase() + t.level.slice(1))}</span>
             <span>About ${t.minutes} min</span>
           </p>
+          <div class="segmented view-toggle" role="group" aria-label="How much of the topic to show">
+            <button type="button" data-mode="full" aria-pressed="${!settings.quickReview}">Full topic</button>
+            <button type="button" data-mode="quick" aria-pressed="${settings.quickReview}">Quick review</button>
+          </div>
+          <p class="quick-note">Quick review shows the one-liner, how it works, the interview answers, and the self-check. Switch to <strong>Full topic</strong> for everything else.</p>
         </header>
 
         <details class="toc-mobile" id="toc-mobile-wrap">
@@ -127,6 +132,18 @@ export function renderTopic(main, { id, section }) {
     location.hash = next ? `#/topic/${next.id}` : '#/path';
   });
 
+  /* full / quick review */
+  const pageEl = main.querySelector('.topic-page');
+  main.querySelectorAll('[data-mode]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const quick = btn.dataset.mode === 'quick';
+      P.setSetting('quickReview', quick);
+      pageEl.classList.toggle('is-quick', quick);
+      main.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      announce(quick ? 'Showing quick review' : 'Showing the full topic');
+    });
+  });
+
   /* notes */
   const notes = main.querySelector('#notes-area');
   const notesStatus = main.querySelector('#notes-status');
@@ -165,7 +182,10 @@ export function renderTopic(main, { id, section }) {
     restoring = true;
     if (currentSection) {
       const target = document.getElementById(`s-${currentSection}`);
-      if (target) target.scrollIntoView({ block: 'start' });
+      if (target) {
+        revealSection(target);
+        target.scrollIntoView({ block: 'start' });
+      }
     } else {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       window.scrollTo(0, Math.round((saved.scroll || 0) * max));
@@ -182,7 +202,7 @@ export function renderTopic(main, { id, section }) {
   let sectionObserver = null;
 
   function buildToc(headings) {
-    const items = headings.map((h) => `<li><a href="#/topic/${id}/${h.slug}" data-toc="${h.slug}">${esc(h.text)}</a></li>`).join('');
+    const items = headings.map((h) => `<li${h.core ? ' class="is-core"' : ''}><a href="#/topic/${id}/${h.slug}" data-toc="${h.slug}">${esc(h.text)}</a></li>`).join('');
     main.querySelector('#toc-desktop').innerHTML = items;
     main.querySelector('#toc-mobile').innerHTML = items;
     if (!headings.length) {
@@ -208,9 +228,17 @@ export function renderTopic(main, { id, section }) {
     body.querySelectorAll('h2[id]').forEach((h) => sectionObserver.observe(h));
   }
 
+  // A link to a section that quick review hides switches back to the full topic.
+  function revealSection(target) {
+    if (pageEl.classList.contains('is-quick') && target.closest('.topic-section:not(.is-core)')) {
+      main.querySelector('[data-mode="full"]').click();
+    }
+  }
+
   function goToSection(slug) {
     const target = document.getElementById(`s-${slug}`);
     if (!target) return;
+    revealSection(target);
     currentSection = slug;
     history.replaceState(null, '', `#/topic/${id}/${slug}`);
     target.scrollIntoView({ block: 'start', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });

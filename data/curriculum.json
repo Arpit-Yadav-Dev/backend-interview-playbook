@@ -658,6 +658,26 @@
           ]
         },
         {
+          "id": "auth-methods",
+          "title": "Ways to authenticate: an overview",
+          "summary": "Passwords, sessions, tokens, API keys, MFA, magic links, and passkeys: what each one is and when to use it.",
+          "file": "content/p04-auth-security/auth-methods.md",
+          "level": "beginner",
+          "priority": "must-know",
+          "minutes": 12,
+          "tags": [
+            "auth",
+            "mfa",
+            "passkeys",
+            "api-keys"
+          ],
+          "related": [
+            "authn-vs-authz",
+            "sessions-vs-jwt",
+            "oauth-oidc"
+          ]
+        },
+        {
           "id": "sessions-vs-jwt",
           "title": "Sessions vs JWT",
           "summary": "Two ways to remember a logged-in user, and the honest tradeoffs between them.",
@@ -674,6 +694,26 @@
             "cookies-sessions-storage",
             "authn-vs-authz",
             "redis-beyond-caching"
+          ]
+        },
+        {
+          "id": "jwt-deep-dive",
+          "title": "JWT in depth: header, payload, signature",
+          "summary": "What is inside a JSON Web Token, how the signature is made and checked, and the mistakes that break JWT security.",
+          "file": "content/p04-auth-security/jwt-deep-dive.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 14,
+          "tags": [
+            "jwt",
+            "auth",
+            "tokens",
+            "signatures"
+          ],
+          "related": [
+            "sessions-vs-jwt",
+            "oauth-oidc",
+            "owasp-essentials"
           ]
         },
         {
