@@ -978,7 +978,7 @@
           "file": "content/p05-databases/n-plus-one.md",
           "level": "intermediate",
           "priority": "must-know",
-          "minutes": 10,
+          "minutes": 11,
           "tags": [
             "sql",
             "orm",
@@ -987,7 +987,8 @@
           "related": [
             "orms",
             "indexes",
-            "graphql-vs-rest"
+            "graphql-vs-rest",
+            "connection-pooling"
           ]
         },
         {
@@ -997,7 +998,7 @@
           "file": "content/p05-databases/orms.md",
           "level": "intermediate",
           "priority": "good-to-know",
-          "minutes": 10,
+          "minutes": 12,
           "tags": [
             "orm",
             "sql",
@@ -1035,7 +1036,7 @@
           "file": "content/p05-databases/connection-pooling.md",
           "level": "intermediate",
           "priority": "must-know",
-          "minutes": 10,
+          "minutes": 12,
           "tags": [
             "databases",
             "performance",
@@ -1054,7 +1055,7 @@
           "file": "content/p05-databases/replication-sharding.md",
           "level": "advanced",
           "priority": "good-to-know",
-          "minutes": 14,
+          "minutes": 15,
           "tags": [
             "databases",
             "scaling",
@@ -1082,7 +1083,8 @@
           "related": [
             "orms",
             "deployment-strategies",
-            "backups"
+            "backups",
+            "connection-pooling"
           ]
         },
         {
@@ -1092,7 +1094,7 @@
           "file": "content/p05-databases/backups.md",
           "level": "intermediate",
           "priority": "good-to-know",
-          "minutes": 10,
+          "minutes": 12,
           "tags": [
             "databases",
             "backups",

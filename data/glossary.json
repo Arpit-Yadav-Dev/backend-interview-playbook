@@ -9,6 +9,13 @@
       "definition": "A plain text file of NAME=value lines holding an app's settings and secrets. It is kept out of Git."
     },
     {
+      "term": "3-2-1 rule",
+      "aliases": [
+        "3-2-1 backup rule"
+      ],
+      "definition": "A backup rule of thumb: keep 3 copies of your data, on 2 different kinds of storage, with 1 copy off-site."
+    },
+    {
       "term": "429 Too Many Requests",
       "aliases": [
         "HTTP 429"
@@ -76,6 +83,20 @@
       "definition": "Automatic Certificate Management Environment: the standard protocol tools like Certbot use to request and renew certificates automatically."
     },
     {
+      "term": "Active Record pattern",
+      "aliases": [
+        "Data Mapper pattern"
+      ],
+      "definition": "Two ORM styles. In Active Record each object saves itself (user.save()); in Data Mapper plain objects are saved by a separate client or repository."
+    },
+    {
+      "term": "aggregation pipeline",
+      "aliases": [
+        "$lookup"
+      ],
+      "definition": "MongoDB's way of running multi-step queries, where documents pass through stages such as $match, $group, and $lookup (a join with another collection)."
+    },
+    {
       "term": "apex domain",
       "aliases": [
         "zone apex",
@@ -96,6 +117,13 @@
         "API keys"
       ],
       "definition": "A long random secret given to a program so it can identify itself when calling an API."
+    },
+    {
+      "term": "APM",
+      "aliases": [
+        "application performance monitoring"
+      ],
+      "definition": "Application performance monitoring: tools such as Datadog or New Relic that record each request's timing, including every database query it made."
     },
     {
       "term": "Argon2id",
@@ -184,6 +212,13 @@
       "definition": "The part of an app that runs on servers: it stores data, applies business rules, and answers requests from the frontend."
     },
     {
+      "term": "backfill",
+      "aliases": [
+        "backfilling"
+      ],
+      "definition": "Filling a new column or table with values for rows that already existed, usually in small batches on a live database."
+    },
+    {
       "term": "backpressure",
       "aliases": [],
       "definition": "How a slow destination tells a fast data source to pause, so unsent data does not pile up in memory."
@@ -258,6 +293,13 @@
         "brute-force"
       ],
       "definition": "Guessing a password by trying huge numbers of possibilities automatically."
+    },
+    {
+      "term": "BSON",
+      "aliases": [
+        "Binary JSON"
+      ],
+      "definition": "The binary, JSON-like format MongoDB stores and sends. It adds types JSON lacks, such as dates, 64-bit integers, Decimal128, and ObjectId."
     },
     {
       "term": "cache",
@@ -385,11 +427,24 @@
       "definition": "TCP's way of slowing down when packets are lost, because loss usually means the network is overloaded."
     },
     {
+      "term": "connection leak",
+      "aliases": [
+        "leaked connection",
+        "leaked connections"
+      ],
+      "definition": "A pooled connection that code checked out and never released, usually on an error path. Enough leaks empty the pool and requests start timing out."
+    },
+    {
       "term": "connection pool",
       "aliases": [
         "pool"
       ],
       "definition": "A small set of open database connections that are reused, instead of opening a new one for every query."
+    },
+    {
+      "term": "consistent hashing",
+      "aliases": [],
+      "definition": "A way of assigning keys to servers so that adding or removing a server moves only a small share of the keys instead of most of them."
     },
     {
       "term": "container",
@@ -480,12 +535,36 @@
       "definition": "A program that stores data safely on disk and lets you search and change it, for example PostgreSQL or MongoDB."
     },
     {
+      "term": "database connection",
+      "aliases": [
+        "database connections",
+        "DB connection"
+      ],
+      "definition": "An open, logged-in channel between your app and the database. Opening one costs network round trips, authentication, and server memory."
+    },
+    {
       "term": "database constraint",
       "aliases": [
         "CHECK constraint",
         "UNIQUE constraint"
       ],
       "definition": "A rule the database enforces on every write, such as NOT NULL, UNIQUE, CHECK (stock >= 0), or a foreign key."
+    },
+    {
+      "term": "database driver",
+      "aliases": [
+        "database drivers"
+      ],
+      "definition": "The low-level library that sends SQL text to a database and returns rows, such as pg for PostgreSQL in Node.js."
+    },
+    {
+      "term": "database migration",
+      "aliases": [
+        "schema migration",
+        "database migrations",
+        "schema migrations"
+      ],
+      "definition": "A versioned script, kept in the repo, that changes the database's structure. A tool records which migrations each database has already run."
     },
     {
       "term": "datagram",
@@ -604,6 +683,13 @@
       "definition": "The error a program gets when it tries to listen on an IP and port that another process is already listening on."
     },
     {
+      "term": "eager loading",
+      "aliases": [
+        "eager-loading"
+      ],
+      "definition": "Telling the ORM up front which related data you need, so it fetches it in bulk instead of one row at a time."
+    },
+    {
       "term": "encryption",
       "aliases": [
         "encrypted"
@@ -680,6 +766,13 @@
       "definition": "The number a program returns when it finishes. 0 means success; anything else means some kind of failure."
     },
     {
+      "term": "expand and contract",
+      "aliases": [
+        "parallel change"
+      ],
+      "definition": "Making a breaking schema change in safe steps: add the new structure, move code and data over, then remove the old structure once nothing uses it."
+    },
+    {
       "term": "EXPLAIN ANALYZE",
       "aliases": [],
       "definition": "A PostgreSQL command that shows the plan for a query. EXPLAIN shows estimates; EXPLAIN ANALYZE also runs it and shows real times and row counts."
@@ -688,6 +781,11 @@
       "term": "Express.js",
       "aliases": [],
       "definition": "The most widely used web framework for Node.js. It routes requests to your functions and runs them through middleware."
+    },
+    {
+      "term": "failover",
+      "aliases": [],
+      "definition": "Promoting a replica to become the new primary when the current primary fails, so the app can keep writing."
     },
     {
       "term": "file descriptor",
@@ -850,6 +948,14 @@
       "term": "host key",
       "aliases": [],
       "definition": "The key a server uses to prove its own identity to SSH clients."
+    },
+    {
+      "term": "hot shard",
+      "aliases": [
+        "hot shards",
+        "hotspot"
+      ],
+      "definition": "One shard that receives far more traffic than the others, usually because of a poor shard key."
     },
     {
       "term": "HSTS",
@@ -1094,6 +1200,13 @@
       "definition": "Load balancing that understands individual HTTP requests and can spread them across servers, even when they share one connection."
     },
     {
+      "term": "lazy loading",
+      "aliases": [
+        "lazy-loading"
+      ],
+      "definition": "Fetching related data only when code first touches it, such as order.user. Convenient, but each access can be a hidden extra query."
+    },
+    {
       "term": "least privilege",
       "aliases": [
         "principle of least privilege"
@@ -1150,11 +1263,23 @@
       "definition": "A section inside an Nginx server block that matches URL paths and says how to handle them, such as serving files or forwarding to an app."
     },
     {
+      "term": "lock_timeout",
+      "aliases": [],
+      "definition": "A PostgreSQL setting that makes a statement give up if it can't get its lock within the given time, instead of waiting and blocking queries behind it."
+    },
+    {
       "term": "log rotation",
       "aliases": [
         "logrotate"
       ],
       "definition": "Regularly renaming, compressing, and deleting old log files so they don't fill the disk."
+    },
+    {
+      "term": "logical backup",
+      "aliases": [
+        "logical backups"
+      ],
+      "definition": "A backup that exports data as SQL or a compressed archive, such as with pg_dump. Portable and table-by-table, but slow to restore for large databases."
     },
     {
       "term": "long polling",
@@ -1210,6 +1335,11 @@
         "materialized views"
       ],
       "definition": "A saved query result that the database stores like a table and refreshes when told to. Fast to read, but can be stale."
+    },
+    {
+      "term": "max_connections",
+      "aliases": [],
+      "definition": "The PostgreSQL setting for the most client connections the server accepts at once (100 by default). Past it, new connections are refused."
     },
     {
       "term": "memory",
@@ -1371,11 +1501,25 @@
       "definition": "A storage service, like Amazon S3, that keeps files (objects) by name inside buckets. Cheap, durable, and built for huge files."
     },
     {
+      "term": "ObjectId",
+      "aliases": [
+        "ObjectIds"
+      ],
+      "definition": "MongoDB's default 12-byte document id: a creation timestamp, a per-process random value, and a counter. Unique without asking the server and roughly ordered by time."
+    },
+    {
       "term": "octal notation",
       "aliases": [
         "octal permissions"
       ],
       "definition": "Writing file permissions as three digits, like 755 or 644, where read = 4, write = 2, execute = 1 are added up for owner, group, and others."
+    },
+    {
+      "term": "ODM",
+      "aliases": [
+        "object-document mapper"
+      ],
+      "definition": "Object-document mapper: the MongoDB version of an ORM, such as Mongoose, which adds schemas and validation in your code."
     },
     {
       "term": "offset pagination",
@@ -1426,6 +1570,14 @@
       "term": "origin",
       "aliases": [],
       "definition": "The scheme, host, and port of a URL together, like https://shop.example.com:443. Browsers use it to decide what a page may access."
+    },
+    {
+      "term": "ORM",
+      "aliases": [
+        "ORMs",
+        "object-relational mapper"
+      ],
+      "definition": "Object-relational mapper: a library that maps database tables to objects in your code and turns method calls into SQL, such as Prisma, Drizzle, or Sequelize."
     },
     {
       "term": "over-fetching",
@@ -1495,9 +1647,21 @@
       "definition": "Pre-registered GraphQL queries the client refers to by a hash, which makes them cacheable and blocks arbitrary queries."
     },
     {
+      "term": "pg_dump",
+      "aliases": [
+        "pg_restore"
+      ],
+      "definition": "PostgreSQL's tool for logical backups of one database. pg_restore loads its custom-format archives back in."
+    },
+    {
       "term": "pg_stat_statements",
       "aliases": [],
       "definition": "A PostgreSQL extension that records how often each query shape runs and how long it takes, used to find the most expensive queries."
+    },
+    {
+      "term": "PgBouncer",
+      "aliases": [],
+      "definition": "A lightweight connection pooler that sits in front of PostgreSQL and lets thousands of client connections share a few real database connections."
     },
     {
       "term": "phantom read",
@@ -1515,6 +1679,14 @@
       "term": "phishing-resistant",
       "aliases": [],
       "definition": "A login method that cannot be used on a fake site even if the user is fooled, such as a passkey that only works on the real domain."
+    },
+    {
+      "term": "physical backup",
+      "aliases": [
+        "physical backups",
+        "base backup"
+      ],
+      "definition": "A copy of the database server's raw data files, such as with pg_basebackup. Restores quickly but only onto the same PostgreSQL major version."
     },
     {
       "term": "PID",
@@ -1535,6 +1707,13 @@
       "term": "PM2",
       "aliases": [],
       "definition": "A process manager for Node.js apps, with extras such as cluster mode and zero-downtime reloads."
+    },
+    {
+      "term": "point-in-time recovery",
+      "aliases": [
+        "PITR"
+      ],
+      "definition": "Restoring a base backup and replaying archived WAL up to a chosen moment, such as the minute before an accidental DELETE."
     },
     {
       "term": "polling",
@@ -1679,6 +1858,13 @@
       "definition": "A request sent to a database to read or change data, for example a SQL SELECT statement."
     },
     {
+      "term": "query builder",
+      "aliases": [
+        "query builders"
+      ],
+      "definition": "A library whose functions mirror SQL clauses (select, from, where) and build safe, parameterized SQL for you, such as Knex or Kysely."
+    },
+    {
       "term": "query planner",
       "aliases": [
         "planner"
@@ -1732,6 +1918,16 @@
       "definition": "Capping how many requests a client can make in a period of time, and rejecting the rest."
     },
     {
+      "term": "read replica",
+      "aliases": [
+        "read replicas",
+        "replica",
+        "replicas",
+        "standby server"
+      ],
+      "definition": "A copy of the database that receives every change from the primary (the one server that takes writes) and serves reads only."
+    },
+    {
       "term": "redirect",
       "aliases": [
         "redirects"
@@ -1783,6 +1979,27 @@
         "rendering"
       ],
       "definition": "Turning HTML, CSS, and data into the pixels you see on screen."
+    },
+    {
+      "term": "replica lag",
+      "aliases": [
+        "replication lag"
+      ],
+      "definition": "The delay between a write committing on the primary and it appearing on a replica. During lag, reads from the replica return old data."
+    },
+    {
+      "term": "replica set",
+      "aliases": [
+        "replica sets"
+      ],
+      "definition": "A group of MongoDB servers holding copies of the same data: one primary that takes writes and secondaries that follow it and can take over."
+    },
+    {
+      "term": "replication",
+      "aliases": [
+        "database replication"
+      ],
+      "definition": "Keeping copies of the same database on several servers, so reads can be spread out and a copy can take over if the main server fails."
     },
     {
       "term": "request",
@@ -1839,6 +2056,14 @@
       "definition": "Giving permissions to roles like seller or admin, and giving roles to users, instead of granting permissions person by person."
     },
     {
+      "term": "rolling deploy",
+      "aliases": [
+        "rolling deployment",
+        "rolling update"
+      ],
+      "definition": "Updating servers to a new version a few at a time, so old and new code run side by side for a while and the site never goes fully down."
+    },
+    {
       "term": "root directory",
       "aliases": [],
       "definition": "The top folder of a Linux system, written /. Every file and folder on the machine sits somewhere below it."
@@ -1880,6 +2105,13 @@
       "definition": "Calling a function that runs on another machine as if it were a normal local function call."
     },
     {
+      "term": "RPO",
+      "aliases": [
+        "recovery point objective"
+      ],
+      "definition": "Recovery point objective: how much recent data you can afford to lose in a disaster, measured in time."
+    },
+    {
       "term": "RSS",
       "aliases": [
         "resident set size"
@@ -1890,6 +2122,13 @@
       "term": "rsync",
       "aliases": [],
       "definition": "A file copying tool that compares source and destination and sends only what changed. It works locally or over SSH."
+    },
+    {
+      "term": "RTO",
+      "aliases": [
+        "recovery time objective"
+      ],
+      "definition": "Recovery time objective: how long you can afford to be down while restoring from a failure."
     },
     {
       "term": "S3 multipart upload",
@@ -1933,6 +2172,13 @@
         "savepoints"
       ],
       "definition": "A named checkpoint inside a transaction that you can roll back to without abandoning the whole transaction."
+    },
+    {
+      "term": "scatter-gather",
+      "aliases": [
+        "scatter-gather query"
+      ],
+      "definition": "Running a query on every shard and combining the results, needed when the query doesn't filter on the shard key. Slower than a single-shard query."
     },
     {
       "term": "schema",
@@ -2039,6 +2285,13 @@
       "definition": "A web standard where the server keeps one HTTP response open and pushes text events to the browser, which reconnects automatically."
     },
     {
+      "term": "serverless function",
+      "aliases": [
+        "serverless functions"
+      ],
+      "definition": "Code the cloud provider starts on demand and scales automatically, such as AWS Lambda. Each running instance is a separate process."
+    },
+    {
       "term": "session",
       "aliases": [
         "sessions"
@@ -2064,6 +2317,13 @@
       "term": "setuid",
       "aliases": [],
       "definition": "A special permission that makes a program run as the file's owner instead of the user who started it. /usr/bin/passwd uses it."
+    },
+    {
+      "term": "shard key",
+      "aliases": [
+        "shard keys"
+      ],
+      "definition": "The column, such as user_id, that decides which shard a row is stored on. It should have many values, spread load evenly, and appear in most queries."
     },
     {
       "term": "sharding",
@@ -2194,6 +2454,11 @@
       "definition": "A special permission on a folder that lets only a file's owner delete or rename it. /tmp uses it so users can't delete each other's files."
     },
     {
+      "term": "streaming replication",
+      "aliases": [],
+      "definition": "PostgreSQL's built-in replication: the primary streams its write-ahead log (WAL) records to replicas, which replay them to stay in sync."
+    },
+    {
       "term": "sudo",
       "aliases": [],
       "definition": "A command that runs one command with administrator (root) rights."
@@ -2209,9 +2474,23 @@
       "definition": "Encryption that uses one shared secret key to both lock and unlock data. It is fast, so TLS uses it for the actual traffic."
     },
     {
+      "term": "synchronous replication",
+      "aliases": [
+        "asynchronous replication"
+      ],
+      "definition": "Synchronous: the primary waits for a replica to confirm each commit, so confirmed writes are never lost but writes are slower. Asynchronous (the default): it doesn't wait."
+    },
+    {
       "term": "systemd",
       "aliases": [],
       "definition": "The program that boots Ubuntu and runs as process 1. It starts, stops, restarts, and logs background services."
+    },
+    {
+      "term": "table partitioning",
+      "aliases": [
+        "partitioning"
+      ],
+      "definition": "Splitting one large table into smaller pieces, such as one per month, on the same database server."
     },
     {
       "term": "TCP",
@@ -2440,6 +2719,13 @@
         "write-ahead log"
       ],
       "definition": "A log where PostgreSQL records every change before applying it to the data files. Flushing it at COMMIT is what makes committed data survive a crash."
+    },
+    {
+      "term": "WAL archiving",
+      "aliases": [
+        "continuous archiving"
+      ],
+      "definition": "Copying each finished write-ahead log file to safe storage, so changes since the last base backup can be replayed during recovery."
     },
     {
       "term": "WebAuthn",
