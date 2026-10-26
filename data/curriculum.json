@@ -958,7 +958,7 @@
           "summary": "What goes wrong when two requests change the same row at once, and how databases prevent it.",
           "file": "content/p05-databases/isolation-levels.md",
           "level": "advanced",
-          "priority": "good-to-know",
+          "priority": "must-know",
           "minutes": 15,
           "tags": [
             "sql",

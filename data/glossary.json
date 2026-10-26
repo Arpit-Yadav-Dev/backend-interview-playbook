@@ -40,6 +40,21 @@
       "definition": "A file location written from the root directory, like /var/log/nginx/error.log. It means the same thing from anywhere."
     },
     {
+      "term": "access pattern",
+      "aliases": [
+        "access patterns"
+      ],
+      "definition": "A specific way the app reads or writes data, such as \"get a user's last 20 orders\". Database design starts from these."
+    },
+    {
+      "term": "ACID",
+      "aliases": [
+        "atomicity",
+        "durability"
+      ],
+      "definition": "The four guarantees of a database transaction: Atomicity (all or nothing), Consistency (rules hold), Isolation (concurrent work doesn't interfere), Durability (committed data survives crashes)."
+    },
+    {
       "term": "ACME",
       "aliases": [
         "ACME protocol"
@@ -77,6 +92,18 @@
       "definition": "The DNS server that holds a domain's official records, usually run by your DNS provider."
     },
     {
+      "term": "autocommit",
+      "aliases": [],
+      "definition": "The default mode where each SQL statement runs as its own transaction and commits immediately."
+    },
+    {
+      "term": "B-tree",
+      "aliases": [
+        "B-trees"
+      ],
+      "definition": "The default index structure: a balanced tree of sorted pages (root, branch, leaf) that finds any value in a few page reads, even in huge tables."
+    },
+    {
       "term": "backend",
       "aliases": [],
       "definition": "The part of an app that runs on servers: it stores data, applies business rules, and answers requests from the frontend."
@@ -106,6 +133,14 @@
       "term": "bind address",
       "aliases": [],
       "definition": "The IP address a server listens on. 127.0.0.1 accepts connections only from the same machine; 0.0.0.0 accepts them on every network interface."
+    },
+    {
+      "term": "bitmap scan",
+      "aliases": [
+        "Bitmap Heap Scan",
+        "Bitmap Index Scan"
+      ],
+      "definition": "A plan step that first collects all matching row locations from an index, then reads each needed table page once, in page order."
     },
     {
       "term": "browser",
@@ -212,6 +247,13 @@
       "definition": "A DNS record that makes one name an alias of another name, so the resolver looks up the other name instead."
     },
     {
+      "term": "composite index",
+      "aliases": [
+        "multicolumn index"
+      ],
+      "definition": "An index on several columns, sorted by the first column, then the second within it. It helps queries that filter on its leading columns."
+    },
+    {
       "term": "congestion control",
       "aliases": [],
       "definition": "TCP's way of slowing down when packets are lost, because loss usually means the network is overloaded."
@@ -250,6 +292,13 @@
       "definition": "Cross-Origin Resource Sharing: the rules a browser follows before letting a page read responses from a different origin, and the headers a server sends to allow it."
     },
     {
+      "term": "covering index",
+      "aliases": [
+        "index-only scan"
+      ],
+      "definition": "An index that contains every column a query needs, so the database can answer from the index alone without reading the table."
+    },
+    {
       "term": "CSR",
       "aliases": [
         "certificate signing request"
@@ -276,11 +325,39 @@
       "definition": "A program that stores data safely on disk and lets you search and change it, for example PostgreSQL or MongoDB."
     },
     {
+      "term": "database constraint",
+      "aliases": [
+        "CHECK constraint",
+        "UNIQUE constraint"
+      ],
+      "definition": "A rule the database enforces on every write, such as NOT NULL, UNIQUE, CHECK (stock >= 0), or a foreign key."
+    },
+    {
       "term": "datagram",
       "aliases": [
         "datagrams"
       ],
       "definition": "One self-contained UDP message. It is sent with no connection, no ordering, and no confirmation that it arrived."
+    },
+    {
+      "term": "deadlock",
+      "aliases": [
+        "deadlocks"
+      ],
+      "definition": "Two transactions each wait for a lock the other holds, so neither can continue. PostgreSQL detects it and aborts one of them."
+    },
+    {
+      "term": "denormalization",
+      "aliases": [
+        "denormalize",
+        "denormalized"
+      ],
+      "definition": "Deliberately storing a copy or precomputed value to make an important read faster, while taking on the job of keeping it in sync."
+    },
+    {
+      "term": "dirty read",
+      "aliases": [],
+      "definition": "Reading another transaction's change before it commits. If it rolls back, you acted on data that never existed. PostgreSQL never allows it."
     },
     {
       "term": "DNS",
@@ -326,6 +403,14 @@
         "container image"
       ],
       "definition": "A read-only template with an app and its dependencies. Running an image creates a container."
+    },
+    {
+      "term": "document database",
+      "aliases": [
+        "document store",
+        "document databases"
+      ],
+      "definition": "A NoSQL database that stores each record as a JSON-like document, often with related data nested inside. MongoDB is the best-known example."
     },
     {
       "term": "domain name",
@@ -402,6 +487,11 @@
       "definition": "The number a program returns when it finishes. 0 means success; anything else means some kind of failure."
     },
     {
+      "term": "EXPLAIN ANALYZE",
+      "aliases": [],
+      "definition": "A PostgreSQL command that shows the plan for a query. EXPLAIN shows estimates; EXPLAIN ANALYZE also runs it and shows real times and row counts."
+    },
+    {
       "term": "file permissions",
       "aliases": [
         "Linux permissions"
@@ -426,6 +516,13 @@
       "definition": "TCP's way of stopping a fast sender from overwhelming a slow receiver: the receiver keeps saying how much more data it has room for."
     },
     {
+      "term": "foreign key",
+      "aliases": [
+        "foreign keys"
+      ],
+      "definition": "A column that holds another table's primary key, such as orders.user_id. The database refuses values that don't point to an existing row."
+    },
+    {
       "term": "forward proxy",
       "aliases": [],
       "definition": "A server that makes requests on behalf of clients, so websites see the proxy instead of the user. The opposite of a reverse proxy."
@@ -446,6 +543,11 @@
       "definition": "Stopping an app cleanly: stop accepting new requests, finish the ones in progress, close connections, then exit."
     },
     {
+      "term": "graph database",
+      "aliases": [],
+      "definition": "A database that stores items as nodes and the relationships between them as links, suited to questions like \"friends of friends\". Neo4j is an example."
+    },
+    {
       "term": "handshake",
       "aliases": [
         "handshakes"
@@ -459,6 +561,13 @@
         "hash function"
       ],
       "definition": "A one-way calculation that turns input into a fixed-length fingerprint. You cannot reverse it to get the input back."
+    },
+    {
+      "term": "hash join",
+      "aliases": [
+        "nested loop join"
+      ],
+      "definition": "Ways a database combines two tables. A hash join builds an in-memory lookup of one side; a nested loop looks up matches for each row, one at a time."
     },
     {
       "term": "head-of-line blocking",
@@ -577,6 +686,13 @@
       "definition": "The newer, much longer IP address format, written in hexadecimal like 2001:db8::1, with enough addresses for practically every device."
     },
     {
+      "term": "isolation level",
+      "aliases": [
+        "isolation levels"
+      ],
+      "definition": "A setting that decides how much concurrent transactions can see of each other's changes: read committed, repeatable read, or serializable."
+    },
+    {
       "term": "journalctl",
       "aliases": [
         "systemd journal"
@@ -587,6 +703,18 @@
       "term": "JSON",
       "aliases": [],
       "definition": "JavaScript Object Notation: a plain-text format for structured data, like {\"id\": 42, \"name\": \"Mug\"}."
+    },
+    {
+      "term": "JSONB",
+      "aliases": [],
+      "definition": "A PostgreSQL column type that stores JSON in a parsed binary form, so you can query and index fields inside it."
+    },
+    {
+      "term": "junction table",
+      "aliases": [
+        "join table"
+      ],
+      "definition": "A table that links two other tables in a many-to-many relationship, with one row per pair, such as order_items between orders and products."
     },
     {
       "term": "JWT",
@@ -630,6 +758,11 @@
         "principle of least privilege"
       ],
       "definition": "Giving every user and program only the access it needs, so a mistake or break-in does as little damage as possible."
+    },
+    {
+      "term": "leftmost prefix rule",
+      "aliases": [],
+      "definition": "A composite index helps a query only if the query uses its first column (or first few columns). An index on (user_id, created_at) can't search created_at alone."
     },
     {
       "term": "Let's Encrypt",
@@ -685,9 +818,28 @@
       "definition": "The special address (127.0.0.1 or ::1) that a computer uses to talk to itself. Traffic sent there never leaves the machine."
     },
     {
+      "term": "lost update",
+      "aliases": [
+        "lost updates"
+      ],
+      "definition": "Two transactions read the same value and write back a new value computed from it, so one write silently overwrites the other."
+    },
+    {
       "term": "man-in-the-middle",
       "aliases": [],
       "definition": "An attack where someone secretly sits between two parties, reading or changing what they send."
+    },
+    {
+      "term": "many-to-many",
+      "aliases": [],
+      "definition": "A relationship where rows on both sides can link to many rows on the other, such as orders and products. It needs a junction table."
+    },
+    {
+      "term": "materialized view",
+      "aliases": [
+        "materialized views"
+      ],
+      "definition": "A saved query result that the database stores like a table and refreshes when told to. Fast to read, but can be stale."
     },
     {
       "term": "memory",
@@ -707,6 +859,13 @@
       "definition": "Sending many requests and responses at the same time over one connection by interleaving their pieces, as HTTP/2 and HTTP/3 do."
     },
     {
+      "term": "MVCC",
+      "aliases": [
+        "multi-version concurrency control"
+      ],
+      "definition": "How PostgreSQL handles concurrent access: updates write new row versions, and each transaction reads a consistent snapshot, so readers and writers don't block each other."
+    },
+    {
       "term": "MX record",
       "aliases": [
         "MX records"
@@ -721,6 +880,11 @@
       "definition": "Network Address Translation: a router shares one public IP address among many devices by rewriting outgoing traffic and remembering where each reply belongs."
     },
     {
+      "term": "natural key",
+      "aliases": [],
+      "definition": "A real-world value that is already unique, like an email address or ISBN. Usually kept UNIQUE rather than used as the primary key."
+    },
+    {
       "term": "network interface",
       "aliases": [
         "network interfaces"
@@ -731,6 +895,33 @@
       "term": "Nginx",
       "aliases": [],
       "definition": "A fast web server often placed in front of apps to handle HTTPS, serve files, and forward requests."
+    },
+    {
+      "term": "non-repeatable read",
+      "aliases": [],
+      "definition": "Reading the same row twice in one transaction and getting different values, because another transaction committed a change in between."
+    },
+    {
+      "term": "normal form",
+      "aliases": [
+        "normal forms",
+        "third normal form",
+        "3NF"
+      ],
+      "definition": "A level of normalization. Third normal form means every column depends on the key, the whole key, and nothing but the key."
+    },
+    {
+      "term": "normalization",
+      "aliases": [
+        "normalize",
+        "normalized"
+      ],
+      "definition": "Organizing tables so each fact is stored in exactly one place, which prevents copies from contradicting each other."
+    },
+    {
+      "term": "NoSQL",
+      "aliases": [],
+      "definition": "\"Not only SQL\": a loose name for databases that don't use tables and joins, such as document, key-value, wide-column, and graph databases."
     },
     {
       "term": "NS record",
@@ -747,11 +938,30 @@
       "definition": "Writing file permissions as three digits, like 755 or 644, where read = 4, write = 2, execute = 1 are added up for owner, group, and others."
     },
     {
+      "term": "ON DELETE CASCADE",
+      "aliases": [
+        "cascade delete"
+      ],
+      "definition": "A foreign key option that automatically deletes child rows when their parent row is deleted, such as an order's items when the order is deleted."
+    },
+    {
+      "term": "one-to-many",
+      "aliases": [],
+      "definition": "A relationship where one row is linked to many rows in another table, such as one user with many orders. The foreign key goes on the \"many\" side."
+    },
+    {
       "term": "OOM killer",
       "aliases": [
         "out-of-memory killer"
       ],
       "definition": "The part of the Linux kernel that ends a process, usually the largest, when the machine runs out of memory."
+    },
+    {
+      "term": "optimistic locking",
+      "aliases": [
+        "pessimistic locking"
+      ],
+      "definition": "Optimistic: don't lock, but check a version number at write time and retry on conflict. Pessimistic: lock the rows first so others wait."
     },
     {
       "term": "origin",
@@ -781,6 +991,23 @@
       "definition": "A small chunk of data, typically up to about 1,500 bytes, that travels across a network on its own. Larger messages are split into many packets."
     },
     {
+      "term": "partial index",
+      "aliases": [],
+      "definition": "An index over only the rows that match a condition, such as videos still processing. Smaller and cheaper to maintain."
+    },
+    {
+      "term": "pg_stat_statements",
+      "aliases": [],
+      "definition": "A PostgreSQL extension that records how often each query shape runs and how long it takes, used to find the most expensive queries."
+    },
+    {
+      "term": "phantom read",
+      "aliases": [
+        "phantoms"
+      ],
+      "definition": "Running the same query twice in one transaction and seeing new rows appear, because another transaction inserted matching rows."
+    },
+    {
       "term": "PID",
       "aliases": [
         "process ID",
@@ -792,6 +1019,11 @@
       "term": "PM2",
       "aliases": [],
       "definition": "A process manager for Node.js apps, with extras such as cluster mode and zero-downtime reloads."
+    },
+    {
+      "term": "polyglot persistence",
+      "aliases": [],
+      "definition": "Using several kinds of databases in one system, each for what it does best, such as PostgreSQL for orders and Redis for sessions."
     },
     {
       "term": "port",
@@ -806,6 +1038,13 @@
         "preflights"
       ],
       "definition": "An OPTIONS request the browser sends before certain cross-origin requests, to ask the server whether that origin, method, and headers are allowed."
+    },
+    {
+      "term": "primary key",
+      "aliases": [
+        "primary keys"
+      ],
+      "definition": "The column (or columns) that uniquely identifies each row in a table. It can never be empty or repeated."
     },
     {
       "term": "private IP address",
@@ -876,6 +1115,13 @@
       "definition": "A request sent to a database to read or change data, for example a SQL SELECT statement."
     },
     {
+      "term": "query planner",
+      "aliases": [
+        "planner"
+      ],
+      "definition": "The part of the database that decides how to run a query, such as which index to use and how to join tables, based on cost estimates."
+    },
+    {
       "term": "queue",
       "aliases": [
         "message queue"
@@ -888,6 +1134,13 @@
       "definition": "A transport protocol built on UDP that adds reliability per stream and builds TLS 1.3 into its handshake. HTTP/3 runs on it."
     },
     {
+      "term": "race condition",
+      "aliases": [
+        "race conditions"
+      ],
+      "definition": "A bug where the result depends on the exact timing of overlapping operations, such as two requests both buying the last item."
+    },
+    {
       "term": "redirect",
       "aliases": [
         "redirects"
@@ -898,6 +1151,13 @@
       "term": "Redis",
       "aliases": [],
       "definition": "An in-memory data store that is very fast, often used for caching, sessions, counters, and simple queues."
+    },
+    {
+      "term": "relational database",
+      "aliases": [
+        "relational databases"
+      ],
+      "definition": "A database that stores data in tables of rows and columns and links tables through ids, queried with SQL. PostgreSQL and MySQL are examples."
     },
     {
       "term": "relative path",
@@ -989,6 +1249,13 @@
       "definition": "An HTTP method that must not change anything on the server, such as GET, HEAD, or OPTIONS."
     },
     {
+      "term": "saga",
+      "aliases": [
+        "saga pattern"
+      ],
+      "definition": "A multi-step process across services where each step is its own transaction and has an undo step that runs if a later step fails."
+    },
+    {
       "term": "same-origin policy",
       "aliases": [],
       "definition": "The browser rule that a page's JavaScript may not read responses from a different origin unless that server allows it with CORS headers."
@@ -997,6 +1264,31 @@
       "term": "SameSite",
       "aliases": [],
       "definition": "A cookie attribute (Strict, Lax, or None) that controls whether the browser sends the cookie on requests started by other sites. Lax and Strict help block CSRF."
+    },
+    {
+      "term": "savepoint",
+      "aliases": [
+        "savepoints"
+      ],
+      "definition": "A named checkpoint inside a transaction that you can roll back to without abandoning the whole transaction."
+    },
+    {
+      "term": "schema",
+      "aliases": [
+        "schemas",
+        "database schema"
+      ],
+      "definition": "The declared structure of a database: which tables exist, their columns, and each column's type and rules."
+    },
+    {
+      "term": "schema-on-read",
+      "aliases": [],
+      "definition": "The database stores data in any shape, and your code interprets the structure when it reads it. Typical of document databases."
+    },
+    {
+      "term": "schema-on-write",
+      "aliases": [],
+      "definition": "The database checks data against a declared structure when you save it, and rejects data that doesn't fit. Typical of relational databases."
     },
     {
       "term": "scp",
@@ -1025,11 +1317,37 @@
       "definition": "A cloud provider's firewall that filters traffic before it reaches your virtual machine. By default it blocks all incoming traffic."
     },
     {
+      "term": "SELECT FOR UPDATE",
+      "aliases": [
+        "FOR UPDATE",
+        "row lock"
+      ],
+      "definition": "A query that locks the rows it reads, so other transactions trying to change or lock them must wait until this one finishes."
+    },
+    {
+      "term": "selectivity",
+      "aliases": [],
+      "definition": "How small a share of rows a condition matches. A highly selective condition (one user's orders) benefits most from an index."
+    },
+    {
       "term": "sequence number",
       "aliases": [
         "sequence numbers"
       ],
       "definition": "The position number TCP gives each byte it sends, so the receiver can put data back in order and spot gaps."
+    },
+    {
+      "term": "sequential scan",
+      "aliases": [
+        "Seq Scan",
+        "full table scan"
+      ],
+      "definition": "Reading every row of a table to find the matching ones. Fine for small tables, slow for finding a few rows in a big one."
+    },
+    {
+      "term": "serialization failure",
+      "aliases": [],
+      "definition": "An error (code 40001) where the database aborts a transaction that conflicted with a concurrent one. The app should retry it."
     },
     {
       "term": "server",
@@ -1066,6 +1384,14 @@
       "term": "setuid",
       "aliases": [],
       "definition": "A special permission that makes a program run as the file's owner instead of the user who started it. /usr/bin/passwd uses it."
+    },
+    {
+      "term": "sharding",
+      "aliases": [
+        "shard",
+        "shards"
+      ],
+      "definition": "Splitting one dataset across several database servers, each holding part of the rows, so no single machine has to store or serve all of it."
     },
     {
       "term": "shell",
@@ -1169,6 +1495,11 @@
       "definition": "A command that runs one command with administrator (root) rights."
     },
     {
+      "term": "surrogate key",
+      "aliases": [],
+      "definition": "A generated id with no real-world meaning, used as a primary key because it never needs to change."
+    },
+    {
       "term": "symmetric encryption",
       "aliases": [],
       "definition": "Encryption that uses one shared secret key to both lock and unlock data. It is fast, so TLS uses it for the actual traffic."
@@ -1231,6 +1562,21 @@
       "definition": "The last part of a domain name, such as .com, .org, or .in. TLD servers know which nameservers are in charge of each domain under them."
     },
     {
+      "term": "transaction",
+      "aliases": [
+        "transactions",
+        "database transaction"
+      ],
+      "definition": "A group of database changes that either all happen (COMMIT) or none happen (ROLLBACK)."
+    },
+    {
+      "term": "transactional outbox",
+      "aliases": [
+        "outbox pattern"
+      ],
+      "definition": "Saving an event row in the same transaction as the data change, then having a worker publish it to other services, so neither can happen without the other."
+    },
+    {
       "term": "trust store",
       "aliases": [],
       "definition": "The list of root certificate authorities that an operating system or browser trusts out of the box."
@@ -1284,11 +1630,28 @@
       "definition": "A small config file that tells systemd how to run a service: the command, the user, restart rules, and when to start it."
     },
     {
+      "term": "update anomaly",
+      "aliases": [],
+      "definition": "A contradiction caused by storing one fact in many rows and changing only some of them, such as a user with two different emails."
+    },
+    {
       "term": "URL",
       "aliases": [
         "URLs"
       ],
       "definition": "Uniform Resource Locator: a web address, like https://shop.example.com/products/42."
+    },
+    {
+      "term": "UUID",
+      "aliases": [
+        "UUIDs"
+      ],
+      "definition": "A 128-bit identifier that can be generated anywhere without coordination and is practically never repeated, such as 3f1c9a2e-..."
+    },
+    {
+      "term": "VACUUM",
+      "aliases": [],
+      "definition": "PostgreSQL's cleanup process. It removes row versions no transaction can see any more and keeps the table's bookkeeping up to date."
     },
     {
       "term": "vCPU",
@@ -1315,9 +1678,28 @@
       "definition": "Virtual Private Server: a rented slice of a physical machine that behaves like your own server."
     },
     {
+      "term": "WAL",
+      "aliases": [
+        "write-ahead log"
+      ],
+      "definition": "A log where PostgreSQL records every change before applying it to the data files. Flushing it at COMMIT is what makes committed data survive a crash."
+    },
+    {
+      "term": "wide-column store",
+      "aliases": [
+        "wide-column"
+      ],
+      "definition": "A NoSQL database, such as Cassandra, that groups rows by a partition key and spreads them across many machines, built for very high write volumes."
+    },
+    {
       "term": "wildcard certificate",
       "aliases": [],
       "definition": "A certificate that covers every subdomain at one level, like *.example.com."
+    },
+    {
+      "term": "write skew",
+      "aliases": [],
+      "definition": "Two transactions read the same data and each writes something different based on it; together they break a rule neither broke alone."
     },
     {
       "term": "X-Forwarded-For",
