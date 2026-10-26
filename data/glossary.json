@@ -9,6 +9,13 @@
       "definition": "A plain text file of NAME=value lines holding an app's settings and secrets. It is kept out of Git."
     },
     {
+      "term": "429 Too Many Requests",
+      "aliases": [
+        "HTTP 429"
+      ],
+      "definition": "The HTTP status code a server returns when a client has sent too many requests and must slow down."
+    },
+    {
       "term": "502 Bad Gateway",
       "aliases": [],
       "definition": "The error a proxy returns when it couldn't get a valid response from the app behind it, often because the app is down."
@@ -47,6 +54,13 @@
       "definition": "A specific way the app reads or writes data, such as \"get a user's last 20 orders\". Database design starts from these."
     },
     {
+      "term": "access token",
+      "aliases": [
+        "access tokens"
+      ],
+      "definition": "A short-lived token sent with API requests to prove the caller is allowed to make them."
+    },
+    {
       "term": "ACID",
       "aliases": [
         "atomicity",
@@ -77,6 +91,20 @@
       "definition": "Application Programming Interface: a defined way for one program to ask another program for data or actions, like a menu of requests it accepts."
     },
     {
+      "term": "API key",
+      "aliases": [
+        "API keys"
+      ],
+      "definition": "A long random secret given to a program so it can identify itself when calling an API."
+    },
+    {
+      "term": "Argon2id",
+      "aliases": [
+        "Argon2"
+      ],
+      "definition": "A modern password hashing algorithm that is deliberately slow and needs lots of memory, making large-scale guessing expensive."
+    },
+    {
       "term": "asymmetric encryption",
       "aliases": [
         "public-key cryptography"
@@ -98,12 +126,45 @@
       "definition": "A delivery guarantee where every message arrives, but some may arrive more than once, so processing must handle duplicates."
     },
     {
+      "term": "attribute-based access control",
+      "aliases": [
+        "ABAC"
+      ],
+      "definition": "Access rules based on properties of the user, the data, and the situation, such as region, amount, or time of day."
+    },
+    {
+      "term": "authentication",
+      "aliases": [
+        "authn"
+      ],
+      "definition": "Proving who you are, for example by logging in with a password, a passkey, or Google."
+    },
+    {
+      "term": "authentication factor",
+      "aliases": [
+        "authentication factors"
+      ],
+      "definition": "A kind of login evidence: something you know (a password), something you have (a phone or security key), or something you are (a fingerprint)."
+    },
+    {
       "term": "authoritative nameserver",
       "aliases": [
         "authoritative nameservers",
         "nameservers"
       ],
       "definition": "The DNS server that holds a domain's official records, usually run by your DNS provider."
+    },
+    {
+      "term": "authorization",
+      "aliases": [
+        "authz"
+      ],
+      "definition": "Deciding what a known user is allowed to do, such as whether they may read a specific order."
+    },
+    {
+      "term": "authorization code",
+      "aliases": [],
+      "definition": "A short-lived, one-time code from an OAuth provider that your server exchanges for tokens."
     },
     {
       "term": "autocommit",
@@ -141,12 +202,29 @@
       "definition": "A whole physical server rented or owned by one customer, with no virtualization shared with others."
     },
     {
+      "term": "base64url",
+      "aliases": [],
+      "definition": "A way to write any bytes as text using letters, digits, - and _, safe for URLs. It is an encoding, not encryption: anyone can decode it."
+    },
+    {
       "term": "bastion host",
       "aliases": [
         "jump host",
         "jump server"
       ],
       "definition": "A server whose only job is to be the entry point into a private network. You SSH to it first, then hop onward to private machines."
+    },
+    {
+      "term": "bcrypt",
+      "aliases": [],
+      "definition": "An older, widely used slow password hashing algorithm with an adjustable cost. It only uses the first 72 bytes of a password."
+    },
+    {
+      "term": "bearer token",
+      "aliases": [
+        "bearer tokens"
+      ],
+      "definition": "A token that works for whoever holds it, like cash, with no further proof of identity."
     },
     {
       "term": "bind address",
@@ -160,6 +238,13 @@
         "Bitmap Index Scan"
       ],
       "definition": "A plan step that first collects all matching row locations from an index, then reads each needed table page once, in page order."
+    },
+    {
+      "term": "botnet",
+      "aliases": [
+        "botnets"
+      ],
+      "definition": "A network of many hijacked computers controlled by an attacker, often used to spread attacks across thousands of IP addresses."
     },
     {
       "term": "browser",
@@ -256,9 +341,24 @@
       "definition": "A way to write a range of IP addresses, like 10.0.0.0/16. The number after the slash says how many leading bits are fixed; the rest can vary."
     },
     {
+      "term": "clickjacking",
+      "aliases": [],
+      "definition": "Loading a site in an invisible frame on another page and tricking the user into clicking buttons on it."
+    },
+    {
       "term": "client",
       "aliases": [],
       "definition": "The program that sends a request and waits for an answer, such as a browser or a mobile app."
+    },
+    {
+      "term": "client secret",
+      "aliases": [],
+      "definition": "A password-like value that identifies your server to an OAuth provider. It must stay on the server."
+    },
+    {
+      "term": "clock skew",
+      "aliases": [],
+      "definition": "The small difference between two machines' clocks, which time-based checks must tolerate."
     },
     {
       "term": "cluster mode",
@@ -299,6 +399,13 @@
       "definition": "An app packaged with everything it needs, running isolated from other apps but sharing the host machine's operating system kernel."
     },
     {
+      "term": "Content Security Policy",
+      "aliases": [
+        "CSP"
+      ],
+      "definition": "A response header listing where a page may load scripts, images, and other resources from, so injected scripts are blocked."
+    },
+    {
       "term": "Content-Type",
       "aliases": [],
       "definition": "The HTTP header that says what format a body is in, such as application/json."
@@ -328,6 +435,16 @@
       "term": "CPU-bound",
       "aliases": [],
       "definition": "Work that keeps the processor busy calculating, such as hashing a password or resizing an image, rather than waiting."
+    },
+    {
+      "term": "credential stuffing",
+      "aliases": [],
+      "definition": "Trying email and password pairs leaked from one site on another site, hoping people reused their passwords."
+    },
+    {
+      "term": "credentials",
+      "aliases": [],
+      "definition": "The evidence you present to prove who you are, such as a password, a one-time code, or a passkey."
     },
     {
       "term": "CSR",
@@ -383,6 +500,13 @@
       "definition": "A Node.js library that collects many single lookups made during one tick of the event loop and runs them as one batched query."
     },
     {
+      "term": "DDoS",
+      "aliases": [
+        "distributed denial of service"
+      ],
+      "definition": "An attack that floods a service with traffic from many machines at once so real users can't reach it."
+    },
+    {
       "term": "deadlock",
       "aliases": [
         "deadlocks"
@@ -396,6 +520,11 @@
         "denormalized"
       ],
       "definition": "Deliberately storing a copy or precomputed value to make an important read faster, while taking on the job of keeping it in sync."
+    },
+    {
+      "term": "deny by default",
+      "aliases": [],
+      "definition": "Treating every action as forbidden unless a rule explicitly allows it, so a forgotten check blocks access instead of leaking data."
     },
     {
       "term": "dirty read",
@@ -511,6 +640,13 @@
       "definition": "An Express middleware with four parameters (err, req, res, next) that Express calls only when an error occurs. Register it last."
     },
     {
+      "term": "escaping",
+      "aliases": [
+        "output escaping"
+      ],
+      "definition": "Converting special characters so they are shown as text instead of being interpreted, for example turning < into &lt; in HTML."
+    },
+    {
       "term": "ETag",
       "aliases": [],
       "definition": "A version tag a server attaches to a response. The browser sends it back later, and if nothing changed the server answers 304 Not Modified with no body."
@@ -578,6 +714,13 @@
         "firewalls"
       ],
       "definition": "A filter that decides which network traffic is allowed in or out of a machine, usually by port and address."
+    },
+    {
+      "term": "fixed window",
+      "aliases": [
+        "fixed-window counter"
+      ],
+      "definition": "A rate limiting algorithm that counts requests per clock period, like per minute, and resets the count when the period ends."
     },
     {
       "term": "flow control",
@@ -684,6 +827,11 @@
       "definition": "A computer with no screen, keyboard, or mouse attached. You control it remotely, usually over SSH."
     },
     {
+      "term": "Helmet",
+      "aliases": [],
+      "definition": "An Express middleware package that sets a group of recommended security headers in one line."
+    },
+    {
       "term": "highWaterMark",
       "aliases": [],
       "definition": "The buffer size limit of a Node.js stream. When it is reached, write() returns false and the source should wait for a 'drain' event."
@@ -694,9 +842,22 @@
       "definition": "The share of cache lookups that find the data: hits divided by all lookups."
     },
     {
+      "term": "HMAC",
+      "aliases": [],
+      "definition": "A hash mixed with a secret key, so only someone who knows the key can produce or check the result."
+    },
+    {
       "term": "host key",
       "aliases": [],
       "definition": "The key a server uses to prove its own identity to SSH clients."
+    },
+    {
+      "term": "HSTS",
+      "aliases": [
+        "Strict-Transport-Security",
+        "HTTP Strict Transport Security"
+      ],
+      "definition": "A response header telling the browser to use only HTTPS for a site, for a set time."
     },
     {
       "term": "HTTP",
@@ -759,6 +920,13 @@
       "definition": "Work that spends most of its time waiting for something outside the program, such as a database query or a network call."
     },
     {
+      "term": "ID token",
+      "aliases": [
+        "ID tokens"
+      ],
+      "definition": "A signed JWT from OpenID Connect that tells your app who the user is and which app it was issued for."
+    },
+    {
       "term": "idempotency key",
       "aliases": [
         "Idempotency-Key"
@@ -771,6 +939,13 @@
         "idempotency"
       ],
       "definition": "Doing it twice has the same effect as doing it once. Deleting order 42 twice still leaves order 42 deleted."
+    },
+    {
+      "term": "IDOR",
+      "aliases": [
+        "insecure direct object reference"
+      ],
+      "definition": "A bug where changing an ID in a request, like /orders/5002, reveals someone else's data because the server doesn't check ownership."
     },
     {
       "term": "index",
@@ -849,11 +1024,33 @@
       "definition": "A table that links two other tables in a many-to-many relationship, with one row per pair, such as order_items between orders and products."
     },
     {
+      "term": "JWE",
+      "aliases": [
+        "JSON Web Encryption"
+      ],
+      "definition": "An encrypted token format, related to JWT, used when the token's contents must be hidden, not just signed."
+    },
+    {
+      "term": "JWKS",
+      "aliases": [
+        "JSON Web Key Set"
+      ],
+      "definition": "A JSON document published at a URL that lists an auth server's current public keys, so APIs can verify its tokens."
+    },
+    {
       "term": "JWT",
       "aliases": [
         "JSON Web Token"
       ],
       "definition": "JSON Web Token: a signed piece of text that carries claims about a user, so a server can check it without looking anything up."
+    },
+    {
+      "term": "JWT claim",
+      "aliases": [
+        "JWT claims",
+        "registered claims"
+      ],
+      "definition": "One statement inside a token, such as the user ID (sub) or the expiry time (exp)."
     },
     {
       "term": "kernel",
@@ -873,6 +1070,11 @@
         "key pairs"
       ],
       "definition": "Two linked keys made together: a private key you keep secret, and a public key you can share. What one signs, the other can verify."
+    },
+    {
+      "term": "key rotation",
+      "aliases": [],
+      "definition": "Replacing a signing or encryption key with a new one on a schedule, while old tokens or data signed with the previous key are phased out."
     },
     {
       "term": "key-value store",
@@ -981,6 +1183,13 @@
       "definition": "The first few bytes of a file that reveal its real format, regardless of its name or claimed type."
     },
     {
+      "term": "magic link",
+      "aliases": [
+        "magic links"
+      ],
+      "definition": "A login link with a single-use secret token, emailed to the user, that logs them in when clicked."
+    },
+    {
       "term": "man-in-the-middle",
       "aliases": [],
       "definition": "An attack where someone secretly sits between two parties, reading or changing what they send."
@@ -1021,6 +1230,22 @@
       "term": "middleware",
       "aliases": [],
       "definition": "A function that runs in the middle of handling a request, for example to check login or parse the body, before the final handler."
+    },
+    {
+      "term": "MIME sniffing",
+      "aliases": [
+        "content sniffing"
+      ],
+      "definition": "A browser guessing a file's type from its contents instead of trusting the Content-Type header."
+    },
+    {
+      "term": "multi-factor authentication",
+      "aliases": [
+        "MFA",
+        "two-factor authentication",
+        "2FA"
+      ],
+      "definition": "Requiring two or more different kinds of evidence to log in, such as a password plus a code from your phone."
     },
     {
       "term": "multipart/form-data",
@@ -1127,6 +1352,20 @@
       "definition": "A DNS record that names the authoritative nameservers for a domain."
     },
     {
+      "term": "OAuth 2.0",
+      "aliases": [
+        "OAuth"
+      ],
+      "definition": "A standard that lets an app get limited, revocable access to a user's data on another service without seeing their password."
+    },
+    {
+      "term": "OAuth scope",
+      "aliases": [
+        "OAuth scopes"
+      ],
+      "definition": "In OAuth, one named permission an app asks for, such as email or permission to upload videos."
+    },
+    {
       "term": "object storage",
       "aliases": [],
       "definition": "A storage service, like Amazon S3, that keeps files (objects) by name inside buckets. Cheap, durable, and built for huge files."
@@ -1163,6 +1402,13 @@
       "definition": "The part of the Linux kernel that ends a process, usually the largest, when the machine runs out of memory."
     },
     {
+      "term": "OpenID Connect",
+      "aliases": [
+        "OIDC"
+      ],
+      "definition": "A layer on top of OAuth 2.0 for login. It gives the app a signed ID token saying who the user is."
+    },
+    {
       "term": "operational error",
       "aliases": [
         "operational errors"
@@ -1187,6 +1433,13 @@
       "definition": "Downloading more data than a screen needs, because an endpoint returns a fixed, larger shape."
     },
     {
+      "term": "OWASP",
+      "aliases": [
+        "OWASP Top 10"
+      ],
+      "definition": "A non-profit community that publishes free web security guidance, including the Top 10 list of the most common web app weaknesses."
+    },
+    {
       "term": "PaaS",
       "aliases": [
         "Platform as a Service",
@@ -1209,9 +1462,30 @@
       "definition": "A small chunk of data, typically up to about 1,500 bytes, that travels across a network on its own. Larger messages are split into many packets."
     },
     {
+      "term": "parameterized query",
+      "aliases": [
+        "parameterized queries",
+        "prepared statement",
+        "prepared statements"
+      ],
+      "definition": "A database query where values are sent separately from the SQL text, so input can never be run as SQL."
+    },
+    {
       "term": "partial index",
       "aliases": [],
       "definition": "An index over only the rows that match a condition, such as videos still processing. Smaller and cheaper to maintain."
+    },
+    {
+      "term": "passkey",
+      "aliases": [
+        "passkeys"
+      ],
+      "definition": "A login credential made of a key pair stored on your device. The site keeps only the public key, and the device signs a challenge after you unlock it."
+    },
+    {
+      "term": "pepper",
+      "aliases": [],
+      "definition": "One secret value for the whole app, kept outside the database and mixed into password hashing as extra protection."
     },
     {
       "term": "persisted queries",
@@ -1233,12 +1507,29 @@
       "definition": "Running the same query twice in one transaction and seeing new rows appear, because another transaction inserted matching rows."
     },
     {
+      "term": "phishing",
+      "aliases": [],
+      "definition": "Tricking someone into entering their login details on a fake site or form that looks real."
+    },
+    {
+      "term": "phishing-resistant",
+      "aliases": [],
+      "definition": "A login method that cannot be used on a fake site even if the user is fooled, such as a passkey that only works on the real domain."
+    },
+    {
       "term": "PID",
       "aliases": [
         "process ID",
         "PIDs"
       ],
       "definition": "The unique number Linux gives each running process. You use it to inspect or signal that process."
+    },
+    {
+      "term": "PKCE",
+      "aliases": [
+        "Proof Key for Code Exchange"
+      ],
+      "definition": "An OAuth add-on where the app proves it started the login with a secret verifier, making stolen authorization codes useless."
     },
     {
       "term": "PM2",
@@ -1419,6 +1710,13 @@
       "definition": "A bug where the result depends on the exact timing of overlapping operations, such as two requests both buying the last item."
     },
     {
+      "term": "rainbow table",
+      "aliases": [
+        "rainbow tables"
+      ],
+      "definition": "A huge precomputed list of hashes and the passwords that produce them. Salts make these useless."
+    },
+    {
       "term": "Range request",
       "aliases": [
         "Range requests"
@@ -1426,11 +1724,26 @@
       "definition": "An HTTP request for only part of a file, which lets a video player jump to the middle without downloading the start."
     },
     {
+      "term": "rate limiting",
+      "aliases": [
+        "rate limit",
+        "rate limiter"
+      ],
+      "definition": "Capping how many requests a client can make in a period of time, and rejecting the rest."
+    },
+    {
       "term": "redirect",
       "aliases": [
         "redirects"
       ],
       "definition": "A response telling the browser to go to a different URL instead, for example from http:// to https://."
+    },
+    {
+      "term": "redirect URI",
+      "aliases": [
+        "callback URL"
+      ],
+      "definition": "The exact URL, registered in advance, where an OAuth provider sends the user back after login."
     },
     {
       "term": "Redis",
@@ -1441,6 +1754,13 @@
       "term": "ReDoS",
       "aliases": [],
       "definition": "Regular expression denial of service: input crafted so a badly written regex takes a very long time, blocking the server."
+    },
+    {
+      "term": "refresh token",
+      "aliases": [
+        "refresh tokens"
+      ],
+      "definition": "A longer-lived token used only to get new access tokens. The server tracks it, so it can be revoked."
     },
     {
       "term": "relational database",
@@ -1502,9 +1822,21 @@
       "definition": "Sending data again because the receiver didn't confirm it arrived. TCP does this automatically."
     },
     {
+      "term": "Retry-After",
+      "aliases": [],
+      "definition": "A response header telling the client how many seconds to wait before trying again."
+    },
+    {
       "term": "reverse proxy",
       "aliases": [],
       "definition": "A server that receives requests from the internet and forwards them to app servers behind it."
+    },
+    {
+      "term": "role-based access control",
+      "aliases": [
+        "RBAC"
+      ],
+      "definition": "Giving permissions to roles like seller or admin, and giving roles to users, instead of granting permissions person by person."
     },
     {
       "term": "root directory",
@@ -1577,6 +1909,13 @@
         "saga pattern"
       ],
       "definition": "A multi-step process across services where each step is its own transaction and has an undo step that runs if a later step fails."
+    },
+    {
+      "term": "salt",
+      "aliases": [
+        "password salt"
+      ],
+      "definition": "A random value, different for each user, mixed into a password before hashing so identical passwords produce different hashes."
     },
     {
       "term": "same-origin policy",
@@ -1707,6 +2046,11 @@
       "definition": "Data a server keeps about a logged-in user between requests, usually found through an ID stored in a cookie."
     },
     {
+      "term": "session fixation",
+      "aliases": [],
+      "definition": "An attack where the attacker makes the victim use a session ID the attacker already knows, so it becomes a logged-in session after the victim logs in."
+    },
+    {
       "term": "session ID",
       "aliases": [],
       "definition": "A long random value that identifies one server-side session. The browser holds it in a cookie; the user's data stays on the server."
@@ -1747,6 +2091,13 @@
       "definition": "The polite stop signal (number 15). A program can catch it, finish its work, clean up, and exit."
     },
     {
+      "term": "SIM swap",
+      "aliases": [
+        "SIM swapping"
+      ],
+      "definition": "An attack where someone convinces a mobile carrier to move your phone number to their SIM card, so they receive your text messages and SMS codes."
+    },
+    {
       "term": "SNI",
       "aliases": [
         "Server Name Indication"
@@ -1774,6 +2125,11 @@
       "definition": "Structured Query Language: the language used to read and change data in relational databases like PostgreSQL."
     },
     {
+      "term": "SQL injection",
+      "aliases": [],
+      "definition": "An attack where user input is pasted into a SQL query and changes what the query does, for example reading every user's data."
+    },
+    {
       "term": "SSH",
       "aliases": [
         "Secure Shell"
@@ -1786,6 +2142,13 @@
         "SSH tunnels"
       ],
       "definition": "Sending another program's network traffic through an encrypted SSH connection, for example to reach a private database from your laptop."
+    },
+    {
+      "term": "SSRF",
+      "aliases": [
+        "server-side request forgery"
+      ],
+      "definition": "An attack that makes your server fetch a URL the attacker chooses, often an internal address the attacker can't reach directly."
     },
     {
       "term": "standard error",
@@ -1909,12 +2272,24 @@
       "definition": "Decrypting HTTPS traffic at a proxy or load balancer, which then forwards plain HTTP to the app behind it."
     },
     {
+      "term": "token bucket",
+      "aliases": [],
+      "definition": "A rate limiting algorithm where tokens refill at a steady rate and each request spends one, which allows short bursts."
+    },
+    {
       "term": "top-level domain",
       "aliases": [
         "TLD",
         "TLDs"
       ],
       "definition": "The last part of a domain name, such as .com, .org, or .in. TLD servers know which nameservers are in charge of each domain under them."
+    },
+    {
+      "term": "TOTP",
+      "aliases": [
+        "time-based one-time password"
+      ],
+      "definition": "A 6-digit login code that an authenticator app computes from a shared secret and the current time, changing every 30 seconds."
     },
     {
       "term": "transaction",
@@ -2014,6 +2389,11 @@
       "definition": "Uniform Resource Locator: a web address, like https://shop.example.com/products/42."
     },
     {
+      "term": "user enumeration",
+      "aliases": [],
+      "definition": "Discovering which usernames or emails have accounts from differences in an app's error messages or response times."
+    },
+    {
       "term": "UUID",
       "aliases": [
         "UUIDs"
@@ -2062,6 +2442,13 @@
       "definition": "A log where PostgreSQL records every change before applying it to the data files. Flushing it at COMMIT is what makes committed data survive a crash."
     },
     {
+      "term": "WebAuthn",
+      "aliases": [
+        "Web Authentication API"
+      ],
+      "definition": "The browser standard that lets websites create and use passkeys and hardware security keys."
+    },
+    {
       "term": "WebSocket",
       "aliases": [
         "WebSockets"
@@ -2079,6 +2466,13 @@
       "term": "wildcard certificate",
       "aliases": [],
       "definition": "A certificate that covers every subdomain at one level, like *.example.com."
+    },
+    {
+      "term": "work factor",
+      "aliases": [
+        "cost factor"
+      ],
+      "definition": "A setting that controls how slow a password hashing algorithm is, so it can be raised as computers get faster."
     },
     {
       "term": "worker threads",
