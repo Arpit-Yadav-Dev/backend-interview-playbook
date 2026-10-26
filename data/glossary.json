@@ -84,6 +84,20 @@
       "definition": "Cryptography with a key pair: a public key anyone may have and a private key only the owner holds. TLS uses it briefly, to agree on keys and prove identity."
     },
     {
+      "term": "async/await",
+      "aliases": [
+        "async function"
+      ],
+      "definition": "JavaScript syntax built on promises: await pauses only the current async function until a promise settles, and errors can be caught with try/catch."
+    },
+    {
+      "term": "at-least-once delivery",
+      "aliases": [
+        "at-least-once"
+      ],
+      "definition": "A delivery guarantee where every message arrives, but some may arrive more than once, so processing must handle duplicates."
+    },
+    {
       "term": "authoritative nameserver",
       "aliases": [
         "authoritative nameservers",
@@ -107,6 +121,11 @@
       "term": "backend",
       "aliases": [],
       "definition": "The part of an app that runs on servers: it stores data, applies business rules, and answers requests from the frontend."
+    },
+    {
+      "term": "backpressure",
+      "aliases": [],
+      "definition": "How a slow destination tells a fast data source to pause, so unsent data does not pile up in memory."
     },
     {
       "term": "bandwidth",
@@ -177,6 +196,13 @@
       "term": "cache-aside",
       "aliases": [],
       "definition": "A caching pattern where the app checks the cache first, and on a miss loads from the database and saves a copy in the cache."
+    },
+    {
+      "term": "callback",
+      "aliases": [
+        "callbacks"
+      ],
+      "definition": "A function you pass to other code, so it can be called later, for example when a slow operation finishes."
     },
     {
       "term": "CDN",
@@ -299,6 +325,11 @@
       "definition": "An index that contains every column a query needs, so the database can answer from the index alone without reading the table."
     },
     {
+      "term": "CPU-bound",
+      "aliases": [],
+      "definition": "Work that keeps the processor busy calculating, such as hashing a password or resizing an image, rather than waiting."
+    },
+    {
       "term": "CSR",
       "aliases": [
         "certificate signing request"
@@ -311,6 +342,13 @@
         "cross-site request forgery"
       ],
       "definition": "Cross-site request forgery: another website makes the user's browser send a request to your site, with the user's cookies attached."
+    },
+    {
+      "term": "cursor pagination",
+      "aliases": [
+        "keyset pagination"
+      ],
+      "definition": "Paging through a list by asking for the next N items after the last one seen, which stays fast and stable on deep pages."
     },
     {
       "term": "daemon",
@@ -338,6 +376,11 @@
         "datagrams"
       ],
       "definition": "One self-contained UDP message. It is sent with no connection, no ordering, and no confirmation that it arrived."
+    },
+    {
+      "term": "DataLoader",
+      "aliases": [],
+      "definition": "A Node.js library that collects many single lookups made during one tick of the event loop and runs them as one batched query."
     },
     {
       "term": "deadlock",
@@ -461,9 +504,23 @@
       "definition": "A temporary port number the operating system picks for the client side of a connection, so replies can find their way back."
     },
     {
+      "term": "error-handling middleware",
+      "aliases": [
+        "error handler"
+      ],
+      "definition": "An Express middleware with four parameters (err, req, res, next) that Express calls only when an error occurs. Register it last."
+    },
+    {
       "term": "ETag",
       "aliases": [],
       "definition": "A version tag a server attaches to a response. The browser sends it back later, and if nothing changed the server answers 304 Not Modified with no body."
+    },
+    {
+      "term": "event emitter",
+      "aliases": [
+        "EventEmitter"
+      ],
+      "definition": "A Node.js object that calls the functions you registered whenever a named event happens, such as 'data' or 'close'."
     },
     {
       "term": "event loop",
@@ -490,6 +547,18 @@
       "term": "EXPLAIN ANALYZE",
       "aliases": [],
       "definition": "A PostgreSQL command that shows the plan for a query. EXPLAIN shows estimates; EXPLAIN ANALYZE also runs it and shows real times and row counts."
+    },
+    {
+      "term": "Express.js",
+      "aliases": [],
+      "definition": "The most widely used web framework for Node.js. It routes requests to your functions and runs them through middleware."
+    },
+    {
+      "term": "file descriptor",
+      "aliases": [
+        "file descriptors"
+      ],
+      "definition": "A number the operating system gives a program for each open file or network connection. There is a limit, so leaked ones eventually cause errors."
     },
     {
       "term": "file permissions",
@@ -538,6 +607,11 @@
       "definition": "The part of an app the user sees and interacts with, running in the browser or on the phone."
     },
     {
+      "term": "full-duplex",
+      "aliases": [],
+      "definition": "Both sides of a connection can send data at the same time, independently."
+    },
+    {
       "term": "graceful shutdown",
       "aliases": [],
       "definition": "Stopping an app cleanly: stop accepting new requests, finish the ones in progress, close connections, then exit."
@@ -546,6 +620,21 @@
       "term": "graph database",
       "aliases": [],
       "definition": "A database that stores items as nodes and the relationships between them as links, suited to questions like \"friends of friends\". Neo4j is an example."
+    },
+    {
+      "term": "GraphQL",
+      "aliases": [],
+      "definition": "A query language for APIs where the client asks one endpoint for exactly the fields it needs, described by a typed schema."
+    },
+    {
+      "term": "gRPC",
+      "aliases": [],
+      "definition": "An RPC framework where services are defined in .proto files, messages are encoded with Protocol Buffers, and calls run over HTTP/2."
+    },
+    {
+      "term": "gRPC-Web",
+      "aliases": [],
+      "definition": "A variant of the gRPC protocol that browsers can use, usually translated to real gRPC by a proxy such as Envoy."
     },
     {
       "term": "handshake",
@@ -570,6 +659,11 @@
       "definition": "Ways a database combines two tables. A hash join builds an in-memory lookup of one side; a nested loop looks up matches for each row, one at a time."
     },
     {
+      "term": "HATEOAS",
+      "aliases": [],
+      "definition": "Hypermedia as the engine of application state: API responses include links to related actions, so clients follow links instead of hard-coding URLs."
+    },
+    {
       "term": "head-of-line blocking",
       "aliases": [],
       "definition": "When one delayed or lost item holds up everything queued behind it, like one lost TCP packet stalling every HTTP/2 request on the connection."
@@ -590,6 +684,11 @@
       "definition": "A computer with no screen, keyboard, or mouse attached. You control it remotely, usually over SSH."
     },
     {
+      "term": "highWaterMark",
+      "aliases": [],
+      "definition": "The buffer size limit of a Node.js stream. When it is reached, write() returns false and the source should wait for a 'drain' event."
+    },
+    {
       "term": "hit rate",
       "aliases": [],
       "definition": "The share of cache lookups that find the data: hits divided by all lookups."
@@ -605,6 +704,13 @@
         "Hypertext Transfer Protocol"
       ],
       "definition": "Hypertext Transfer Protocol: the request-and-response language browsers and servers use to exchange web pages and data."
+    },
+    {
+      "term": "HTTP trailers",
+      "aliases": [
+        "grpc-status"
+      ],
+      "definition": "Headers sent after the response body. gRPC uses them to report the call's final status."
     },
     {
       "term": "HTTP-01 challenge",
@@ -639,6 +745,25 @@
         "hypervisors"
       ],
       "definition": "Software that splits one physical computer into several virtual machines, each with its own share of CPU, memory, and disk."
+    },
+    {
+      "term": "I/O",
+      "aliases": [
+        "input/output"
+      ],
+      "definition": "Input/output: any work where a program asks something outside itself, such as a disk, a database, or the network, and waits for the reply."
+    },
+    {
+      "term": "I/O-bound",
+      "aliases": [],
+      "definition": "Work that spends most of its time waiting for something outside the program, such as a database query or a network call."
+    },
+    {
+      "term": "idempotency key",
+      "aliases": [
+        "Idempotency-Key"
+      ],
+      "definition": "A unique id the client creates for one action and sends with every retry, so the server can return the first result instead of doing the work again."
     },
     {
       "term": "idempotent",
@@ -691,6 +816,13 @@
         "isolation levels"
       ],
       "definition": "A setting that decides how much concurrent transactions can see of each other's changes: read committed, repeatable read, or serializable."
+    },
+    {
+      "term": "JavaScript promise",
+      "aliases": [
+        "Promise.all"
+      ],
+      "definition": "A JavaScript object that stands for a result that isn't ready yet. It is pending, then becomes fulfilled with a value or rejected with an error, exactly once."
     },
     {
       "term": "journalctl",
@@ -753,6 +885,13 @@
       "definition": "How long one request takes from start to finish, usually measured in milliseconds."
     },
     {
+      "term": "layer 7 load balancing",
+      "aliases": [
+        "L7 load balancing"
+      ],
+      "definition": "Load balancing that understands individual HTTP requests and can spread them across servers, even when they share one connection."
+    },
+    {
       "term": "least privilege",
       "aliases": [
         "principle of least privilege"
@@ -768,6 +907,11 @@
       "term": "Let's Encrypt",
       "aliases": [],
       "definition": "A free, automated certificate authority that issues the HTTPS certificates used by a large share of websites."
+    },
+    {
+      "term": "libuv",
+      "aliases": [],
+      "definition": "The C library inside Node.js that provides the event loop, talks to the operating system for network I/O, and runs a small thread pool."
     },
     {
       "term": "Linux",
@@ -811,6 +955,11 @@
       "definition": "Regularly renaming, compressing, and deleting old log files so they don't fill the disk."
     },
     {
+      "term": "long polling",
+      "aliases": [],
+      "definition": "The client sends a request that the server holds open until there is news or a timeout, then the client asks again."
+    },
+    {
       "term": "loopback",
       "aliases": [
         "loopback address"
@@ -825,6 +974,13 @@
       "definition": "Two transactions read the same value and write back a new value computed from it, so one write silently overwrites the other."
     },
     {
+      "term": "magic bytes",
+      "aliases": [
+        "file signature"
+      ],
+      "definition": "The first few bytes of a file that reveal its real format, regardless of its name or claimed type."
+    },
+    {
       "term": "man-in-the-middle",
       "aliases": [],
       "definition": "An attack where someone secretly sits between two parties, reading or changing what they send."
@@ -833,6 +989,11 @@
       "term": "many-to-many",
       "aliases": [],
       "definition": "A relationship where rows on both sides can link to many rows on the other, such as orders and products. It needs a junction table."
+    },
+    {
+      "term": "mass assignment",
+      "aliases": [],
+      "definition": "A vulnerability where an attacker adds unexpected fields, like isAdmin or price, to a request, and the server saves them because it copies the whole body."
     },
     {
       "term": "materialized view",
@@ -849,9 +1010,24 @@
       "definition": "The computer's fast, temporary working storage. Much faster than disk, but smaller and cleared on restart."
     },
     {
+      "term": "microtask",
+      "aliases": [
+        "microtasks",
+        "microtask queue"
+      ],
+      "definition": "A small job, such as a promise's .then callback or the code after an await, that runs as soon as the current code finishes, before timers or new I/O."
+    },
+    {
       "term": "middleware",
       "aliases": [],
       "definition": "A function that runs in the middle of handling a request, for example to check login or parse the body, before the final handler."
+    },
+    {
+      "term": "multipart/form-data",
+      "aliases": [
+        "multipart form"
+      ],
+      "definition": "The format browsers use to send form fields and files in one request body, with parts separated by a boundary string."
     },
     {
       "term": "multiplexing",
@@ -871,6 +1047,13 @@
         "MX records"
       ],
       "definition": "A DNS record that says which mail servers receive email for a domain, each with a priority number (lower is tried first)."
+    },
+    {
+      "term": "N+1 query problem",
+      "aliases": [
+        "N+1"
+      ],
+      "definition": "Running one query to get a list of N items, then one more query per item, instead of fetching the related data in one batch."
     },
     {
       "term": "NAT",
@@ -895,6 +1078,19 @@
       "term": "Nginx",
       "aliases": [],
       "definition": "A fast web server often placed in front of apps to handle HTTPS, serve files, and forward requests."
+    },
+    {
+      "term": "Node.js Buffer",
+      "aliases": [],
+      "definition": "Node's built-in type for a fixed-size block of raw bytes, used for binary data such as file contents and network packets."
+    },
+    {
+      "term": "Node.js stream",
+      "aliases": [
+        "readable stream",
+        "writable stream"
+      ],
+      "definition": "An object that hands data over in small chunks as it arrives, instead of all at once, so large data needs little memory."
     },
     {
       "term": "non-repeatable read",
@@ -931,11 +1127,21 @@
       "definition": "A DNS record that names the authoritative nameservers for a domain."
     },
     {
+      "term": "object storage",
+      "aliases": [],
+      "definition": "A storage service, like Amazon S3, that keeps files (objects) by name inside buckets. Cheap, durable, and built for huge files."
+    },
+    {
       "term": "octal notation",
       "aliases": [
         "octal permissions"
       ],
       "definition": "Writing file permissions as three digits, like 755 or 644, where read = 4, write = 2, execute = 1 are added up for owner, group, and others."
+    },
+    {
+      "term": "offset pagination",
+      "aliases": [],
+      "definition": "Paging through a list by skipping a number of rows (offset) and taking the next N. Simple, but slow on deep pages and unstable when rows are added."
     },
     {
       "term": "ON DELETE CASCADE",
@@ -957,6 +1163,13 @@
       "definition": "The part of the Linux kernel that ends a process, usually the largest, when the machine runs out of memory."
     },
     {
+      "term": "operational error",
+      "aliases": [
+        "operational errors"
+      ],
+      "definition": "An expected failure you can explain to the client, such as invalid input, a missing record, or a declined card."
+    },
+    {
       "term": "optimistic locking",
       "aliases": [
         "pessimistic locking"
@@ -967,6 +1180,11 @@
       "term": "origin",
       "aliases": [],
       "definition": "The scheme, host, and port of a URL together, like https://shop.example.com:443. Browsers use it to decide what a page may access."
+    },
+    {
+      "term": "over-fetching",
+      "aliases": [],
+      "definition": "Downloading more data than a screen needs, because an endpoint returns a fixed, larger shape."
     },
     {
       "term": "PaaS",
@@ -996,6 +1214,13 @@
       "definition": "An index over only the rows that match a condition, such as videos still processing. Smaller and cheaper to maintain."
     },
     {
+      "term": "persisted queries",
+      "aliases": [
+        "persisted query"
+      ],
+      "definition": "Pre-registered GraphQL queries the client refers to by a hash, which makes them cacheable and blocks arbitrary queries."
+    },
+    {
       "term": "pg_stat_statements",
       "aliases": [],
       "definition": "A PostgreSQL extension that records how often each query shape runs and how long it takes, used to find the most expensive queries."
@@ -1021,6 +1246,13 @@
       "definition": "A process manager for Node.js apps, with extras such as cluster mode and zero-downtime reloads."
     },
     {
+      "term": "polling",
+      "aliases": [
+        "short polling"
+      ],
+      "definition": "The client asking the server on a timer whether anything has changed."
+    },
+    {
       "term": "polyglot persistence",
       "aliases": [],
       "definition": "Using several kinds of databases in one system, each for what it does best, such as PostgreSQL for orders and Redis for sessions."
@@ -1038,6 +1270,14 @@
         "preflights"
       ],
       "definition": "An OPTIONS request the browser sends before certain cross-origin requests, to ask the server whether that origin, method, and headers are allowed."
+    },
+    {
+      "term": "presigned URL",
+      "aliases": [
+        "presigned URLs",
+        "pre-signed URL"
+      ],
+      "definition": "A storage URL with a signature that allows one specific action, such as uploading one file, until it expires, without sharing your credentials."
     },
     {
       "term": "primary key",
@@ -1070,6 +1310,13 @@
       "definition": "A port number below 1024. On Linux, only root (or a program given special permission) can listen on one."
     },
     {
+      "term": "Problem Details",
+      "aliases": [
+        "RFC 9457"
+      ],
+      "definition": "A standard JSON format for API errors, with fields like type, title, status, and detail."
+    },
+    {
       "term": "process",
       "aliases": [
         "processes"
@@ -1084,14 +1331,40 @@
       "definition": "A program that starts your app, restarts it when it crashes, and collects its logs, such as systemd, PM2, or Docker."
     },
     {
+      "term": "process.nextTick",
+      "aliases": [],
+      "definition": "A Node.js function that schedules a callback to run right after the current operation, even before promise callbacks."
+    },
+    {
+      "term": "programmer error",
+      "aliases": [
+        "programmer errors"
+      ],
+      "definition": "A bug in the code, such as reading a property of undefined. The client gets a generic 500 and developers fix the code."
+    },
+    {
       "term": "protocol",
       "aliases": [],
       "definition": "An agreed set of rules for how two programs exchange messages."
     },
     {
+      "term": "Protocol Buffers",
+      "aliases": [
+        "protobuf"
+      ],
+      "definition": "A language for describing data structures plus a compact binary format that sends numbered fields instead of field names."
+    },
+    {
       "term": "proxy_pass",
       "aliases": [],
       "definition": "The Nginx setting that forwards a request to another server, such as a Node app on 127.0.0.1:3000."
+    },
+    {
+      "term": "pub/sub",
+      "aliases": [
+        "publish/subscribe"
+      ],
+      "definition": "A messaging pattern where senders publish messages to a channel and every subscriber of that channel receives them, without knowing about each other."
     },
     {
       "term": "public IP address",
@@ -1122,6 +1395,11 @@
       "definition": "The part of the database that decides how to run a query, such as which index to use and how to join tables, based on cost estimates."
     },
     {
+      "term": "query string",
+      "aliases": [],
+      "definition": "The part of a URL after the ?, holding extra parameters such as ?category=audio&limit=20."
+    },
+    {
       "term": "queue",
       "aliases": [
         "message queue"
@@ -1141,6 +1419,13 @@
       "definition": "A bug where the result depends on the exact timing of overlapping operations, such as two requests both buying the last item."
     },
     {
+      "term": "Range request",
+      "aliases": [
+        "Range requests"
+      ],
+      "definition": "An HTTP request for only part of a file, which lets a video player jump to the middle without downloading the start."
+    },
+    {
       "term": "redirect",
       "aliases": [
         "redirects"
@@ -1151,6 +1436,11 @@
       "term": "Redis",
       "aliases": [],
       "definition": "An in-memory data store that is very fast, often used for caching, sessions, counters, and simple queues."
+    },
+    {
+      "term": "ReDoS",
+      "aliases": [],
+      "definition": "Regular expression denial of service: input crafted so a badly written regex takes a very long time, blocking the server."
     },
     {
       "term": "relational database",
@@ -1188,6 +1478,13 @@
       "term": "response",
       "aliases": [],
       "definition": "The message a server sends back to answer a request, with a status code, headers, and usually a body."
+    },
+    {
+      "term": "REST",
+      "aliases": [
+        "RESTful"
+      ],
+      "definition": "Representational State Transfer: an API style where URLs name resources and standard HTTP methods and status codes act on them."
     },
     {
       "term": "restart policy",
@@ -1237,9 +1534,35 @@
       "definition": "One message travelling to the other side plus the reply coming back. Many network steps cost one round trip each."
     },
     {
+      "term": "route parameter",
+      "aliases": [
+        "route parameters"
+      ],
+      "definition": "A named part of a URL pattern, like :id in /orders/:id, whose value Express puts in req.params."
+    },
+    {
+      "term": "RPC",
+      "aliases": [
+        "remote procedure call"
+      ],
+      "definition": "Calling a function that runs on another machine as if it were a normal local function call."
+    },
+    {
+      "term": "RSS",
+      "aliases": [
+        "resident set size"
+      ],
+      "definition": "The amount of physical memory (RAM) a process is actually using right now."
+    },
+    {
       "term": "rsync",
       "aliases": [],
       "definition": "A file copying tool that compares source and destination and sends only what changed. It works locally or over SSH."
+    },
+    {
+      "term": "S3 multipart upload",
+      "aliases": [],
+      "definition": "Uploading one large file to S3 as separate parts that can go in parallel and be retried alone, then joined into one object."
     },
     {
       "term": "safe method",
@@ -1279,6 +1602,11 @@
         "database schema"
       ],
       "definition": "The declared structure of a database: which tables exist, their columns, and each column's type and rules."
+    },
+    {
+      "term": "schema validation",
+      "aliases": [],
+      "definition": "Checking incoming data against a written description of the allowed fields, types, and limits before using it."
     },
     {
       "term": "schema-on-read",
@@ -1364,6 +1692,14 @@
       "definition": "A section of Nginx config that describes one website, chosen by port and domain name (server_name)."
     },
     {
+      "term": "Server-Sent Events",
+      "aliases": [
+        "SSE",
+        "EventSource"
+      ],
+      "definition": "A web standard where the server keeps one HTTP response open and pushes text events to the browser, which reconnects automatically."
+    },
+    {
       "term": "session",
       "aliases": [
         "sessions"
@@ -1416,6 +1752,11 @@
         "Server Name Indication"
       ],
       "definition": "Server Name Indication: the field in the TLS handshake where the browser names the site it wants, so one server can host many HTTPS sites."
+    },
+    {
+      "term": "Socket.IO",
+      "aliases": [],
+      "definition": "A real-time library built on WebSockets that adds rooms, reconnection, and fallbacks, using its own protocol on top."
     },
     {
       "term": "SOCKS proxy",
@@ -1522,6 +1863,20 @@
       "definition": "The text window where you type commands."
     },
     {
+      "term": "thread",
+      "aliases": [
+        "threads"
+      ],
+      "definition": "A single line of execution inside a process. One thread can do exactly one thing at a time."
+    },
+    {
+      "term": "thread pool",
+      "aliases": [
+        "libuv thread pool"
+      ],
+      "definition": "A small set of helper threads (4 by default in Node.js) that run file system calls, DNS lookups, and some heavy crypto so the main thread stays free."
+    },
+    {
       "term": "three-way handshake",
       "aliases": [
         "TCP handshake"
@@ -1577,6 +1932,11 @@
       "definition": "Saving an event row in the same transaction as the data change, then having a worker publish it to other services, so neither can happen without the other."
     },
     {
+      "term": "trust boundary",
+      "aliases": [],
+      "definition": "The point where data enters your system from a source you don't control, such as a request body. Everything crossing it must be checked."
+    },
+    {
       "term": "trust store",
       "aliases": [],
       "definition": "The list of root certificate authorities that an operating system or browser trusts out of the box."
@@ -1622,6 +1982,18 @@
       "definition": "A setting that removes permissions from newly created files by default. With the common 022, new files start at 644 and folders at 755."
     },
     {
+      "term": "under-fetching",
+      "aliases": [],
+      "definition": "Needing several requests to build one screen, because no single endpoint returns enough data."
+    },
+    {
+      "term": "unhandled rejection",
+      "aliases": [
+        "unhandled promise rejection"
+      ],
+      "definition": "A promise that failed with nobody handling the error. Since Node.js 15, it crashes the process by default."
+    },
+    {
       "term": "unit file",
       "aliases": [
         "unit files",
@@ -1647,6 +2019,11 @@
         "UUIDs"
       ],
       "definition": "A 128-bit identifier that can be generated anywhere without coordination and is practically never repeated, such as 3f1c9a2e-..."
+    },
+    {
+      "term": "V8",
+      "aliases": [],
+      "definition": "The JavaScript engine, also used by Chrome, that runs your JavaScript code inside Node.js."
     },
     {
       "term": "VACUUM",
@@ -1685,6 +2062,13 @@
       "definition": "A log where PostgreSQL records every change before applying it to the data files. Flushing it at COMMIT is what makes committed data survive a crash."
     },
     {
+      "term": "WebSocket",
+      "aliases": [
+        "WebSockets"
+      ],
+      "definition": "A long-lived connection, started by upgrading an HTTP request, over which client and server can both send messages at any time."
+    },
+    {
       "term": "wide-column store",
       "aliases": [
         "wide-column"
@@ -1695,6 +2079,13 @@
       "term": "wildcard certificate",
       "aliases": [],
       "definition": "A certificate that covers every subdomain at one level, like *.example.com."
+    },
+    {
+      "term": "worker threads",
+      "aliases": [
+        "worker_threads"
+      ],
+      "definition": "Extra JavaScript threads in Node.js, each with its own event loop, used to run CPU-heavy work without blocking the main thread."
     },
     {
       "term": "write skew",
@@ -1712,6 +2103,11 @@
         "cross-site scripting"
       ],
       "definition": "Cross-site scripting: an attacker gets their own JavaScript to run on your pages, where it can read page data and act as the user."
+    },
+    {
+      "term": "zod",
+      "aliases": [],
+      "definition": "A popular JavaScript and TypeScript library for describing data schemas and validating values against them."
     },
     {
       "term": "zombie process",

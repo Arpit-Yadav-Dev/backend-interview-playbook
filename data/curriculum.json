@@ -425,25 +425,6 @@
       "summary": "How a Node server handles requests, and how to design APIs people can rely on.",
       "topics": [
         {
-          "id": "event-loop",
-          "title": "The Node.js event loop",
-          "summary": "How one thread can serve thousands of requests, and the one mistake that freezes all of them.",
-          "file": "content/p03-node/event-loop.md",
-          "level": "intermediate",
-          "priority": "must-know",
-          "minutes": 15,
-          "tags": [
-            "node",
-            "event-loop",
-            "async"
-          ],
-          "related": [
-            "async-await",
-            "browser-event-loop",
-            "streams-buffers"
-          ]
-        },
-        {
           "id": "async-await",
           "title": "Callbacks, promises, and async/await",
           "summary": "Three ways to wait for slow work in JavaScript, and how to handle errors in each.",
@@ -460,6 +441,25 @@
             "event-loop",
             "validation-errors",
             "browser-event-loop"
+          ]
+        },
+        {
+          "id": "event-loop",
+          "title": "The Node.js event loop",
+          "summary": "How one thread can serve thousands of requests, and the one mistake that freezes all of them.",
+          "file": "content/p03-node/event-loop.md",
+          "level": "intermediate",
+          "priority": "must-know",
+          "minutes": 15,
+          "tags": [
+            "node",
+            "event-loop",
+            "async"
+          ],
+          "related": [
+            "async-await",
+            "browser-event-loop",
+            "streams-buffers"
           ]
         },
         {
