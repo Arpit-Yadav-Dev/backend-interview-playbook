@@ -100,6 +100,13 @@
       "definition": "Two ORM styles. In Active Record each object saves itself (user.save()); in Data Mapper plain objects are saved by a separate client or repository."
     },
     {
+      "term": "adaptive bitrate streaming",
+      "aliases": [
+        "ABR"
+      ],
+      "definition": "Video playback where the player picks a quality for each segment based on its current bandwidth and buffer."
+    },
+    {
       "term": "aggregation pipeline",
       "aliases": [
         "$lookup"
@@ -137,6 +144,13 @@
       "definition": "Application Programming Interface: a defined way for one program to ask another program for data or actions, like a menu of requests it accepts."
     },
     {
+      "term": "API gateway",
+      "aliases": [
+        "API gateways"
+      ],
+      "definition": "A single entry point in front of backend services that handles shared concerns like authentication and rate limiting, then routes each request to the right service."
+    },
+    {
       "term": "API key",
       "aliases": [
         "API keys"
@@ -149,6 +163,13 @@
         "application performance monitoring"
       ],
       "definition": "Application performance monitoring: tools such as Datadog or New Relic that record each request's timing, including every database query it made."
+    },
+    {
+      "term": "APNs",
+      "aliases": [
+        "Apple Push Notification service"
+      ],
+      "definition": "Apple's service that delivers push notifications to iPhones, iPads, and Macs."
     },
     {
       "term": "Argon2id",
@@ -184,6 +205,13 @@
         "at-most-once"
       ],
       "definition": "A delivery guarantee where each message arrives once or not at all. Nothing is duplicated, but messages can be lost."
+    },
+    {
+      "term": "atomic",
+      "aliases": [
+        "atomically"
+      ],
+      "definition": "Happening as one indivisible step, so no other operation can see or change things halfway through."
     },
     {
       "term": "attribute-based access control",
@@ -232,6 +260,11 @@
       "definition": "The default mode where each SQL statement runs as its own transaction and commits immediately."
     },
     {
+      "term": "autoscaling",
+      "aliases": [],
+      "definition": "Automatically adding or removing server instances based on a metric such as CPU use or request count."
+    },
+    {
       "term": "availability zone",
       "aliases": [
         "availability zones",
@@ -247,9 +280,23 @@
       "definition": "The default index structure: a balanced tree of sorted pages (root, branch, leaf) that finds any value in a few page reads, even in huge tables."
     },
     {
+      "term": "back-of-the-envelope estimate",
+      "aliases": [
+        "back-of-the-envelope estimates"
+      ],
+      "definition": "A rough calculation with round numbers, used to find the scale of a problem (requests per second, storage) before designing."
+    },
+    {
       "term": "backend",
       "aliases": [],
       "definition": "The part of an app that runs on servers: it stores data, applies business rules, and answers requests from the frontend."
+    },
+    {
+      "term": "backend for frontend",
+      "aliases": [
+        "BFF"
+      ],
+      "definition": "A separate gateway for each type of client, such as one for the mobile app and one for the web app, shaped to that client's needs."
     },
     {
       "term": "backfill",
@@ -282,6 +329,11 @@
         "dedicated servers"
       ],
       "definition": "A whole physical server rented or owned by one customer, with no virtualization shared with others."
+    },
+    {
+      "term": "base62",
+      "aliases": [],
+      "definition": "Writing numbers or random codes with 62 URL-safe characters: 0-9, a-z, and A-Z."
     },
     {
       "term": "base64url",
@@ -330,12 +382,29 @@
       "definition": "A specific folder or file from the host made visible inside a container. Both sides see the same files."
     },
     {
+      "term": "birthday problem",
+      "aliases": [
+        "birthday paradox"
+      ],
+      "definition": "The surprising fact that collisions among random values appear much sooner than expected: roughly after the square root of the number of possible values."
+    },
+    {
       "term": "bitmap scan",
       "aliases": [
         "Bitmap Heap Scan",
         "Bitmap Index Scan"
       ],
       "definition": "A plan step that first collects all matching row locations from an index, then reads each needed table page once, in page order."
+    },
+    {
+      "term": "bitrate",
+      "aliases": [],
+      "definition": "How many bits each second of audio or video uses. Higher bitrate means better quality and bigger files."
+    },
+    {
+      "term": "bitrate ladder",
+      "aliases": [],
+      "definition": "The set of quality versions (renditions) a video is encoded into, from high resolution and bitrate down to low."
     },
     {
       "term": "blue-green deployment",
@@ -397,6 +466,13 @@
       "term": "build context",
       "aliases": [],
       "definition": "The folder sent to Docker by docker build. COPY can only use files from it, and .dockerignore removes files from it."
+    },
+    {
+      "term": "bulkhead",
+      "aliases": [
+        "bulkheads"
+      ],
+      "definition": "Separate, limited resources per dependency (like separate connection pools), so one failing dependency can't use up everything."
     },
     {
       "term": "BullMQ",
@@ -472,11 +548,25 @@
       "definition": "Sending a small share of traffic to a new version first, watching its metrics, and increasing the share only if it looks healthy."
     },
     {
+      "term": "CAP theorem",
+      "aliases": [
+        "CAP"
+      ],
+      "definition": "The rule that during a network partition, a distributed system must choose between consistency (every read sees the latest write) and availability (every request gets an answer)."
+    },
+    {
       "term": "cardinality",
       "aliases": [
         "metric cardinality"
       ],
       "definition": "For metrics, the number of distinct time series a metric creates: one per unique combination of label values. High cardinality uses lots of memory."
+    },
+    {
+      "term": "cascading failure",
+      "aliases": [
+        "cascading failures"
+      ],
+      "definition": "A failure in one part of a system that spreads and causes other parts to fail too."
     },
     {
       "term": "CDN",
@@ -526,6 +616,11 @@
         "CDC"
       ],
       "definition": "Reading a database's own change log to produce an event for every changed row, so other systems can react to every write."
+    },
+    {
+      "term": "chaos engineering",
+      "aliases": [],
+      "definition": "Deliberately injecting failures, such as delays or crashes, to find weaknesses before real outages do."
     },
     {
       "term": "chmod",
@@ -596,6 +691,13 @@
         "CNAME record"
       ],
       "definition": "A DNS record that makes one name an alias of another name, so the resolver looks up the other name instead."
+    },
+    {
+      "term": "codec",
+      "aliases": [
+        "codecs"
+      ],
+      "definition": "The method used to compress and decompress video or audio, such as H.264 or AV1."
     },
     {
       "term": "cold start",
@@ -700,6 +802,11 @@
       "definition": "Passing the trace ID and current span ID along with each outgoing call or message, so the next service joins the same trace."
     },
     {
+      "term": "Conway's law",
+      "aliases": [],
+      "definition": "The observation that a system's structure tends to mirror the communication structure of the organisation that builds it."
+    },
+    {
       "term": "cookie",
       "aliases": [
         "cookies"
@@ -794,6 +901,13 @@
       "definition": "A program that runs in the background, waiting for work, such as sshd waiting for SSH logins."
     },
     {
+      "term": "DASH",
+      "aliases": [
+        "MPEG-DASH"
+      ],
+      "definition": "A standard streaming format similar to HLS, which describes segments in an XML manifest (.mpd)."
+    },
+    {
       "term": "database",
       "aliases": [
         "databases"
@@ -831,6 +945,11 @@
         "schema migrations"
       ],
       "definition": "A versioned script, kept in the repo, that changes the database's structure. A tool records which migrations each database has already run."
+    },
+    {
+      "term": "database per service",
+      "aliases": [],
+      "definition": "The microservices rule that each service owns its own database, and no other service reads its tables directly."
     },
     {
       "term": "datagram",
@@ -904,6 +1023,18 @@
         "distributed locks"
       ],
       "definition": "A lock stored in a shared place, such as Redis, that several servers respect, so only one of them does a piece of work at a time."
+    },
+    {
+      "term": "distributed monolith",
+      "aliases": [],
+      "definition": "A system split into services that still can't change or deploy independently, so it has the costs of microservices without the benefits."
+    },
+    {
+      "term": "distributed system",
+      "aliases": [
+        "distributed systems"
+      ],
+      "definition": "A system made of several machines that work together by sending messages over a network."
     },
     {
       "term": "distributed tracing",
@@ -1185,9 +1316,31 @@
       "definition": "The most widely used web framework for Node.js. It routes requests to your functions and runs them through middleware."
     },
     {
+      "term": "fail closed",
+      "aliases": [],
+      "definition": "When a protective component breaks, block requests rather than letting them through."
+    },
+    {
+      "term": "fail open",
+      "aliases": [],
+      "definition": "When a protective component breaks, let requests through rather than blocking them."
+    },
+    {
       "term": "failover",
       "aliases": [],
       "definition": "Promoting a replica to become the new primary when the current primary fails, so the app can keep writing."
+    },
+    {
+      "term": "fan-out",
+      "aliases": [],
+      "definition": "Copying one message or event to many recipients, such as every member of a group chat."
+    },
+    {
+      "term": "FCM",
+      "aliases": [
+        "Firebase Cloud Messaging"
+      ],
+      "definition": "Google's service that delivers push notifications to Android devices, and also to iOS and web apps."
     },
     {
       "term": "feature flag",
@@ -1242,6 +1395,11 @@
       "definition": "A chart of profiler results where each bar is a function and wider bars mean more CPU time."
     },
     {
+      "term": "floating IP",
+      "aliases": [],
+      "definition": "An IP address that can move from one machine to a standby machine, so traffic continues if the first one fails."
+    },
+    {
       "term": "flow control",
       "aliases": [],
       "definition": "TCP's way of stopping a fast sender from overwhelming a slow receiver: the receiver keeps saying how much more data it has room for."
@@ -1281,6 +1439,13 @@
       "definition": "Both sides of a connection can send data at the same time, independently."
     },
     {
+      "term": "functional requirement",
+      "aliases": [
+        "functional requirements"
+      ],
+      "definition": "A feature the system must provide, such as \"users can upload videos\"."
+    },
+    {
       "term": "Git commit hash",
       "aliases": [
         "commit hash",
@@ -1302,6 +1467,11 @@
       "term": "GitHub Actions workflow",
       "aliases": [],
       "definition": "In GitHub Actions, a YAML file in .github/workflows that says when to run and which jobs to run."
+    },
+    {
+      "term": "graceful degradation",
+      "aliases": [],
+      "definition": "Keeping the core of an app working with reduced features when a part fails, such as showing best-sellers when recommendations are down."
     },
     {
       "term": "graceful shutdown",
@@ -1419,6 +1589,14 @@
       "term": "HMAC",
       "aliases": [],
       "definition": "A hash mixed with a secret key, so only someone who knows the key can produce or check the result."
+    },
+    {
+      "term": "horizontal scaling",
+      "aliases": [
+        "scale out",
+        "scaling out"
+      ],
+      "definition": "Handling more load by running more copies of the app on more machines and sharing traffic between them."
     },
     {
       "term": "host key",
@@ -1715,6 +1893,13 @@
       "definition": "A database that stores values under names (keys), like a giant dictionary or JavaScript object."
     },
     {
+      "term": "keyframe",
+      "aliases": [
+        "keyframes"
+      ],
+      "definition": "A complete picture in a video stream that decoding can start from, without needing earlier frames."
+    },
+    {
       "term": "Kubernetes",
       "aliases": [
         "K8s"
@@ -1754,6 +1939,22 @@
       "definition": "How long one request takes from start to finish, usually measured in milliseconds."
     },
     {
+      "term": "Layer 4 load balancer",
+      "aliases": [
+        "Layer 4",
+        "L4"
+      ],
+      "definition": "A load balancer that forwards TCP or UDP connections using only IP addresses and ports, without reading the HTTP inside."
+    },
+    {
+      "term": "Layer 7 load balancer",
+      "aliases": [
+        "Layer 7",
+        "L7"
+      ],
+      "definition": "A load balancer that reads HTTP requests, so it can route by path or host, terminate TLS, and add headers."
+    },
+    {
       "term": "layer 7 load balancing",
       "aliases": [
         "L7 load balancing"
@@ -1766,6 +1967,16 @@
         "lazy-loading"
       ],
       "definition": "Fetching related data only when code first touches it, such as order.user. Convenient, but each access can be a hidden extra query."
+    },
+    {
+      "term": "leaky bucket",
+      "aliases": [],
+      "definition": "A rate-limiting algorithm where requests queue up and are processed at a fixed rate, smoothing out bursts."
+    },
+    {
+      "term": "least connections",
+      "aliases": [],
+      "definition": "A load-balancing method that sends each request to the server with the fewest requests currently in progress."
     },
     {
       "term": "least privilege",
@@ -1790,6 +2001,11 @@
       "definition": "The C library inside Node.js that provides the event loop, talks to the operating system for network I/O, and runs a small thread pool."
     },
     {
+      "term": "linearizability",
+      "aliases": [],
+      "definition": "The strict consistency in CAP: the system behaves as if there were a single copy of the data, so every read sees the latest completed write."
+    },
+    {
       "term": "Linux",
       "aliases": [],
       "definition": "A free, open-source operating system that runs most servers on the internet. Ubuntu is one popular version (distribution) of it."
@@ -1810,6 +2026,11 @@
         "load balancers"
       ],
       "definition": "A server that spreads incoming requests across several app servers so no single one gets overwhelmed."
+    },
+    {
+      "term": "load shedding",
+      "aliases": [],
+      "definition": "Deliberately rejecting some requests quickly when overloaded, so the rest can still be served well."
     },
     {
       "term": "load test",
@@ -1886,6 +2107,11 @@
         "lost updates"
       ],
       "definition": "Two transactions read the same value and write back a new value computed from it, so one write silently overwrites the other."
+    },
+    {
+      "term": "Lua script",
+      "aliases": [],
+      "definition": "A small program sent to Redis that runs atomically: no other command runs until it finishes."
     },
     {
       "term": "magic bytes",
@@ -1977,6 +2203,25 @@
       "definition": "A browser guessing a file's type from its contents instead of trusting the Content-Type header."
     },
     {
+      "term": "modular monolith",
+      "aliases": [],
+      "definition": "A monolith with strict internal boundaries between modules, which talk only through each other's public functions."
+    },
+    {
+      "term": "monolith",
+      "aliases": [
+        "monolithic"
+      ],
+      "definition": "An application built and deployed as one unit, with all features in one codebase and usually one database."
+    },
+    {
+      "term": "mTLS",
+      "aliases": [
+        "mutual TLS"
+      ],
+      "definition": "TLS where both sides prove their identity with certificates, often used between internal services."
+    },
+    {
       "term": "multi-factor authentication",
       "aliases": [
         "MFA",
@@ -1991,6 +2236,11 @@
         "multi-stage builds"
       ],
       "definition": "A Dockerfile with several FROM stages, where a later stage copies only the finished output from an earlier one, so build tools stay out of the final image."
+    },
+    {
+      "term": "multipart upload",
+      "aliases": [],
+      "definition": "Uploading a large file to object storage in separate parts that can be sent in parallel and retried individually."
     },
     {
       "term": "multipart/form-data",
@@ -2053,6 +2303,11 @@
       "definition": "One connection point between a computer and a network, such as a Wi-Fi card, an Ethernet port, or the loopback interface. Each has its own IP address."
     },
     {
+      "term": "network partition",
+      "aliases": [],
+      "definition": "A network failure that splits nodes into groups that are running but can't reach each other."
+    },
+    {
       "term": "Nginx",
       "aliases": [],
       "definition": "A fast web server often placed in front of apps to handle HTTPS, serve files, and forward requests."
@@ -2069,6 +2324,13 @@
         "writable stream"
       ],
       "definition": "An object that hands data over in small chunks as it arrives, instead of all at once, so large data needs little memory."
+    },
+    {
+      "term": "non-functional requirement",
+      "aliases": [
+        "non-functional requirements"
+      ],
+      "definition": "A quality the system must have, such as speed, availability, durability, or cost limits, like \"playback starts within 2 seconds\"."
     },
     {
       "term": "non-repeatable read",
@@ -2246,12 +2508,22 @@
       "definition": "A non-profit community that publishes free web security guidance, including the Top 10 list of the most common web app weaknesses."
     },
     {
+      "term": "p99 latency",
+      "aliases": [],
+      "definition": "The time within which 99% of requests finish. Only the slowest 1% take longer."
+    },
+    {
       "term": "PaaS",
       "aliases": [
         "Platform as a Service",
         "managed platform"
       ],
       "definition": "A hosting service that runs your code for you. The provider manages the servers, operating system, and restarts; you just deploy."
+    },
+    {
+      "term": "PACELC",
+      "aliases": [],
+      "definition": "An extension of CAP: during a Partition choose Availability or Consistency; Else choose Latency or Consistency."
     },
     {
       "term": "package manager",
@@ -2575,6 +2847,20 @@
       "definition": "A request to merge a branch into another, usually main, where teammates review the change and CI runs."
     },
     {
+      "term": "push notification",
+      "aliases": [
+        "push notifications"
+      ],
+      "definition": "A message shown on a phone or browser by the operating system, even when the app is closed."
+    },
+    {
+      "term": "push token",
+      "aliases": [
+        "device token"
+      ],
+      "definition": "The address a phone gets from Apple's or Google's push service for one app on one device, used to send it push notifications."
+    },
+    {
       "term": "query",
       "aliases": [
         "queries"
@@ -2611,6 +2897,11 @@
       "term": "QUIC",
       "aliases": [],
       "definition": "A transport protocol built on UDP that adds reliability per stream and builds TLS 1.3 into its handshake. HTTP/3 runs on it."
+    },
+    {
+      "term": "quorum",
+      "aliases": [],
+      "definition": "A required number of replicas, usually a majority, that must confirm a read or write."
     },
     {
       "term": "RabbitMQ",
@@ -2743,6 +3034,13 @@
       "definition": "Turning HTML, CSS, and data into the pixels you see on screen."
     },
     {
+      "term": "rendition",
+      "aliases": [
+        "renditions"
+      ],
+      "definition": "One quality version of a video, such as 720p at 3 Mbps."
+    },
+    {
       "term": "replica lag",
       "aliases": [
         "replication lag"
@@ -2783,6 +3081,11 @@
       "definition": "Letting many simultaneous requests for the same data share one in-progress load instead of each starting their own."
     },
     {
+      "term": "request ID",
+      "aliases": [],
+      "definition": "A unique ID attached to a request and logged by every service it passes through, so one request can be traced across the system."
+    },
+    {
       "term": "request line",
       "aliases": [],
       "definition": "The first line of an HTTP request: the method, the path, and the protocol version, like POST /orders HTTP/1.1."
@@ -2813,6 +3116,11 @@
         "retransmits"
       ],
       "definition": "Sending data again because the receiver didn't confirm it arrived. TCP does this automatically."
+    },
+    {
+      "term": "retry storm",
+      "aliases": [],
+      "definition": "A surge of traffic caused by many clients or layers retrying failed requests at once, which can overload a recovering service."
     },
     {
       "term": "Retry-After",
@@ -2874,6 +3182,11 @@
       "definition": "The administrator account on Linux (user ID 0). It can read and change any file and run anything."
     },
     {
+      "term": "round robin",
+      "aliases": [],
+      "definition": "A load-balancing method that sends each new request to the next server in turn: 1, 2, 3, 1, 2, 3."
+    },
+    {
       "term": "round trip",
       "aliases": [
         "round trips",
@@ -2918,6 +3231,11 @@
       "term": "rsync",
       "aliases": [],
       "definition": "A file copying tool that compares source and destination and sends only what changed. It works locally or over SSH."
+    },
+    {
+      "term": "RTMP",
+      "aliases": [],
+      "definition": "A protocol commonly used to send a live video stream from broadcasting software to a streaming server."
     },
     {
       "term": "RTO",
@@ -3093,6 +3411,16 @@
       "definition": "Code the cloud provider starts on demand and scales automatically, such as AWS Lambda. Each running instance is a separate process."
     },
     {
+      "term": "service discovery",
+      "aliases": [],
+      "definition": "How a service finds the current network address of another service, for example through Docker or Kubernetes DNS names."
+    },
+    {
+      "term": "service mesh",
+      "aliases": [],
+      "definition": "A layer of small proxies next to each service that handle retries, timeouts, metrics, and encryption for service-to-service calls."
+    },
+    {
       "term": "session",
       "aliases": [
         "sessions"
@@ -3173,6 +3501,11 @@
       "definition": "An attack where someone convinces a mobile carrier to move your phone number to their SIM card, so they receive your text messages and SMS codes."
     },
     {
+      "term": "single point of failure",
+      "aliases": [],
+      "definition": "One part whose failure takes the whole system down, such as a lone server or a lone load balancer."
+    },
+    {
       "term": "skip list",
       "aliases": [],
       "definition": "A layered linked list that allows fast searching in sorted order. Redis uses one inside sorted sets."
@@ -3183,6 +3516,14 @@
         "service level indicator"
       ],
       "definition": "A measured number describing service quality, such as the share of requests that succeed in under 1 second."
+    },
+    {
+      "term": "sliding window",
+      "aliases": [
+        "sliding window counter",
+        "sliding window log"
+      ],
+      "definition": "A rate-limiting algorithm that counts requests in the last N seconds, so the limit moves smoothly with time."
     },
     {
       "term": "SLO",
@@ -3320,6 +3661,21 @@
       "definition": "A special permission on a folder that lets only a file's owner delete or rename it. /tmp uses it so users can't delete each other's files."
     },
     {
+      "term": "sticky session",
+      "aliases": [
+        "sticky sessions",
+        "session affinity"
+      ],
+      "definition": "A load balancer setting that sends a user to the same server every time, usually using a cookie."
+    },
+    {
+      "term": "strangler fig pattern",
+      "aliases": [
+        "strangler fig"
+      ],
+      "definition": "Replacing an old system gradually by routing one feature at a time to new code until the old code can be removed."
+    },
+    {
       "term": "streaming replication",
       "aliases": [],
       "definition": "PostgreSQL's built-in replication: the primary streams its write-ahead log (WAL) records to replicas, which replay them to stay in sync."
@@ -3353,6 +3709,11 @@
         "asynchronous replication"
       ],
       "definition": "Synchronous: the primary waits for a replica to confirm each commit, so confirmed writes are never lost but writes are slower. Asynchronous (the default): it doesn't wait."
+    },
+    {
+      "term": "system design",
+      "aliases": [],
+      "definition": "Deciding which parts a software system needs (servers, databases, caches, queues) and how they connect, so it works at the size and speed it must."
     },
     {
       "term": "systemd",
@@ -3644,6 +4005,14 @@
         "virtual CPU"
       ],
       "definition": "A virtual CPU: the slice of a real processor core given to a virtual machine. On cheaper plans it may be shared with other customers."
+    },
+    {
+      "term": "vertical scaling",
+      "aliases": [
+        "scale up",
+        "scaling up"
+      ],
+      "definition": "Handling more load by moving to a bigger machine with more CPU and memory."
     },
     {
       "term": "virtual machine",
