@@ -99,7 +99,7 @@ export async function getProductById(id) {
   const { rows } = await db.query('SELECT id, name, price_cents FROM products WHERE id = $1', [id]);
   const product = rows[0] ?? null;
   if (product) {
-    redis.set(key, JSON.stringify(product), { EX: TTL_SECONDS }) // store with a TTL
+    redis.set(key, JSON.stringify(product), { expiration: { type: 'EX', value: TTL_SECONDS } }) // store with a TTL
       .catch((err) => console.warn('Cache write failed:', err.message)); // don't make the user wait
   }
   return product;

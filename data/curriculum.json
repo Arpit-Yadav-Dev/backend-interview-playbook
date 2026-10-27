@@ -1215,7 +1215,7 @@
           "file": "content/p06-caching/cdn.md",
           "level": "intermediate",
           "priority": "must-know",
-          "minutes": 13,
+          "minutes": 14,
           "tags": [
             "cdn",
             "caching",
@@ -1336,7 +1336,7 @@
           "file": "content/p07-async-messaging/cron-jobs.md",
           "level": "beginner",
           "priority": "good-to-know",
-          "minutes": 8,
+          "minutes": 10,
           "tags": [
             "cron",
             "jobs",

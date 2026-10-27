@@ -16,6 +16,11 @@
       "definition": "A backup rule of thumb: keep 3 copies of your data, on 2 different kinds of storage, with 1 copy off-site."
     },
     {
+      "term": "304 Not Modified",
+      "aliases": [],
+      "definition": "The HTTP status code meaning \"your cached copy is still correct\". It has no body, so it saves bandwidth."
+    },
+    {
       "term": "429 Too Many Requests",
       "aliases": [
         "HTTP 429"
@@ -97,6 +102,11 @@
       "definition": "MongoDB's way of running multi-step queries, where documents pass through stages such as $match, $group, and $lookup (a join with another collection)."
     },
     {
+      "term": "anycast",
+      "aliases": [],
+      "definition": "A routing method where the same IP address is announced from many locations, and the internet delivers each user to the nearest one."
+    },
+    {
       "term": "apex domain",
       "aliases": [
         "zone apex",
@@ -152,6 +162,13 @@
         "at-least-once"
       ],
       "definition": "A delivery guarantee where every message arrives, but some may arrive more than once, so processing must handle duplicates."
+    },
+    {
+      "term": "at-most-once delivery",
+      "aliases": [
+        "at-most-once"
+      ],
+      "definition": "A delivery guarantee where each message arrives once or not at all. Nothing is duplicated, but messages can be lost."
     },
     {
       "term": "attribute-based access control",
@@ -219,6 +236,13 @@
       "definition": "Filling a new column or table with values for rows that already existed, usually in small batches on a live database."
     },
     {
+      "term": "background job",
+      "aliases": [
+        "background jobs"
+      ],
+      "definition": "Work a server does after it has already replied to the user, such as sending an email or processing a video, handled by a separate worker process."
+    },
+    {
       "term": "backpressure",
       "aliases": [],
       "definition": "How a slow destination tells a fast data source to pause, so unsent data does not pile up in memory."
@@ -282,6 +306,13 @@
       "definition": "A network of many hijacked computers controlled by an attacker, often used to spread attacks across thousands of IP addresses."
     },
     {
+      "term": "bottleneck",
+      "aliases": [
+        "bottlenecks"
+      ],
+      "definition": "The one part of a system that limits the speed or capacity of everything else. Speeding up other parts doesn't help until it's fixed."
+    },
+    {
       "term": "browser",
       "aliases": [],
       "definition": "The app (Chrome, Safari, Firefox) that fetches web pages, runs their JavaScript, and draws them on screen."
@@ -302,6 +333,11 @@
       "definition": "The binary, JSON-like format MongoDB stores and sends. It adds types JSON lacks, such as dates, 64-bit integers, Decimal128, and ObjectId."
     },
     {
+      "term": "BullMQ",
+      "aliases": [],
+      "definition": "A popular Node.js library for job queues that stores its data in Redis, with retries, delays, priorities, and schedules built in."
+    },
+    {
       "term": "cache",
       "aliases": [
         "caching",
@@ -310,9 +346,25 @@
       "definition": "A saved copy of data kept somewhere faster to reach, so the same work does not have to be repeated."
     },
     {
+      "term": "cache busting",
+      "aliases": [
+        "hashed filename",
+        "hashed filenames"
+      ],
+      "definition": "Changing a file's URL when its content changes, usually by putting a hash of the content in the filename, so browsers and CDNs fetch the new version instead of an old cached copy."
+    },
+    {
       "term": "cache hit",
       "aliases": [],
       "definition": "The data you asked for was found in the cache, so the slower source was not needed."
+    },
+    {
+      "term": "cache invalidation",
+      "aliases": [
+        "invalidating a cache",
+        "invalidate the cache"
+      ],
+      "definition": "Removing or replacing cached copies when the real data changes, so users stop seeing the old version."
     },
     {
       "term": "cache miss",
@@ -320,9 +372,24 @@
       "definition": "The data was not in the cache, so it had to be fetched from the slower source."
     },
     {
+      "term": "cache stampede",
+      "aliases": [
+        "thundering herd",
+        "dog-piling"
+      ],
+      "definition": "When a popular cached value expires and many requests miss at the same moment, so they all hit the database for the same data at once."
+    },
+    {
       "term": "cache-aside",
       "aliases": [],
       "definition": "A caching pattern where the app checks the cache first, and on a miss loads from the database and saves a copy in the cache."
+    },
+    {
+      "term": "Cache-Control",
+      "aliases": [
+        "Cache-Control header"
+      ],
+      "definition": "An HTTP response header that tells browsers and CDNs whether they may store a response and for how long, using directives like max-age, no-cache, and no-store."
     },
     {
       "term": "callback",
@@ -366,6 +433,13 @@
       "definition": "The sequence of signatures from a site's certificate up through intermediate certificates to a root certificate authority the browser already trusts."
     },
     {
+      "term": "change data capture",
+      "aliases": [
+        "CDC"
+      ],
+      "definition": "Reading a database's own change log to produce an event for every changed row, so other systems can react to every write."
+    },
+    {
       "term": "chmod",
       "aliases": [],
       "definition": "The Linux command that changes a file's permissions, for example chmod 600 .env."
@@ -381,6 +455,11 @@
         "CIDR"
       ],
       "definition": "A way to write a range of IP addresses, like 10.0.0.0/16. The number after the slash says how many leading bits are fixed; the rest can vary."
+    },
+    {
+      "term": "circuit breaker",
+      "aliases": [],
+      "definition": "A safety switch in code that stops calling a failing service for a while after too many errors, then lets a few test requests through to see if it has recovered."
     },
     {
       "term": "clickjacking",
@@ -415,11 +494,26 @@
       "definition": "A DNS record that makes one name an alias of another name, so the resolver looks up the other name instead."
     },
     {
+      "term": "compensating action",
+      "aliases": [
+        "compensating actions"
+      ],
+      "definition": "A step that undoes an earlier step in a saga, such as releasing reserved stock when payment fails."
+    },
+    {
       "term": "composite index",
       "aliases": [
         "multicolumn index"
       ],
       "definition": "An index on several columns, sorted by the first column, then the second within it. It helps queries that filter on its leading columns."
+    },
+    {
+      "term": "conditional request",
+      "aliases": [
+        "conditional requests",
+        "revalidation"
+      ],
+      "definition": "A request that asks the server to send the content only if it changed, using If-None-Match (with an ETag) or If-Modified-Since. If nothing changed, the answer is 304 Not Modified with no body."
     },
     {
       "term": "congestion control",
@@ -447,6 +541,18 @@
       "definition": "A way of assigning keys to servers so that adding or removing a server moves only a small share of the keys instead of most of them."
     },
     {
+      "term": "consumer group",
+      "aliases": [
+        "consumer groups"
+      ],
+      "definition": "A named set of consumers that share the messages of a stream or topic. Each message goes to one consumer in the group; different groups each get their own copy."
+    },
+    {
+      "term": "consumer lag",
+      "aliases": [],
+      "definition": "How far consumers are behind producers: the number of messages written but not yet processed. Growing lag means consumers can't keep up."
+    },
+    {
       "term": "container",
       "aliases": [
         "containers"
@@ -471,6 +577,13 @@
         "cookies"
       ],
       "definition": "A small piece of text a server asks the browser to store and send back automatically with later requests to that site."
+    },
+    {
+      "term": "correlation ID",
+      "aliases": [
+        "correlation IDs"
+      ],
+      "definition": "One ID attached to every request, log line, and event caused by the same user action, so they can be traced across services."
     },
     {
       "term": "CORS",
@@ -500,6 +613,26 @@
       "term": "credentials",
       "aliases": [],
       "definition": "The evidence you present to prove who you are, such as a password, a one-time code, or a passkey."
+    },
+    {
+      "term": "cron",
+      "aliases": [
+        "cron job",
+        "cron jobs"
+      ],
+      "definition": "The standard Linux tool that runs commands automatically on a schedule, like every night at 02:30."
+    },
+    {
+      "term": "cron expression",
+      "aliases": [
+        "cron expressions"
+      ],
+      "definition": "Five fields (minute, hour, day of month, month, day of week) that describe when a scheduled job runs, for example 30 2 * * * for 02:30 every day."
+    },
+    {
+      "term": "crontab",
+      "aliases": [],
+      "definition": "A cron table: the list of scheduled commands for a user, edited with crontab -e."
     },
     {
       "term": "CSR",
@@ -586,6 +719,14 @@
       "definition": "An attack that floods a service with traffic from many machines at once so real users can't reach it."
     },
     {
+      "term": "dead-letter queue",
+      "aliases": [
+        "dead-letter queues",
+        "DLQ"
+      ],
+      "definition": "A separate holding area for messages or jobs that failed too many times or failed permanently, kept for people to inspect, fix, and replay."
+    },
+    {
       "term": "deadlock",
       "aliases": [
         "deadlocks"
@@ -609,6 +750,13 @@
       "term": "dirty read",
       "aliases": [],
       "definition": "Reading another transaction's change before it commits. If it rolls back, you acted on data that never existed. PostgreSQL never allows it."
+    },
+    {
+      "term": "distributed lock",
+      "aliases": [
+        "distributed locks"
+      ],
+      "definition": "A lock stored in a shared place, such as Redis, that several servers respect, so only one of them does a piece of work at a time."
     },
     {
       "term": "DNS",
@@ -678,6 +826,13 @@
       "definition": "A company that sells and registers domain names for you."
     },
     {
+      "term": "dual write",
+      "aliases": [
+        "dual-write problem"
+      ],
+      "definition": "Writing the same change to two systems (like a database and a message broker) as separate steps, where one can succeed while the other fails."
+    },
+    {
       "term": "EADDRINUSE",
       "aliases": [],
       "definition": "The error a program gets when it tries to listen on an IP and port that another process is already listening on."
@@ -688,6 +843,20 @@
         "eager-loading"
       ],
       "definition": "Telling the ORM up front which related data you need, so it fetches it in bulk instead of one row at a time."
+    },
+    {
+      "term": "edge server",
+      "aliases": [
+        "edge servers",
+        "point of presence",
+        "PoP"
+      ],
+      "definition": "A CDN server located in a city near users. It keeps cached copies so requests don't have to travel to your origin server."
+    },
+    {
+      "term": "egress",
+      "aliases": [],
+      "definition": "Data sent out of a data centre or cloud provider to the internet. Cloud providers usually charge for it."
     },
     {
       "term": "encryption",
@@ -750,12 +919,46 @@
       "definition": "The mechanism in JavaScript that runs one piece of code at a time and picks up the next task when the current one finishes."
     },
     {
+      "term": "event loop delay",
+      "aliases": [
+        "event loop lag"
+      ],
+      "definition": "How late Node.js timers fire compared to when they should. High delay means CPU-heavy code is blocking the event loop."
+    },
+    {
+      "term": "event sourcing",
+      "aliases": [],
+      "definition": "Storing the full list of events as the source of truth for an entity and computing its current state by replaying them, like a bank ledger."
+    },
+    {
+      "term": "event-driven architecture",
+      "aliases": [
+        "event-driven"
+      ],
+      "definition": "A design where services publish events about what happened, and other services react on their own, instead of calling each other directly."
+    },
+    {
+      "term": "eventual consistency",
+      "aliases": [
+        "eventually consistent"
+      ],
+      "definition": "Different parts of a system may briefly disagree after a change, but they all reach the correct state shortly afterwards if no new changes arrive."
+    },
+    {
       "term": "evict",
       "aliases": [
         "evicts",
         "eviction"
       ],
       "definition": "To automatically delete entries from a cache to make room for new ones."
+    },
+    {
+      "term": "exactly-once",
+      "aliases": [
+        "exactly-once delivery",
+        "exactly-once processing"
+      ],
+      "definition": "The ideal where each message has its effect exactly one time. In practice it is achieved with at-least-once delivery plus idempotent consumers."
     },
     {
       "term": "exit code",
@@ -776,6 +979,13 @@
       "term": "EXPLAIN ANALYZE",
       "aliases": [],
       "definition": "A PostgreSQL command that shows the plan for a query. EXPLAIN shows estimates; EXPLAIN ANALYZE also runs it and shows real times and row counts."
+    },
+    {
+      "term": "exponential backoff",
+      "aliases": [
+        "backoff"
+      ],
+      "definition": "Waiting longer after each failed attempt before retrying, typically doubling the wait each time (1 s, 2 s, 4 s...), usually with a maximum cap."
     },
     {
       "term": "Express.js",
@@ -819,6 +1029,11 @@
         "fixed-window counter"
       ],
       "definition": "A rate limiting algorithm that counts requests per clock period, like per minute, and resets the count when the period ends."
+    },
+    {
+      "term": "flame graph",
+      "aliases": [],
+      "definition": "A chart of profiler results where each bar is a function and wider bars mean more CPU time."
     },
     {
       "term": "flow control",
@@ -940,6 +1155,13 @@
       "definition": "The share of cache lookups that find the data: hits divided by all lookups."
     },
     {
+      "term": "HLS",
+      "aliases": [
+        "HTTP Live Streaming"
+      ],
+      "definition": "A video streaming format that splits a video into small segment files plus a playlist file listing them, so it can be served by ordinary web servers and CDNs."
+    },
+    {
       "term": "HMAC",
       "aliases": [],
       "definition": "A hash mixed with a secret key, so only someone who knows the key can produce or check the result."
@@ -1054,6 +1276,11 @@
       "definition": "A bug where changing an ID in a request, like /orders/5002, reveals someone else's data because the server doesn't check ownership."
     },
     {
+      "term": "in-process cache",
+      "aliases": [],
+      "definition": "A cache kept inside one running copy of your app, for example a JavaScript Map. Fast, but each server has its own copy and it's lost on restart."
+    },
+    {
       "term": "index",
       "aliases": [
         "database index"
@@ -1104,6 +1331,11 @@
         "Promise.all"
       ],
       "definition": "A JavaScript object that stands for a result that isn't ready yet. It is pending, then becomes fulfilled with a value or rejected with an error, exactly once."
+    },
+    {
+      "term": "jitter",
+      "aliases": [],
+      "definition": "Randomness added to wait times or expiry times so that many clients or keys don't all act at the same moment."
     },
     {
       "term": "journalctl",
@@ -1157,6 +1389,23 @@
         "registered claims"
       ],
       "definition": "One statement inside a token, such as the user ID (sub) or the expiry time (exp)."
+    },
+    {
+      "term": "Kafka",
+      "aliases": [
+        "Apache Kafka"
+      ],
+      "definition": "A distributed log for event streams. Events are kept for a retention period, split into partitions, and many consumer groups can read and replay them."
+    },
+    {
+      "term": "Kafka offset",
+      "aliases": [],
+      "definition": "The position number of an event in a Kafka partition. Consumer groups store the offset they've reached, like a bookmark."
+    },
+    {
+      "term": "Kafka partition",
+      "aliases": [],
+      "definition": "One ordered, append-only slice of a Kafka topic. Order is guaranteed only within a partition, and each partition is read by one consumer per group."
     },
     {
       "term": "kernel",
@@ -1234,6 +1483,11 @@
       "definition": "A free, open-source operating system that runs most servers on the internet. Ubuntu is one popular version (distribution) of it."
     },
     {
+      "term": "Little's Law",
+      "aliases": [],
+      "definition": "Requests in progress = throughput × latency. At 200 requests per second taking 0.05 s each, about 10 are in progress at once."
+    },
+    {
       "term": "load average",
       "aliases": [],
       "definition": "Roughly, the average number of processes running or waiting to run. Compared with the number of CPU cores, it shows whether work is queuing."
@@ -1244,6 +1498,13 @@
         "load balancers"
       ],
       "definition": "A server that spreads incoming requests across several app servers so no single one gets overwhelmed."
+    },
+    {
+      "term": "load test",
+      "aliases": [
+        "load testing"
+      ],
+      "definition": "Sending many requests to a system on purpose to measure its latency and throughput under pressure, usually against a copy of production."
     },
     {
       "term": "localhost",
@@ -1347,6 +1608,27 @@
         "RAM"
       ],
       "definition": "The computer's fast, temporary working storage. Much faster than disk, but smaller and cleared on restart."
+    },
+    {
+      "term": "message acknowledgment",
+      "aliases": [
+        "acknowledgment",
+        "acknowledgement",
+        "ack"
+      ],
+      "definition": "A consumer's confirmation to the broker that a message was handled, so it can be deleted. Without it, the broker redelivers the message."
+    },
+    {
+      "term": "message broker",
+      "aliases": [],
+      "definition": "A server that stores messages from producers and hands them out to consumers, such as RabbitMQ, Kafka, Amazon SQS, or Redis."
+    },
+    {
+      "term": "microservices",
+      "aliases": [
+        "microservice"
+      ],
+      "definition": "An architecture where an app is split into separate small services, each with its own code and usually its own database, talking over the network."
     },
     {
       "term": "microtask",
@@ -1640,6 +1922,16 @@
       "definition": "One secret value for the whole app, kept outside the database and mixed into password hashing as extra protection."
     },
     {
+      "term": "percentile",
+      "aliases": [
+        "percentiles",
+        "p95",
+        "p99",
+        "p50"
+      ],
+      "definition": "A way to describe latency across many requests. p95 is the time 95% of requests beat; p99 shows the slowest 1%. Averages hide these slow requests."
+    },
+    {
       "term": "persisted queries",
       "aliases": [
         "persisted query"
@@ -1716,6 +2008,13 @@
       "definition": "Restoring a base backup and replaying archived WAL up to a chosen moment, such as the minute before an accidental DELETE."
     },
     {
+      "term": "poison message",
+      "aliases": [
+        "poison messages"
+      ],
+      "definition": "A message that fails every time it is processed, for example because its data is invalid. Without a retry limit it loops forever."
+    },
+    {
       "term": "polling",
       "aliases": [
         "short polling"
@@ -1755,6 +2054,11 @@
         "primary keys"
       ],
       "definition": "The column (or columns) that uniquely identifies each row in a table. It can never be empty or repeated."
+    },
+    {
+      "term": "private cache",
+      "aliases": [],
+      "definition": "A cache that stores responses for one user only, such as the browser's cache."
     },
     {
       "term": "private IP address",
@@ -1804,6 +2108,14 @@
       "term": "process.nextTick",
       "aliases": [],
       "definition": "A Node.js function that schedules a callback to run right after the current operation, even before promise callbacks."
+    },
+    {
+      "term": "profiler",
+      "aliases": [
+        "profiling",
+        "CPU profile"
+      ],
+      "definition": "A tool that samples which code the CPU is running, showing which functions use the most time."
     },
     {
       "term": "programmer error",
@@ -1889,6 +2201,20 @@
       "definition": "A transport protocol built on UDP that adds reliability per stream and builds TLS 1.3 into its handshake. HTTP/3 runs on it."
     },
     {
+      "term": "RabbitMQ",
+      "aliases": [],
+      "definition": "A message broker where producers publish to exchanges that route messages into queues; messages are deleted once acknowledged."
+    },
+    {
+      "term": "RabbitMQ exchange",
+      "aliases": [
+        "exchange type",
+        "topic exchange",
+        "fanout exchange"
+      ],
+      "definition": "The part of RabbitMQ that receives published messages and routes them to queues according to bindings and the message's routing key."
+    },
+    {
       "term": "race condition",
       "aliases": [
         "race conditions"
@@ -1945,6 +2271,13 @@
       "term": "Redis",
       "aliases": [],
       "definition": "An in-memory data store that is very fast, often used for caching, sessions, counters, and simple queues."
+    },
+    {
+      "term": "Redis Streams",
+      "aliases": [
+        "Redis Stream"
+      ],
+      "definition": "A Redis data type that works as an append-only log of messages, with consumer groups and acknowledgments, so messages aren't lost if a consumer crashes."
     },
     {
       "term": "ReDoS",
@@ -2005,6 +2338,13 @@
       "term": "request",
       "aliases": [],
       "definition": "A message a client sends to a server asking for something, such as a page or some data."
+    },
+    {
+      "term": "request coalescing",
+      "aliases": [
+        "single-flight"
+      ],
+      "definition": "Letting many simultaneous requests for the same data share one in-progress load instead of each starting their own."
     },
     {
       "term": "request line",
@@ -2096,6 +2436,11 @@
         "route parameters"
       ],
       "definition": "A named part of a URL pattern, like :id in /orders/:id, whose value Express puts in req.params."
+    },
+    {
+      "term": "routing key",
+      "aliases": [],
+      "definition": "A label on a RabbitMQ message, like order.placed.eu, that exchanges use to decide which queues get it."
     },
     {
       "term": "RPC",
@@ -2334,6 +2679,20 @@
       "definition": "Splitting one dataset across several database servers, each holding part of the rows, so no single machine has to store or serve all of it."
     },
     {
+      "term": "shared buffers",
+      "aliases": [
+        "shared_buffers"
+      ],
+      "definition": "The area of memory where PostgreSQL keeps recently used data pages so repeated reads don't have to go to disk. It caches pages, not query results."
+    },
+    {
+      "term": "shared cache",
+      "aliases": [
+        "shared caches"
+      ],
+      "definition": "A cache that stores one copy of a response and serves it to many users, such as a CDN or reverse proxy. Personal data must never be stored in one."
+    },
+    {
       "term": "shell",
       "aliases": [],
       "definition": "The program that reads the commands you type in a terminal and runs them. On Ubuntu it is usually bash."
@@ -2358,6 +2717,11 @@
       "definition": "An attack where someone convinces a mobile carrier to move your phone number to their SIM card, so they receive your text messages and SMS codes."
     },
     {
+      "term": "skip list",
+      "aliases": [],
+      "definition": "A layered linked list that allows fast searching in sorted order. Redis uses one inside sorted sets."
+    },
+    {
       "term": "SNI",
       "aliases": [
         "Server Name Indication"
@@ -2373,6 +2737,13 @@
       "term": "SOCKS proxy",
       "aliases": [],
       "definition": "A general relay that forwards any kind of network traffic for an app. ssh -D turns an SSH connection into one."
+    },
+    {
+      "term": "sorted set",
+      "aliases": [
+        "sorted sets"
+      ],
+      "definition": "A Redis data type holding unique members, each with a numeric score, always kept in score order. Used for leaderboards and sliding-window rate limits."
     },
     {
       "term": "source of truth",
@@ -2409,6 +2780,11 @@
         "server-side request forgery"
       ],
       "definition": "An attack that makes your server fetch a URL the attacker chooses, often an internal address the attacker can't reach directly."
+    },
+    {
+      "term": "stale-while-revalidate",
+      "aliases": [],
+      "definition": "A Cache-Control directive (and caching strategy) that lets a cache keep serving an expired copy for a short time while it fetches a fresh one in the background."
     },
     {
       "term": "standard error",
@@ -2586,6 +2962,21 @@
       "definition": "Saving an event row in the same transaction as the data change, then having a worker publish it to other services, so neither can happen without the other."
     },
     {
+      "term": "transcoding",
+      "aliases": [
+        "transcode",
+        "transcoded"
+      ],
+      "definition": "Converting a video into other sizes and formats (for example 1080p, 720p, 480p) so it plays smoothly on any device."
+    },
+    {
+      "term": "transient error",
+      "aliases": [
+        "transient errors"
+      ],
+      "definition": "A temporary failure, like a timeout or a 503, that may succeed if you try again later."
+    },
+    {
       "term": "trust boundary",
       "aliases": [],
       "definition": "The point where data enters your system from a source you don't control, such as a request body. Everything crossing it must be checked."
@@ -2707,6 +3098,11 @@
       "definition": "A software-made computer running on a real one. It has its own operating system and behaves like a separate machine."
     },
     {
+      "term": "visibility timeout",
+      "aliases": [],
+      "definition": "In Amazon SQS, how long a received message stays hidden from other consumers. If it isn't deleted in time, it becomes visible and is redelivered."
+    },
+    {
       "term": "VPS",
       "aliases": [
         "virtual private server"
@@ -2759,6 +3155,13 @@
         "cost factor"
       ],
       "definition": "A setting that controls how slow a password hashing algorithm is, so it can be raised as computers get faster."
+    },
+    {
+      "term": "worker process",
+      "aliases": [
+        "worker processes"
+      ],
+      "definition": "A separate program whose only task is to take jobs from a queue and do them."
     },
     {
       "term": "worker threads",
