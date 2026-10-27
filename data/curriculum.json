@@ -1856,7 +1856,7 @@
           "summary": "Tracking numbers over time and getting woken up only when it matters.",
           "file": "content/p10-observability/metrics-alerts.md",
           "level": "intermediate",
-          "priority": "good-to-know",
+          "priority": "must-know",
           "minutes": 12,
           "tags": [
             "metrics",
@@ -1876,7 +1876,7 @@
           "file": "content/p10-observability/distributed-tracing.md",
           "level": "advanced",
           "priority": "good-to-know",
-          "minutes": 10,
+          "minutes": 11,
           "tags": [
             "tracing",
             "observability",
@@ -1895,7 +1895,7 @@
           "file": "content/p10-observability/health-checks.md",
           "level": "beginner",
           "priority": "must-know",
-          "minutes": 9,
+          "minutes": 11,
           "tags": [
             "monitoring",
             "reliability"
@@ -2307,7 +2307,7 @@
           "file": "content/p14-interview/star-method.md",
           "level": "beginner",
           "priority": "must-know",
-          "minutes": 10,
+          "minutes": 12,
           "tags": [
             "interview",
             "behavioral"
@@ -2325,7 +2325,7 @@
           "file": "content/p14-interview/production-bug-story.md",
           "level": "beginner",
           "priority": "must-know",
-          "minutes": 9,
+          "minutes": 11,
           "tags": [
             "interview",
             "behavioral",
@@ -2344,7 +2344,7 @@
           "file": "content/p14-interview/when-you-dont-know.md",
           "level": "beginner",
           "priority": "must-know",
-          "minutes": 7,
+          "minutes": 9,
           "tags": [
             "interview",
             "communication"

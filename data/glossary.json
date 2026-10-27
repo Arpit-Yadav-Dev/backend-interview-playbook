@@ -107,6 +107,16 @@
       "definition": "MongoDB's way of running multi-step queries, where documents pass through stages such as $match, $group, and $lookup (a join with another collection)."
     },
     {
+      "term": "alert fatigue",
+      "aliases": [],
+      "definition": "When so many alerts fire, mostly for nothing, that people start ignoring them, including the real ones."
+    },
+    {
+      "term": "Alertmanager",
+      "aliases": [],
+      "definition": "The Prometheus component that receives fired alerts, groups them, and sends notifications to Slack, email, or a pager."
+    },
+    {
       "term": "anycast",
       "aliases": [],
       "definition": "A routing method where the same IP address is announced from many locations, and the internet delivers each user to the nearest one."
@@ -299,6 +309,15 @@
       "definition": "A token that works for whoever holds it, like cash, with no further proof of identity."
     },
     {
+      "term": "behavioral question",
+      "aliases": [
+        "behavioral questions",
+        "behavioural question",
+        "behavioural questions"
+      ],
+      "definition": "An interview question about how you acted in a past situation, usually starting 'Tell me about a time...'."
+    },
+    {
       "term": "bind address",
       "aliases": [],
       "definition": "The IP address a server listens on. 127.0.0.1 accepts connections only from the same machine; 0.0.0.0 accepts them on every network interface."
@@ -451,6 +470,13 @@
         "canary deployment"
       ],
       "definition": "Sending a small share of traffic to a new version first, watching its metrics, and increasing the share only if it looks healthy."
+    },
+    {
+      "term": "cardinality",
+      "aliases": [
+        "metric cardinality"
+      ],
+      "definition": "For metrics, the number of distinct time series a metric creates: one per unique combination of label values. High cardinality uses lots of memory."
     },
     {
       "term": "CDN",
@@ -669,6 +695,11 @@
       "definition": "The HTTP header that says what format a body is in, such as application/json."
     },
     {
+      "term": "context propagation",
+      "aliases": [],
+      "definition": "Passing the trace ID and current span ID along with each outgoing call or message, so the next service joins the same trace."
+    },
+    {
       "term": "cookie",
       "aliases": [
         "cookies"
@@ -875,6 +906,11 @@
       "definition": "A lock stored in a shared place, such as Redis, that several servers respect, so only one of them does a piece of work at a time."
     },
     {
+      "term": "distributed tracing",
+      "aliases": [],
+      "definition": "Recording one request's path across several services as a tree of timed steps (spans), so you can see where time went."
+    },
+    {
       "term": "DNS",
       "aliases": [
         "Domain Name System"
@@ -1034,6 +1070,11 @@
       "definition": "A temporary port number the operating system picks for the client side of a connection, so replies can find their way back."
     },
     {
+      "term": "error budget",
+      "aliases": [],
+      "definition": "The amount of failure an SLO allows, such as 0.1% of requests. Teams slow down risky changes when it is being used up."
+    },
+    {
       "term": "error-handling middleware",
       "aliases": [
         "error handler"
@@ -1182,6 +1223,13 @@
       "definition": "A filter that decides which network traffic is allowed in or out of a machine, usually by port and address."
     },
     {
+      "term": "fix forward",
+      "aliases": [
+        "fixing forward"
+      ],
+      "definition": "Resolving a bad release by deploying a new fix instead of rolling back to the previous version."
+    },
+    {
       "term": "fixed window",
       "aliases": [
         "fixed-window counter"
@@ -1214,6 +1262,13 @@
       "term": "forward secrecy",
       "aliases": [],
       "definition": "A property of TLS key exchange: because each connection uses temporary keys, a server key stolen later can't decrypt traffic recorded in the past."
+    },
+    {
+      "term": "four golden signals",
+      "aliases": [
+        "golden signals"
+      ],
+      "definition": "Google SRE's core service metrics: latency, traffic, errors, and saturation."
     },
     {
       "term": "frontend",
@@ -1252,6 +1307,11 @@
       "term": "graceful shutdown",
       "aliases": [],
       "definition": "Stopping an app cleanly: stop accepting new requests, finish the ones in progress, close connections, then exit."
+    },
+    {
+      "term": "Grafana",
+      "aliases": [],
+      "definition": "An open-source tool for building dashboards and graphs from monitoring data such as Prometheus metrics."
     },
     {
       "term": "graph database",
@@ -1299,6 +1359,11 @@
       "term": "HATEOAS",
       "aliases": [],
       "definition": "Hypermedia as the engine of application state: API responses include links to related actions, so clients follow links instead of hard-coding URLs."
+    },
+    {
+      "term": "head sampling",
+      "aliases": [],
+      "definition": "Deciding at the start of a request whether to record its trace, for example keeping 10%. Cheap, but may drop rare errors."
     },
     {
       "term": "head-of-line blocking",
@@ -1776,11 +1841,25 @@
       "definition": "A PostgreSQL setting that makes a statement give up if it can't get its lock within the given time, instead of waiting and blocking queries behind it."
     },
     {
+      "term": "log level",
+      "aliases": [
+        "log levels"
+      ],
+      "definition": "A label for how serious a log line is, such as debug, info, warn, error, or fatal. Lines below the configured minimum level are dropped."
+    },
+    {
       "term": "log rotation",
       "aliases": [
         "logrotate"
       ],
       "definition": "Regularly renaming, compressing, and deleting old log files so they don't fill the disk."
+    },
+    {
+      "term": "log shipper",
+      "aliases": [
+        "log shippers"
+      ],
+      "definition": "A small agent, such as Fluent Bit, that copies log lines from servers to a central log store."
     },
     {
       "term": "logical backup",
@@ -2083,6 +2162,11 @@
       "definition": "A foreign key option that automatically deletes child rows when their parent row is deleted, such as an order's items when the order is deleted."
     },
     {
+      "term": "on-call",
+      "aliases": [],
+      "definition": "Being the engineer responsible for responding to production alerts, including outside working hours, for a set period."
+    },
+    {
       "term": "one-to-many",
       "aliases": [],
       "definition": "A relationship where one row is linked to many rows in another table, such as one user with many orders. The foreign key goes on the \"many\" side."
@@ -2100,6 +2184,13 @@
         "OIDC"
       ],
       "definition": "A layer on top of OAuth 2.0 for login. It gives the app a signed ID token saying who the user is."
+    },
+    {
+      "term": "OpenTelemetry",
+      "aliases": [
+        "OTel"
+      ],
+      "definition": "A vendor-neutral open standard and set of libraries for producing traces, metrics, and logs, which can send data to many backends."
     },
     {
       "term": "operating system",
@@ -2227,6 +2318,11 @@
       "definition": "PostgreSQL's tool for logical backups of one database. pg_restore loads its custom-format archives back in."
     },
     {
+      "term": "pg_stat_activity",
+      "aliases": [],
+      "definition": "A PostgreSQL system view listing every connection and the query it is currently running, with timing and wait information."
+    },
+    {
       "term": "pg_stat_statements",
       "aliases": [],
       "definition": "A PostgreSQL extension that records how often each query shape runs and how long it takes, used to find the most expensive queries."
@@ -2320,6 +2416,15 @@
       "definition": "A number from 0 to 65535 that says which program on a machine should receive network traffic, like an apartment number on a building."
     },
     {
+      "term": "post-mortem",
+      "aliases": [
+        "postmortem",
+        "post-mortems",
+        "blameless post-mortem"
+      ],
+      "definition": "A write-up after an incident: timeline, impact, root cause, and action items. Blameless ones focus on how the system allowed the failure, not on who."
+    },
+    {
       "term": "preflight request",
       "aliases": [
         "preflights"
@@ -2409,6 +2514,11 @@
         "programmer errors"
       ],
       "definition": "A bug in the code, such as reading a property of undefined. The client gets a generic 500 and developers fix the code."
+    },
+    {
+      "term": "Prometheus",
+      "aliases": [],
+      "definition": "An open-source monitoring system that regularly fetches (scrapes) numbers from apps, stores them as time series, and evaluates alert rules."
     },
     {
       "term": "protocol",
@@ -2566,6 +2676,11 @@
         "liveness probe"
       ],
       "definition": "Kubernetes health checks: readiness decides if a pod gets traffic; liveness decides if a stuck pod is restarted."
+    },
+    {
+      "term": "RED method",
+      "aliases": [],
+      "definition": "A checklist for monitoring anything that serves requests: Rate (requests per second), Errors, and Duration."
     },
     {
       "term": "redirect",
@@ -2731,6 +2846,13 @@
         "rolling update"
       ],
       "definition": "Updating servers to a new version a few at a time, so old and new code run side by side for a while and the site never goes fully down."
+    },
+    {
+      "term": "root cause",
+      "aliases": [
+        "root causes"
+      ],
+      "definition": "The underlying reason a problem happened, as opposed to its symptom. For example 'the endpoint was not idempotent', not 'orders were duplicated'."
     },
     {
       "term": "root directory",
@@ -3056,6 +3178,21 @@
       "definition": "A layered linked list that allows fast searching in sorted order. Redis uses one inside sorted sets."
     },
     {
+      "term": "SLI",
+      "aliases": [
+        "service level indicator"
+      ],
+      "definition": "A measured number describing service quality, such as the share of requests that succeed in under 1 second."
+    },
+    {
+      "term": "SLO",
+      "aliases": [
+        "service level objective",
+        "SLOs"
+      ],
+      "definition": "A target for a measured service quality, such as 99.9% of checkout requests succeeding over 30 days."
+    },
+    {
       "term": "SNI",
       "aliases": [
         "Server Name Indication"
@@ -3116,6 +3253,13 @@
       "definition": "An attack that makes your server fetch a URL the attacker chooses, often an internal address the attacker can't reach directly."
     },
     {
+      "term": "stack trace",
+      "aliases": [
+        "stack traces"
+      ],
+      "definition": "The list of function calls that led to an error, with file names and line numbers, showing where the error happened."
+    },
+    {
       "term": "stale-while-revalidate",
       "aliases": [],
       "definition": "A Cache-Control directive (and caching strategy) that lets a cache keep serving an expired copy for a short time while it fetches a fresh one in the background."
@@ -3133,6 +3277,18 @@
         "stdout"
       ],
       "definition": "The stream where a program writes its normal results. By default it goes to the screen, but it can be redirected to a file or piped to another program."
+    },
+    {
+      "term": "STAR method",
+      "aliases": [
+        "STAR"
+      ],
+      "definition": "A shape for behavioral answers: Situation, Task, Action, Result, with most time spent on the Action."
+    },
+    {
+      "term": "startup probe",
+      "aliases": [],
+      "definition": "A Kubernetes check that gives a slow-starting app time to boot before liveness checks begin."
     },
     {
       "term": "stateful firewall",
@@ -3169,6 +3325,14 @@
       "definition": "PostgreSQL's built-in replication: the primary streams its write-ahead log (WAL) records to replicas, which replay them to stay in sync."
     },
     {
+      "term": "structured log",
+      "aliases": [
+        "structured logs",
+        "structured logging"
+      ],
+      "definition": "A log line written as named fields, usually JSON, instead of a free-form sentence, so tools can search and filter by field."
+    },
+    {
       "term": "sudo",
       "aliases": [],
       "definition": "A command that runs one command with administrator (root) rights."
@@ -3201,6 +3365,11 @@
         "partitioning"
       ],
       "definition": "Splitting one large table into smaller pieces, such as one per month, on the same database server."
+    },
+    {
+      "term": "tail sampling",
+      "aliases": [],
+      "definition": "Deciding whether to keep a trace after it finishes, so all errors and slow traces can be kept. Needs a collector that buffers spans."
     },
     {
       "term": "TCP",
@@ -3239,6 +3408,18 @@
       "term": "throughput",
       "aliases": [],
       "definition": "How much work a system finishes per second, such as requests per second."
+    },
+    {
+      "term": "time series",
+      "aliases": [],
+      "definition": "A sequence of values of one metric over time, each with a timestamp. It is what a monitoring graph draws."
+    },
+    {
+      "term": "time to first byte",
+      "aliases": [
+        "TTFB"
+      ],
+      "definition": "How long from sending a request until the first byte of the response arrives. Mostly measures how long the server took to start answering."
     },
     {
       "term": "TIME_WAIT",
@@ -3286,6 +3467,20 @@
         "time-based one-time password"
       ],
       "definition": "A 6-digit login code that an authenticator app computes from a shared secret and the current time, changing every 30 seconds."
+    },
+    {
+      "term": "trace ID",
+      "aliases": [
+        "trace IDs"
+      ],
+      "definition": "A random ID shared by every step of one request across all services, used to group them into one trace."
+    },
+    {
+      "term": "traceparent",
+      "aliases": [
+        "traceparent header"
+      ],
+      "definition": "The W3C standard HTTP header that carries the trace ID, parent span ID, and sampling flag between services."
     },
     {
       "term": "transaction",
@@ -3401,11 +3596,24 @@
       "definition": "A contradiction caused by storing one fact in many rows and changing only some of them, such as a user with two different emails."
     },
     {
+      "term": "uptime monitor",
+      "aliases": [
+        "uptime monitoring",
+        "uptime monitors"
+      ],
+      "definition": "An outside service that requests your site regularly from the internet and alerts you when it fails, as a customer would see it."
+    },
+    {
       "term": "URL",
       "aliases": [
         "URLs"
       ],
       "definition": "Uniform Resource Locator: a web address, like https://shop.example.com/products/42."
+    },
+    {
+      "term": "USE method",
+      "aliases": [],
+      "definition": "A checklist for monitoring resources such as CPU, memory, and disk: Utilization, Saturation (queued work), and Errors."
     },
     {
       "term": "user enumeration",

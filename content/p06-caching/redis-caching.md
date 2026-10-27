@@ -70,6 +70,7 @@ import pg from 'pg';
 
 // A pool keeps a few database connections open and reuses them.
 export const db = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+db.on('error', (err) => console.error('Postgres pool error:', err.message)); // without this, a dropped DB connection crashes the app
 
 export const redis = createClient({
   url: process.env.REDIS_URL,      // e.g. redis://localhost:6379
