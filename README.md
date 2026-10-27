@@ -16,6 +16,7 @@ The path covers 14 phases and 119 topics. It runs from "what happens when you ty
 - **Continue button:** reopens your last topic and scrolls to the spot where you stopped.
 - **Topic pages:** a 30-second and a 2-minute spoken interview answer, follow-up questions with hidden answers, diagrams, and a tap-to-define glossary.
 - **Spaced revision:** a topic you mark done comes back after 3, 10, and 30 days.
+- **Practise out loud:** a 60-second explain-it-aloud drill and a 5-question mock interview built from each topic's interview answers. You rate yourself, and weak topics come back sooner. It runs entirely in your browser, free.
 - **Search:** covers every topic and glossary term.
 - **Works anywhere:** phones, light and dark mode, and printing.
 - **Private progress:** progress stays in your browser. Nothing is sent anywhere. You can export it, or move it between devices with a progress code.

@@ -36,7 +36,7 @@ function resolve({ parts, query }) {
     case 'path': return { name: 'path', render: () => renderPath(main, query) };
     case 'topic': return { name: 'topic', params: { id: a, section: b }, render: () => renderTopic(main, { id: a, section: b }) };
     case 'search': return { name: 'search', render: () => renderSearch(main, query) };
-    case 'revise': return { name: 'revise', render: () => renderRevise(main) };
+    case 'revise': return { name: 'revise', render: () => renderRevise(main, query) };
     case 'settings': return { name: 'settings', render: () => renderSettings(main) };
     default: return { name: 'missing', render: () => renderMissing() };
   }
