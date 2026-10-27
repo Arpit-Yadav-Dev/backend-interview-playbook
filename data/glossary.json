@@ -2,6 +2,11 @@
   "version": 1,
   "terms": [
     {
+      "term": ".dockerignore",
+      "aliases": [],
+      "definition": "A file listing paths to leave out of the Docker build context, such as node_modules, .git, and .env."
+    },
+    {
       "term": ".env file",
       "aliases": [
         ".env"
@@ -217,6 +222,14 @@
       "definition": "The default mode where each SQL statement runs as its own transaction and commits immediately."
     },
     {
+      "term": "availability zone",
+      "aliases": [
+        "availability zones",
+        "AZ"
+      ],
+      "definition": "One or more separate data centres inside a cloud region, with their own power and networking."
+    },
+    {
       "term": "B-tree",
       "aliases": [
         "B-trees"
@@ -291,12 +304,26 @@
       "definition": "The IP address a server listens on. 127.0.0.1 accepts connections only from the same machine; 0.0.0.0 accepts them on every network interface."
     },
     {
+      "term": "bind mount",
+      "aliases": [
+        "bind mounts"
+      ],
+      "definition": "A specific folder or file from the host made visible inside a container. Both sides see the same files."
+    },
+    {
       "term": "bitmap scan",
       "aliases": [
         "Bitmap Heap Scan",
         "Bitmap Index Scan"
       ],
       "definition": "A plan step that first collects all matching row locations from an index, then reads each needed table page once, in page order."
+    },
+    {
+      "term": "blue-green deployment",
+      "aliases": [
+        "blue-green"
+      ],
+      "definition": "Running the new version as a complete second environment and switching all traffic to it at once, keeping the old one ready for rollback."
     },
     {
       "term": "botnet",
@@ -311,6 +338,14 @@
         "bottlenecks"
       ],
       "definition": "The one part of a system that limits the speed or capacity of everything else. Speeding up other parts doesn't help until it's fixed."
+    },
+    {
+      "term": "bridge network",
+      "aliases": [
+        "user-defined network",
+        "Docker network"
+      ],
+      "definition": "A private virtual network on one host that containers join. On user-defined bridge networks, containers find each other by name."
     },
     {
       "term": "browser",
@@ -331,6 +366,18 @@
         "Binary JSON"
       ],
       "definition": "The binary, JSON-like format MongoDB stores and sends. It adds types JSON lacks, such as dates, 64-bit integers, Decimal128, and ObjectId."
+    },
+    {
+      "term": "build cache",
+      "aliases": [
+        "Docker build cache"
+      ],
+      "definition": "Docker's store of previously built layers. A layer is reused if its instruction and inputs are unchanged; the first change rebuilds every later layer."
+    },
+    {
+      "term": "build context",
+      "aliases": [],
+      "definition": "The folder sent to Docker by docker build. COPY can only use files from it, and .dockerignore removes files from it."
     },
     {
       "term": "BullMQ",
@@ -399,6 +446,13 @@
       "definition": "A function you pass to other code, so it can be called later, for example when a slow operation finishes."
     },
     {
+      "term": "canary release",
+      "aliases": [
+        "canary deployment"
+      ],
+      "definition": "Sending a small share of traffic to a new version first, watching its metrics, and increasing the share only if it looks healthy."
+    },
+    {
       "term": "CDN",
       "aliases": [
         "content delivery network"
@@ -426,6 +480,14 @@
       "definition": "A trusted organisation that signs certificates, vouching that a server really owns a domain name."
     },
     {
+      "term": "cgroup",
+      "aliases": [
+        "cgroups",
+        "control groups"
+      ],
+      "definition": "A Linux kernel feature that limits what a group of processes can use, such as memory and CPU. Docker's --memory flag uses it."
+    },
+    {
       "term": "chain of trust",
       "aliases": [
         "certificate chain"
@@ -448,6 +510,15 @@
       "term": "chown",
       "aliases": [],
       "definition": "The Linux command that changes which user and group own a file, for example chown deploy:www-data file."
+    },
+    {
+      "term": "CI/CD",
+      "aliases": [
+        "continuous integration",
+        "continuous delivery",
+        "continuous deployment"
+      ],
+      "definition": "Automatically testing every change (CI), and building and releasing it the same way every time (CD)."
     },
     {
       "term": "CIDR notation",
@@ -482,6 +553,13 @@
       "definition": "The small difference between two machines' clocks, which time-based checks must tolerate."
     },
     {
+      "term": "cloud region",
+      "aliases": [
+        "AWS region"
+      ],
+      "definition": "A geographic area where a cloud provider has data centres, such as eu-west-1."
+    },
+    {
       "term": "cluster mode",
       "aliases": [],
       "definition": "Running several copies of a Node app on one machine, sharing one port, so it can use every CPU core."
@@ -492,6 +570,13 @@
         "CNAME record"
       ],
       "definition": "A DNS record that makes one name an alias of another name, so the resolver looks up the other name instead."
+    },
+    {
+      "term": "cold start",
+      "aliases": [
+        "cold starts"
+      ],
+      "definition": "The extra delay when a serverless platform must create a fresh environment before running a function."
     },
     {
       "term": "compensating action",
@@ -519,6 +604,11 @@
       "term": "congestion control",
       "aliases": [],
       "definition": "TCP's way of slowing down when packets are lost, because loss usually means the network is overloaded."
+    },
+    {
+      "term": "connection draining",
+      "aliases": [],
+      "definition": "Stopping new requests to an instance and letting in-flight ones finish before shutting it down."
     },
     {
       "term": "connection leak",
@@ -560,6 +650,13 @@
       "definition": "An app packaged with everything it needs, running isolated from other apps but sharing the host machine's operating system kernel."
     },
     {
+      "term": "container registry",
+      "aliases": [
+        "image registry"
+      ],
+      "definition": "A server that stores Docker images, such as Docker Hub or GitHub Container Registry. You push images to it and pull them from it."
+    },
+    {
       "term": "Content Security Policy",
       "aliases": [
         "CSP"
@@ -577,6 +674,11 @@
         "cookies"
       ],
       "definition": "A small piece of text a server asks the browser to store and send back automatically with later requests to that site."
+    },
+    {
+      "term": "copy-on-write",
+      "aliases": [],
+      "definition": "Copying a shared file only at the moment something changes it, so unchanged files are never duplicated."
     },
     {
       "term": "correlation ID",
@@ -747,6 +849,20 @@
       "definition": "Treating every action as forbidden unless a rule explicitly allows it, so a forgotten check blocks access instead of leaking data."
     },
     {
+      "term": "Deployment (Kubernetes)",
+      "aliases": [
+        "Kubernetes Deployment"
+      ],
+      "definition": "A Kubernetes object that manages ReplicaSets and performs rolling updates and rollbacks."
+    },
+    {
+      "term": "devDependencies",
+      "aliases": [
+        "devDependency"
+      ],
+      "definition": "npm packages needed only to build or test an app, such as TypeScript or a test runner, and not to run it."
+    },
+    {
       "term": "dirty read",
       "aliases": [],
       "definition": "Reading another transaction's change before it commits. If it rolls back, you acted on data that never existed. PostgreSQL never allows it."
@@ -797,11 +913,31 @@
       "definition": "A tool that builds and runs containers, so an app runs the same way on a laptop and on a server."
     },
     {
+      "term": "Docker Compose",
+      "aliases": [],
+      "definition": "A tool that defines and runs a multi-container app from one YAML file, with one command."
+    },
+    {
       "term": "Docker image",
       "aliases": [
         "container image"
       ],
       "definition": "A read-only template with an app and its dependencies. Running an image creates a container."
+    },
+    {
+      "term": "Docker volume",
+      "aliases": [
+        "named volume",
+        "named volumes"
+      ],
+      "definition": "Storage managed by Docker that lives outside a container, so its data survives when the container is deleted."
+    },
+    {
+      "term": "Dockerfile",
+      "aliases": [
+        "Dockerfiles"
+      ],
+      "definition": "A text file of instructions, one per line, that Docker follows to build an image."
     },
     {
       "term": "document database",
@@ -826,6 +962,11 @@
       "definition": "A company that sells and registers domain names for you."
     },
     {
+      "term": "downtime",
+      "aliases": [],
+      "definition": "Time when users cannot use an app."
+    },
+    {
       "term": "dual write",
       "aliases": [
         "dual-write problem"
@@ -843,6 +984,11 @@
         "eager-loading"
       ],
       "definition": "Telling the ORM up front which related data you need, so it fetches it in bulk instead of one row at a time."
+    },
+    {
+      "term": "EC2",
+      "aliases": [],
+      "definition": "Amazon's virtual machine service: rent a server by the second and manage everything from the OS up."
     },
     {
       "term": "edge server",
@@ -969,6 +1115,11 @@
       "definition": "The number a program returns when it finishes. 0 means success; anything else means some kind of failure."
     },
     {
+      "term": "exit code 137",
+      "aliases": [],
+      "definition": "The exit code of a process killed with SIGKILL (128 + 9). In containers it often means the memory limit was exceeded."
+    },
+    {
       "term": "expand and contract",
       "aliases": [
         "parallel change"
@@ -996,6 +1147,13 @@
       "term": "failover",
       "aliases": [],
       "definition": "Promoting a replica to become the new primary when the current primary fails, so the app can keep writing."
+    },
+    {
+      "term": "feature flag",
+      "aliases": [
+        "feature flags"
+      ],
+      "definition": "A runtime setting that turns a feature on or off without a deploy."
     },
     {
       "term": "file descriptor",
@@ -1068,6 +1226,29 @@
       "definition": "Both sides of a connection can send data at the same time, independently."
     },
     {
+      "term": "Git commit hash",
+      "aliases": [
+        "commit hash",
+        "commit SHA"
+      ],
+      "definition": "The unique ID of a Git commit, such as 7f3c2a1. Often used to tag images so you know exactly what code is running."
+    },
+    {
+      "term": "GitHub Actions",
+      "aliases": [],
+      "definition": "GitHub's built-in CI/CD service. Workflows contain jobs, jobs run steps, and each job runs on a fresh runner."
+    },
+    {
+      "term": "GitHub Actions runner",
+      "aliases": [],
+      "definition": "A fresh virtual machine that runs one GitHub Actions job and is thrown away afterwards."
+    },
+    {
+      "term": "GitHub Actions workflow",
+      "aliases": [],
+      "definition": "In GitHub Actions, a YAML file in .github/workflows that says when to run and which jobs to run."
+    },
+    {
       "term": "graceful shutdown",
       "aliases": [],
       "definition": "Stopping an app cleanly: stop accepting new requests, finish the ones in progress, close connections, then exit."
@@ -1138,6 +1319,14 @@
         "headless server"
       ],
       "definition": "A computer with no screen, keyboard, or mouse attached. You control it remotely, usually over SSH."
+    },
+    {
+      "term": "health check",
+      "aliases": [
+        "health checks",
+        "healthcheck"
+      ],
+      "definition": "A command or request run regularly to test whether an app really works, not just whether its process is running."
     },
     {
       "term": "Helmet",
@@ -1248,6 +1437,13 @@
       "definition": "Work that spends most of its time waiting for something outside the program, such as a database query or a network call."
     },
     {
+      "term": "IAM role",
+      "aliases": [
+        "IAM"
+      ],
+      "definition": "In AWS, a set of permissions given to a server or service, so it gets short-lived credentials instead of stored passwords."
+    },
+    {
       "term": "ID token",
       "aliases": [
         "ID tokens"
@@ -1274,6 +1470,23 @@
         "insecure direct object reference"
       ],
       "definition": "A bug where changing an ID in a request, like /orders/5002, reveals someone else's data because the server doesn't check ownership."
+    },
+    {
+      "term": "image digest",
+      "aliases": [],
+      "definition": "A SHA-256 fingerprint calculated from an image's or layer's content. The same content always has the same digest."
+    },
+    {
+      "term": "image layer",
+      "aliases": [
+        "Docker layer"
+      ],
+      "definition": "One slice of a Docker image: the files added, changed, or deleted by one Dockerfile instruction. Layers are shared between images and cached."
+    },
+    {
+      "term": "image tag",
+      "aliases": [],
+      "definition": "A human-friendly name for one version of a Docker image, such as shop-api:1.4.0. Tags can be moved, unlike digests."
     },
     {
       "term": "in-process cache",
@@ -1435,6 +1648,40 @@
       "term": "key-value store",
       "aliases": [],
       "definition": "A database that stores values under names (keys), like a giant dictionary or JavaScript object."
+    },
+    {
+      "term": "Kubernetes",
+      "aliases": [
+        "K8s"
+      ],
+      "definition": "The most widely used container orchestrator. You declare the desired state and it keeps the cluster matching it."
+    },
+    {
+      "term": "Kubernetes cluster",
+      "aliases": [],
+      "definition": "A group of machines managed together, for example by Kubernetes."
+    },
+    {
+      "term": "Kubernetes pod",
+      "aliases": [
+        "pod",
+        "pods"
+      ],
+      "definition": "The smallest unit Kubernetes runs: one or more containers that share an IP address. Pods are replaced, not repaired."
+    },
+    {
+      "term": "Kubernetes Service",
+      "aliases": [
+        "ClusterIP"
+      ],
+      "definition": "A stable name and virtual IP in front of a changing set of pods, which it selects by label."
+    },
+    {
+      "term": "Lambda",
+      "aliases": [
+        "AWS Lambda"
+      ],
+      "definition": "Amazon's serverless functions: code that runs when an event arrives, billed per request and run time."
     },
     {
       "term": "latency",
@@ -1660,6 +1907,13 @@
       "definition": "Requiring two or more different kinds of evidence to log in, such as a password plus a code from your phone."
     },
     {
+      "term": "multi-stage build",
+      "aliases": [
+        "multi-stage builds"
+      ],
+      "definition": "A Dockerfile with several FROM stages, where a later stage copies only the finished output from an earlier one, so build tools stay out of the final image."
+    },
+    {
       "term": "multipart/form-data",
       "aliases": [
         "multipart form"
@@ -1691,6 +1945,14 @@
         "N+1"
       ],
       "definition": "Running one query to get a list of N items, then one more query per item, instead of fetching the related data in one batch."
+    },
+    {
+      "term": "namespace",
+      "aliases": [
+        "namespaces",
+        "Linux namespaces"
+      ],
+      "definition": "A Linux kernel feature that limits what a process can see, such as other processes, network interfaces, or files. Containers are built from them."
     },
     {
       "term": "NAT",
@@ -1755,6 +2017,11 @@
       "term": "NoSQL",
       "aliases": [],
       "definition": "\"Not only SQL\": a loose name for databases that don't use tables and joins, such as document, key-value, wide-column, and graph databases."
+    },
+    {
+      "term": "npm ci",
+      "aliases": [],
+      "definition": "An npm command that installs exactly the versions in package-lock.json and fails if they don't match package.json. Made for automated builds."
     },
     {
       "term": "NS record",
@@ -1835,6 +2102,13 @@
       "definition": "A layer on top of OAuth 2.0 for login. It gives the app a signed ID token saying who the user is."
     },
     {
+      "term": "operating system",
+      "aliases": [
+        "OS"
+      ],
+      "definition": "The base software that runs a computer, such as Ubuntu or Windows, and lets other programs use its hardware."
+    },
+    {
       "term": "operational error",
       "aliases": [
         "operational errors"
@@ -1847,6 +2121,13 @@
         "pessimistic locking"
       ],
       "definition": "Optimistic: don't lock, but check a version number at write time and retry on conflict. Pessimistic: lock the rows first so others wait."
+    },
+    {
+      "term": "orchestrator",
+      "aliases": [
+        "container orchestrator"
+      ],
+      "definition": "A system that places, connects, heals, and updates containers across many machines, such as Kubernetes."
     },
     {
       "term": "origin",
@@ -1987,6 +2268,11 @@
         "PIDs"
       ],
       "definition": "The unique number Linux gives each running process. You use it to inspect or signal that process."
+    },
+    {
+      "term": "PID 1",
+      "aliases": [],
+      "definition": "The first process in a container (or system). Linux does not apply default signal actions to it, so it must handle SIGTERM itself."
     },
     {
       "term": "PKCE",
@@ -2163,6 +2449,22 @@
       "definition": "The shareable half of a key pair. Servers store it to recognise you."
     },
     {
+      "term": "publishing a port",
+      "aliases": [
+        "published port",
+        "port publishing"
+      ],
+      "definition": "Telling Docker to forward traffic from a host port to a container port, such as -p 8080:3000. On Linux, published ports bypass ufw."
+    },
+    {
+      "term": "pull request",
+      "aliases": [
+        "pull requests",
+        "PR"
+      ],
+      "definition": "A request to merge a branch into another, usually main, where teammates review the change and CI runs."
+    },
+    {
       "term": "query",
       "aliases": [
         "queries"
@@ -2244,6 +2546,11 @@
       "definition": "Capping how many requests a client can make in a period of time, and rejecting the rest."
     },
     {
+      "term": "RDS",
+      "aliases": [],
+      "definition": "Amazon's managed relational database service, which handles patching, backups, and failover for you."
+    },
+    {
       "term": "read replica",
       "aliases": [
         "read replicas",
@@ -2252,6 +2559,13 @@
         "standby server"
       ],
       "definition": "A copy of the database that receives every change from the primary (the one server that takes writes) and serves reads only."
+    },
+    {
+      "term": "readiness probe",
+      "aliases": [
+        "liveness probe"
+      ],
+      "definition": "Kubernetes health checks: readiness decides if a pod gets traffic; liveness decides if a stuck pod is restarted."
     },
     {
       "term": "redirect",
@@ -2328,6 +2642,13 @@
       "definition": "A group of MongoDB servers holding copies of the same data: one primary that takes writes and secondaries that follow it and can take over."
     },
     {
+      "term": "ReplicaSet",
+      "aliases": [
+        "ReplicaSets"
+      ],
+      "definition": "A Kubernetes object that keeps a set number of identical pods running."
+    },
+    {
       "term": "replication",
       "aliases": [
         "database replication"
@@ -2394,6 +2715,14 @@
         "RBAC"
       ],
       "definition": "Giving permissions to roles like seller or admin, and giving roles to users, instead of granting permissions person by person."
+    },
+    {
+      "term": "rollback",
+      "aliases": [
+        "roll back",
+        "rolling back"
+      ],
+      "definition": "Returning to the previous version of an app after a bad release."
     },
     {
       "term": "rolling deploy",
@@ -2474,6 +2803,11 @@
         "recovery time objective"
       ],
       "definition": "Recovery time objective: how long you can afford to be down while restoring from a failure."
+    },
+    {
+      "term": "S3",
+      "aliases": [],
+      "definition": "Amazon's object storage: files stored in buckets under keys, read and written over HTTPS."
     },
     {
       "term": "S3 multipart upload",
@@ -2927,6 +3261,13 @@
       "definition": "Decrypting HTTPS traffic at a proxy or load balancer, which then forwards plain HTTP to the app behind it."
     },
     {
+      "term": "tmpfs mount",
+      "aliases": [
+        "tmpfs"
+      ],
+      "definition": "A mount stored only in memory, which disappears when the container stops."
+    },
+    {
       "term": "token bucket",
       "aliases": [],
       "definition": "A rate limiting algorithm where tokens refill at a steady rate and each request spends one, which allows short bursts."
@@ -3037,6 +3378,14 @@
         "unhandled promise rejection"
       ],
       "definition": "A promise that failed with nobody handling the error. Since Node.js 15, it crashes the process by default."
+    },
+    {
+      "term": "union filesystem",
+      "aliases": [
+        "overlayfs",
+        "overlay filesystem"
+      ],
+      "definition": "A filesystem that stacks several folders so they look like one, with higher layers hiding lower ones. Docker uses it to combine image layers."
     },
     {
       "term": "unit file",
@@ -3186,6 +3535,18 @@
         "cross-site scripting"
       ],
       "definition": "Cross-site scripting: an attacker gets their own JavaScript to run on your pages, where it can read page data and act as the user."
+    },
+    {
+      "term": "YAML",
+      "aliases": [],
+      "definition": "A text format for configuration files that uses indentation to show structure."
+    },
+    {
+      "term": "zero-downtime deployment",
+      "aliases": [
+        "zero downtime"
+      ],
+      "definition": "Releasing a new version without users noticing any interruption."
     },
     {
       "term": "zod",
