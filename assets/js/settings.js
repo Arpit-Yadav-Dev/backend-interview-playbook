@@ -59,6 +59,12 @@ export function renderSettings(main) {
       <p class="form-msg" id="progress-msg" role="status"></p>
     </section>
 
+    <section class="settings-block" aria-labelledby="set-help">
+      <h2 id="set-help">Help</h2>
+      <p class="muted small">Show the "How to use this site" guide on the home page again.</p>
+      <div class="button-row"><button type="button" class="btn" id="show-intro">Show the guide again</button></div>
+    </section>
+
     <section class="settings-block settings-danger" aria-labelledby="set-reset">
       <h2 id="set-reset">Start over</h2>
       <p class="muted small">Erases every status, note, and history entry in this browser. Export first if you might want it back.</p>
@@ -81,6 +87,11 @@ export function renderSettings(main) {
       P.setSetting('theme', r.value);
       announce(`Theme: ${r.parentElement.textContent.trim()}`);
     });
+  });
+
+  main.querySelector('#show-intro').addEventListener('click', () => {
+    P.setSetting('introDismissed', false);
+    location.hash = '#/';
   });
 
   main.querySelector('#must-know').addEventListener('change', (e) => {

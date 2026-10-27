@@ -27,10 +27,14 @@ function intro() {
   <section class="intro" aria-labelledby="intro-title">
     <h2 id="intro-title">How to use this site</h2>
     <ol>
-      <li><strong>Follow the path in order.</strong> Each topic only relies on topics that come before it.</li>
-      <li><strong>Read, then say it out loud.</strong> Every topic ends with a 30-second and a 2-minute interview answer. Practise them aloud, not just in your head.</li>
-      <li><strong>Mark a topic done only when you can explain it without looking.</strong> Done topics come back for revision after 3, 10, and 30 days.</li>
-      <li><strong>Your progress stays in this browser.</strong> To move it to another device, use <a href="#/settings">Export progress</a> or a progress code.</li>
+      <li><strong>Follow the path in order.</strong> Open <a href="#/path">Path</a> and start at the first stop. Each topic only uses ideas from the topics before it. The <strong>Continue</strong> button always takes you back to where you stopped.</li>
+      <li><strong>Read for understanding, not memory.</strong> Every topic starts with the problem it solves and an everyday analogy, then shows how it works with a diagram and a real example.</li>
+      <li><strong>Tap underlined words.</strong> A dotted underline means the word has a plain-English definition. Tap it (or hover on a computer) to see it.</li>
+      <li><strong>Short on time? Switch to Quick review.</strong> At the top of every topic, <strong>Quick review</strong> shows only the one-liner, how it works, the interview answers, and the self-check.</li>
+      <li><strong>Say the answers out loud.</strong> Each topic has a 30-second and a 2-minute interview answer, plus follow-up questions with hidden answers. Try answering before you tap to reveal.</li>
+      <li><strong>Mark a topic Done only when you can explain it without looking.</strong> Done topics come back on the <a href="#/revise">Revise</a> page after 3, 10, and 30 days.</li>
+      <li><strong>Practise like a real interview.</strong> On <a href="#/revise">Revise</a>, use <strong>Practise out loud</strong>: answer a question in 60 seconds, compare with the model answer, and rate yourself. The mock interview asks 5 questions and lists your weak topics.</li>
+      <li><strong>Your progress stays in this browser.</strong> Nothing is sent anywhere. To continue on another device, copy your <a href="#/settings">progress code</a> in Settings and paste it on the other device.</li>
     </ol>
     <button type="button" class="btn btn-quiet" id="dismiss-intro">Got it, hide this</button>
   </section>`;
