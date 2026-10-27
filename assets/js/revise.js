@@ -1,6 +1,4 @@
-// Revision page. Phase A: lists what is due and what was marked "Revise later".
-// The explain-aloud drill and mock interview mode are built in Phase D, once
-// topics have real interview questions to draw from.
+// Revision page: lists what is due and what was marked "Revise later".
 
 import { getTopic, lineVar, nextUnfinished } from './curriculum.js';
 import { esc, statusIcon, SITE_NAME, formatDate } from './ui.js';
@@ -55,8 +53,8 @@ export function renderRevise(main) {
     </section>` : ''}
 
     <aside class="callout callout--note">
-      <p class="callout-title"><span>Practice drills are on the way</span></p>
-      <div class="callout-body"><p>A timed explain-it-aloud drill and a five-question mock interview will appear here once topics have their interview questions written.</p></div>
+      <p class="callout-title"><span>How to revise a topic</span></p>
+      <div class="callout-body"><p>Open it, read only the 30-second answer, then close your eyes and say it out loud. If you get stuck, switch the topic to <strong>Quick review</strong> and reread the core sections.</p></div>
     </aside>
   </div>`;
   return null;
