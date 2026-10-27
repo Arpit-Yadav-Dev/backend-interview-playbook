@@ -124,6 +124,14 @@
       "definition": "MongoDB's way of running multi-step queries, where documents pass through stages such as $match, $group, and $lookup (a join with another collection)."
     },
     {
+      "term": "AI coding assistant",
+      "aliases": [
+        "AI coding tools",
+        "AI coding tool"
+      ],
+      "definition": "A tool built on an LLM that helps write code: autocompleting lines, answering questions, or editing files and running commands as an agent."
+    },
+    {
       "term": "alert fatigue",
       "aliases": [],
       "definition": "When so many alerts fire, mostly for nothing, that people start ignoring them, including the real ones."
@@ -182,6 +190,15 @@
       "definition": "Apple's service that delivers push notifications to iPhones, iPads, and Macs."
     },
     {
+      "term": "approximate nearest neighbour",
+      "aliases": [
+        "approximate nearest neighbor",
+        "ANN index",
+        "HNSW"
+      ],
+      "definition": "A search index (HNSW is a common type) that finds vectors close to a query very quickly by occasionally missing an exact best match."
+    },
+    {
       "term": "Argon2id",
       "aliases": [
         "Argon2"
@@ -201,6 +218,13 @@
         "arrow functions"
       ],
       "definition": "A short function syntax, (x) => x * 2. It has no this of its own and uses the this of the surrounding code."
+    },
+    {
+      "term": "assertion",
+      "aliases": [
+        "assertions"
+      ],
+      "definition": "The line in a test that checks a result, such as assert.equal(total, 2598). If it is false, the test fails."
     },
     {
       "term": "asymmetric encryption",
@@ -755,6 +779,20 @@
       "definition": "A DNS record that makes one name an alias of another name, so the resolver looks up the other name instead."
     },
     {
+      "term": "code coverage",
+      "aliases": [
+        "test coverage"
+      ],
+      "definition": "The percentage of code lines or branches that ran during the tests. It shows untested code, but not whether the tests check the right things."
+    },
+    {
+      "term": "code review",
+      "aliases": [
+        "code reviews"
+      ],
+      "definition": "A teammate reading a change before it is merged, checking correctness, security, design, and tests."
+    },
+    {
       "term": "code splitting",
       "aliases": [],
       "definition": "Splitting a JavaScript bundle into smaller files so each page or feature downloads only the code it needs."
@@ -869,6 +907,11 @@
       "definition": "Passing the trace ID and current span ID along with each outgoing call or message, so the next service joins the same trace."
     },
     {
+      "term": "context window",
+      "aliases": [],
+      "definition": "The most tokens (pieces of text) one LLM request can hold, counting both what you send and what the model writes back."
+    },
+    {
       "term": "contrast ratio",
       "aliases": [],
       "definition": "How different text and background colours are in brightness. WCAG AA needs at least 4.5:1 for normal text."
@@ -908,6 +951,13 @@
         "cross-origin resource sharing"
       ],
       "definition": "Cross-Origin Resource Sharing: the rules a browser follows before letting a page read responses from a different origin, and the headers a server sends to allow it."
+    },
+    {
+      "term": "cosine similarity",
+      "aliases": [
+        "cosine distance"
+      ],
+      "definition": "A measure of how closely two vectors point in the same direction: 1 means the same meaning, near 0 means unrelated. Cosine distance is 1 minus the similarity."
     },
     {
       "term": "covering index",
@@ -1093,11 +1143,21 @@
       "definition": "The list passed as the last argument to hooks like useEffect and useMemo. React re-runs the hook only when a value in it changes."
     },
     {
+      "term": "dependency injection",
+      "aliases": [],
+      "definition": "Passing the things a piece of code depends on (database, payment client) in as arguments, instead of creating them inside, so tests can pass in test doubles."
+    },
+    {
       "term": "Deployment (Kubernetes)",
       "aliases": [
         "Kubernetes Deployment"
       ],
       "definition": "A Kubernetes object that manages ReplicaSets and performs rolling updates and rollbacks."
+    },
+    {
+      "term": "detached HEAD",
+      "aliases": [],
+      "definition": "A Git state where HEAD points directly at a commit instead of a branch, so new commits there are easy to lose unless you create a branch."
     },
     {
       "term": "devDependencies",
@@ -1273,11 +1333,28 @@
       "definition": "Data sent out of a data centre or cloud provider to the internet. Cloud providers usually charge for it."
     },
     {
+      "term": "embedding",
+      "aliases": [
+        "embeddings",
+        "embedding model"
+      ],
+      "definition": "A list of numbers (a vector) that represents the meaning of a piece of text, so texts with similar meanings get similar numbers."
+    },
+    {
       "term": "encryption",
       "aliases": [
         "encrypted"
       ],
       "definition": "Scrambling data so only someone with the right key can turn it back into readable form."
+    },
+    {
+      "term": "end-to-end test",
+      "aliases": [
+        "end-to-end tests",
+        "E2E test",
+        "E2E tests"
+      ],
+      "definition": "A test that drives the whole running app like a user would, usually through a real browser, for journeys like sign-up or checkout."
     },
     {
       "term": "endpoint",
@@ -1380,6 +1457,11 @@
       "definition": "The ideal where each message has its effect exactly one time. In practice it is achieved with at-least-once delivery plus idempotent consumers."
     },
     {
+      "term": "excessive agency",
+      "aliases": [],
+      "definition": "OWASP's name for giving an AI system more tools, permissions, or autonomy than it needs, so a manipulated model can do real damage."
+    },
+    {
       "term": "exit code",
       "aliases": [
         "exit codes",
@@ -1437,6 +1519,13 @@
       "definition": "Copying one message or event to many recipients, such as every member of a group chat."
     },
     {
+      "term": "fast-forward",
+      "aliases": [
+        "fast-forward merge"
+      ],
+      "definition": "A Git merge where the target branch has no new commits of its own, so Git just moves its pointer forward without a merge commit."
+    },
+    {
       "term": "FCM",
       "aliases": [
         "Firebase Cloud Messaging"
@@ -1470,6 +1559,14 @@
       "definition": "The read, write, and execute rights on a file, set separately for its owner, its group, and everyone else."
     },
     {
+      "term": "fine-tuning",
+      "aliases": [
+        "fine-tune",
+        "fine-tuned"
+      ],
+      "definition": "Further training an existing AI model on your own examples to change its behaviour or style. It changes the model itself, unlike RAG."
+    },
+    {
       "term": "fingerprint",
       "aliases": [],
       "definition": "A short summary of a key, used to check quickly that two keys are the same."
@@ -1496,6 +1593,14 @@
       "definition": "A rate limiting algorithm that counts requests per clock period, like per minute, and resets the count when the period ends."
     },
     {
+      "term": "flaky test",
+      "aliases": [
+        "flaky tests",
+        "flaky"
+      ],
+      "definition": "A test that sometimes fails without any real bug, usually because of timing, shared data, or network calls."
+    },
+    {
       "term": "flame graph",
       "aliases": [],
       "definition": "A chart of profiler results where each bar is a function and wider bars mean more CPU time."
@@ -1509,6 +1614,13 @@
       "term": "flow control",
       "aliases": [],
       "definition": "TCP's way of stopping a fast sender from overwhelming a slow receiver: the receiver keeps saying how much more data it has room for."
+    },
+    {
+      "term": "force-with-lease",
+      "aliases": [
+        "--force-with-lease"
+      ],
+      "definition": "A safer git push --force that refuses to overwrite the remote branch if it has commits you haven't seen."
     },
     {
       "term": "foreign key",
@@ -1545,6 +1657,14 @@
       "definition": "Both sides of a connection can send data at the same time, independently."
     },
     {
+      "term": "function calling",
+      "aliases": [
+        "tool calling",
+        "tool use"
+      ],
+      "definition": "An LLM feature where the model outputs a structured request to run one of your functions, such as looking up an order. Your code decides whether to run it."
+    },
+    {
       "term": "functional requirement",
       "aliases": [
         "functional requirements"
@@ -1557,6 +1677,24 @@
         "garbage collection"
       ],
       "definition": "The part of the JavaScript engine that automatically frees memory used by values nothing can reach any more."
+    },
+    {
+      "term": "Git",
+      "aliases": [],
+      "definition": "The most widely used version control system: it records every change to a project as commits and lets people work on branches in parallel."
+    },
+    {
+      "term": "Git branch",
+      "aliases": [
+        "feature branch",
+        "feature branches"
+      ],
+      "definition": "A movable label pointing at one commit. Committing on a branch moves the label forward. Creating one copies nothing."
+    },
+    {
+      "term": "Git commit",
+      "aliases": [],
+      "definition": "A saved snapshot of the whole project in Git, with a message, author, a pointer to the previous commit, and a unique hash as its ID."
     },
     {
       "term": "Git commit hash",
@@ -1622,6 +1760,14 @@
       "term": "gRPC-Web",
       "aliases": [],
       "definition": "A variant of the gRPC protocol that browsers can use, usually translated to real gRPC by a proxy such as Envoy."
+    },
+    {
+      "term": "hallucination",
+      "aliases": [
+        "hallucinate",
+        "hallucinations"
+      ],
+      "definition": "When an AI model confidently produces something false, such as an invented fact, function, or package name."
     },
     {
       "term": "handshake",
@@ -1793,6 +1939,11 @@
       "definition": "HTTP sent inside an encrypted TLS connection, so nobody in between can read or change it."
     },
     {
+      "term": "hybrid search",
+      "aliases": [],
+      "definition": "Combining keyword search with embedding (meaning-based) search, so both exact terms like product codes and similar meanings are found."
+    },
+    {
       "term": "hydration",
       "aliases": [
         "hydrate",
@@ -1905,6 +2056,14 @@
       "definition": "How long the page takes to show a response after clicks, taps, and key presses, near the worst case for a visit. Good is 200 ms or less."
     },
     {
+      "term": "integration test",
+      "aliases": [
+        "integration tests",
+        "integration testing"
+      ],
+      "definition": "A test that checks several parts working together with real dependencies, such as an API route against a real test database."
+    },
+    {
       "term": "intermediate certificate",
       "aliases": [
         "intermediate certificates"
@@ -1934,6 +2093,13 @@
         "isolation levels"
       ],
       "definition": "A setting that decides how much concurrent transactions can see of each other's changes: read committed, repeatable read, or serializable."
+    },
+    {
+      "term": "jailbreak",
+      "aliases": [
+        "jailbreaking"
+      ],
+      "definition": "A form of prompt injection that tries to make an AI model ignore its safety rules."
     },
     {
       "term": "JavaScript bundle",
@@ -2181,6 +2347,11 @@
       "definition": "The rule that where a variable can be used is decided by where it is written in the code, not by when the code runs."
     },
     {
+      "term": "LGTM",
+      "aliases": [],
+      "definition": "\"Looks good to me\": shorthand reviewers use to approve a pull request."
+    },
+    {
       "term": "libuv",
       "aliases": [],
       "definition": "The C library inside Node.js that provides the event loop, talks to the operating system for network I/O, and runs a small thread pool."
@@ -2194,6 +2365,14 @@
       "term": "linearizability",
       "aliases": [],
       "definition": "The strict consistency in CAP: the system behaves as if there were a single copy of the data, so every read sees the latest completed write."
+    },
+    {
+      "term": "linter",
+      "aliases": [
+        "linters",
+        "ESLint"
+      ],
+      "definition": "A tool that scans code for likely bugs and style problems without running it."
     },
     {
       "term": "Linux",
@@ -2211,6 +2390,15 @@
         "aria-live"
       ],
       "definition": "An element whose content changes are announced automatically by screen readers, used for updates like 'Added to cart'."
+    },
+    {
+      "term": "LLM",
+      "aliases": [
+        "large language model",
+        "LLMs",
+        "large language models"
+      ],
+      "definition": "A large language model: a program trained on huge amounts of text that writes text by predicting what most plausibly comes next. ChatGPT and Claude are built on LLMs."
     },
     {
       "term": "load average",
@@ -2380,6 +2568,18 @@
         "RAM"
       ],
       "definition": "The computer's fast, temporary working storage. Much faster than disk, but smaller and cleared on restart."
+    },
+    {
+      "term": "merge commit",
+      "aliases": [],
+      "definition": "A Git commit with two parents, created when merging two branches that both had new commits. It records that the work happened in parallel."
+    },
+    {
+      "term": "merge conflict",
+      "aliases": [
+        "merge conflicts"
+      ],
+      "definition": "When two branches changed the same lines, so Git can't combine them automatically and asks you to choose the final version."
     },
     {
       "term": "message acknowledgment",
@@ -2837,6 +3037,11 @@
       "definition": "A lightweight connection pooler that sits in front of PostgreSQL and lets thousands of client connections share a few real database connections."
     },
     {
+      "term": "pgvector",
+      "aliases": [],
+      "definition": "A PostgreSQL extension that adds a vector column type and similarity search, so Postgres can act as a vector database."
+    },
+    {
       "term": "phantom read",
       "aliases": [
         "phantoms"
@@ -3030,6 +3235,14 @@
       "definition": "An open-source monitoring system that regularly fetches (scrapes) numbers from apps, stores them as time series, and evaluates alert rules."
     },
     {
+      "term": "prompt injection",
+      "aliases": [
+        "direct prompt injection",
+        "indirect prompt injection"
+      ],
+      "definition": "An attack where text the model reads, typed by a user (direct) or hidden in a document, review, or web page (indirect), contains instructions that hijack an AI feature."
+    },
+    {
       "term": "prop drilling",
       "aliases": [],
       "definition": "Passing a value through several layers of React components that do not use it, only so a deeply nested one can."
@@ -3172,6 +3385,13 @@
       "definition": "A bug where the result depends on the exact timing of overlapping operations, such as two requests both buying the last item."
     },
     {
+      "term": "RAG",
+      "aliases": [
+        "retrieval-augmented generation"
+      ],
+      "definition": "Retrieval-augmented generation: finding the documents relevant to a question and putting them in an LLM's prompt so it answers from your data."
+    },
+    {
       "term": "rainbow table",
       "aliases": [
         "rainbow tables"
@@ -3258,6 +3478,14 @@
       "definition": "Kubernetes health checks: readiness decides if a pod gets traffic; liveness decides if a stuck pod is restarted."
     },
     {
+      "term": "rebase",
+      "aliases": [
+        "rebasing",
+        "git rebase"
+      ],
+      "definition": "Replaying a branch's commits on top of another branch, creating new commits with new hashes and a straight-line history."
+    },
+    {
       "term": "reconciliation",
       "aliases": [],
       "definition": "React comparing a new render with the previous one to work out the smallest set of changes to make to the real page."
@@ -3299,6 +3527,13 @@
       "definition": "Regular expression denial of service: input crafted so a badly written regex takes a very long time, blocking the server."
     },
     {
+      "term": "reflog",
+      "aliases": [
+        "git reflog"
+      ],
+      "definition": "Git's local record of everywhere HEAD and your branches have pointed, used to find and recover commits after a bad reset or rebase."
+    },
+    {
       "term": "reflow",
       "aliases": [
         "reflows"
@@ -3313,6 +3548,13 @@
       "definition": "A longer-lived token used only to get new access tokens. The server tracks it, so it can be revoked."
     },
     {
+      "term": "regression test",
+      "aliases": [
+        "regression tests"
+      ],
+      "definition": "A test written to reproduce a bug that was fixed, so the same bug can't come back unnoticed."
+    },
+    {
       "term": "relational database",
       "aliases": [
         "relational databases"
@@ -3325,6 +3567,14 @@
         "relative paths"
       ],
       "definition": "A file location written from the folder you are currently in, like logs/app.log."
+    },
+    {
+      "term": "remote-tracking branch",
+      "aliases": [
+        "remote-tracking branches",
+        "origin/main"
+      ],
+      "definition": "Your local copy of where a branch was on the remote, such as origin/main, updated when you run git fetch."
     },
     {
       "term": "render",
@@ -3925,6 +4175,13 @@
       "definition": "An attack where user input is pasted into a SQL query and changes what the query does, for example reading every user's data."
     },
     {
+      "term": "squash merge",
+      "aliases": [
+        "squash-merge"
+      ],
+      "definition": "Merging a pull request by combining all its commits into one new commit on the main branch."
+    },
+    {
       "term": "SSH",
       "aliases": [
         "Secure Shell"
@@ -3951,6 +4208,13 @@
         "stack traces"
       ],
       "definition": "The list of function calls that led to an error, with file names and line numbers, showing where the error happened."
+    },
+    {
+      "term": "staging area",
+      "aliases": [
+        "Git index"
+      ],
+      "definition": "In Git, the set of changes that will go into the next commit. git add puts changes there."
     },
     {
       "term": "stale-while-revalidate",
@@ -4058,6 +4322,11 @@
       "definition": "A command that runs one command with administrator (root) rights."
     },
     {
+      "term": "supertest",
+      "aliases": [],
+      "definition": "A Node.js library that sends HTTP requests to an Express app inside your tests without starting a real server on a port."
+    },
+    {
       "term": "surrogate key",
       "aliases": [],
       "definition": "A generated id with no real-world meaning, used as a primary key because it never needs to change."
@@ -4078,6 +4347,13 @@
       "term": "system design",
       "aliases": [],
       "definition": "Deciding which parts a software system needs (servers, databases, caches, queues) and how they connect, so it works at the size and speed it must."
+    },
+    {
+      "term": "system prompt",
+      "aliases": [
+        "system prompts"
+      ],
+      "definition": "The standing instructions an app sends to an LLM with every request, such as \"You answer questions about our shop's products\"."
     },
     {
       "term": "systemd",
@@ -4114,6 +4390,27 @@
       "term": "terminal",
       "aliases": [],
       "definition": "The text window where you type commands."
+    },
+    {
+      "term": "test double",
+      "aliases": [
+        "test doubles"
+      ],
+      "definition": "Any stand-in for a real dependency in a test: a dummy (unused), stub (canned answers), spy (records calls), mock (expects certain calls), or fake (simple working version)."
+    },
+    {
+      "term": "test pyramid",
+      "aliases": [
+        "testing pyramid"
+      ],
+      "definition": "The guideline to have many fast unit tests, fewer integration tests, and only a few slow end-to-end tests."
+    },
+    {
+      "term": "test runner",
+      "aliases": [
+        "test runners"
+      ],
+      "definition": "The tool that finds your automated tests, runs them, and reports which passed or failed, such as Node's node:test, Jest, or Vitest."
     },
     {
       "term": "thread",
@@ -4184,6 +4481,11 @@
       "term": "token bucket",
       "aliases": [],
       "definition": "A rate limiting algorithm where tokens refill at a steady rate and each request spends one, which allows short bursts."
+    },
+    {
+      "term": "tokenizer",
+      "aliases": [],
+      "definition": "The part of an LLM that cuts text into tokens, the word pieces the model reads and writes. LLM APIs bill and rate-limit by token counts."
     },
     {
       "term": "top-level domain",
@@ -4323,6 +4625,14 @@
       "definition": "A small config file that tells systemd how to run a service: the command, the user, restart rules, and when to start it."
     },
     {
+      "term": "unit test",
+      "aliases": [
+        "unit tests",
+        "unit testing"
+      ],
+      "definition": "A test of one small piece of logic, such as a function, on its own, with no database or network. Very fast."
+    },
+    {
       "term": "update anomaly",
       "aliases": [],
       "definition": "A contradiction caused by storing one fact in many rows and changing only some of them, such as a user with two different emails."
@@ -4376,6 +4686,21 @@
         "virtual CPU"
       ],
       "definition": "A virtual CPU: the slice of a real processor core given to a virtual machine. On cheaper plans it may be shared with other customers."
+    },
+    {
+      "term": "vector database",
+      "aliases": [
+        "vector databases",
+        "vector store"
+      ],
+      "definition": "A database that stores embeddings and quickly finds the ones closest to a query vector, used for meaning-based search."
+    },
+    {
+      "term": "version control",
+      "aliases": [
+        "version control system"
+      ],
+      "definition": "A system that records every change to files, who made it, and why, so you can see history, undo changes, and combine parallel work."
     },
     {
       "term": "vertical scaling",
@@ -4490,6 +4815,13 @@
         "worker_threads"
       ],
       "definition": "Extra JavaScript threads in Node.js, each with its own event loop, used to run CPU-heavy work without blocking the main thread."
+    },
+    {
+      "term": "working tree",
+      "aliases": [
+        "working directory"
+      ],
+      "definition": "In Git, the actual files on your disk that you edit, as opposed to the saved commits."
     },
     {
       "term": "write skew",
